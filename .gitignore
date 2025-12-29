@@ -1,0 +1,61 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Environment variables (IMPORTANT: Never commit .env files!)
+.env
+.env.local
+.env.production
+.env.development
+.env.test
+
+# Build outputs
+client/out/
+client/dist/
+*.log
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# OS files
+Thumbs.db
+desktop.ini
+
+# Database
+*.sql.backup
+*.db
+*.sqlite
+
+# Uploads (optional - uncomment if you don't want to commit uploads)
+# server/uploads/
+# client/uploads/
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Testing
+coverage/
+.nyc_output/
+
+# Production
+build/
+dist/
+
+# Misc
+*.pem
+*.key
+

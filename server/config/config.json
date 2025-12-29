@@ -1,0 +1,58 @@
+{
+  "development": {
+    "username": "raghul",
+    "password": "RefexAdmin@123",
+    "database": "3imedtech_production",
+    "host": "localhost",
+    "port": 3306,
+    "dialect": "mysql",
+    "logging": false,
+    "define": {
+      "underscored": true
+    },
+    "pool": {
+      "max": 5,
+      "min": 0,
+      "acquire": 30000,
+      "idle": 10000
+    },
+    "dialectOptions": {
+      "connectTimeout": 10000
+    }
+  },
+  "test": {
+    "username": "raghul",
+    "password": "RefexAdmin@123",
+    "database": "3imedtech_production",
+    "host": "localhost",
+    "port": 3306,
+    "dialect": "mysql",
+    "pool": {
+      "max": 5,
+      "min": 0,
+      "acquire": 30000,
+      "idle": 10000
+    },
+    "dialectOptions": {
+      "connectTimeout": 10000
+    }
+  },
+  "production": {
+    "username": "raghul",
+    "password": "RefexAdmin@123",
+    "database": "3imedtech_production",
+    "host": "localhost",
+    "port": 3306,
+    "dialect": "mysql",
+    "pool": {
+      "max": 5,
+      "min": 0,
+      "acquire": 30000,
+      "idle": 10000
+    },
+    "dialectOptions": {
+      "connectTimeout": 10000
+    }
+  }
+}
+
