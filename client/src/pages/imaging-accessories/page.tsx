@@ -150,7 +150,7 @@ const ImagingAccessoriesPage = () => {
 
       {/* Products from CMS or Static Fallback */}
       {loading ? (
-        <div className="py-20 text-center">
+        <div className="py-14 text-center">
           <p className="text-gray-600">Loading...</p>
         </div>
       ) : products.length > 0 ? (
@@ -173,24 +173,30 @@ const ImagingAccessoriesPage = () => {
             <section 
               key={product.id || sectionId || index} 
               id={sectionId} 
-              className={`py-20 bg-gradient-to-br ${backgroundColor} relative overflow-hidden transition-all duration-500 ${
+              className={`pt-8 pb-6 bg-gradient-to-br ${backgroundColor} relative overflow-hidden transition-all duration-500 ${
                 isHighlighted ? 'ring-4 ring-[#E6662F] ring-opacity-75 shadow-2xl' : ''
               }`}
               style={{
-                scrollMarginTop: '100px'
+                scrollMarginTop: '100px',
+                background: 'linear-gradient(180deg, rgba(0, 0, 0, 0) 10%, rgba(40, 121, 182, 0.08) 90%)'
               }}
             >
               <div className="absolute left-0 top-1/2 -translate-y-1/2 w-16 h-32 bg-gradient-to-r from-[#027C8E] to-transparent"></div>
               <div className="absolute right-0 top-1/2 -translate-y-1/2 w-16 h-32 bg-gradient-to-l from-[#E6662F] to-transparent"></div>
               
-              <div className="max-w-7xl mx-auto px-6 lg:px-12">
+              <div className="container mx-auto px-4">
                 {(() => {
                   const imagePosition = product.imagePosition || 'left';
                   const isImageRight = imagePosition === 'right';
                   return (
                     <div className={`flex flex-col lg:flex-row gap-12 items-start ${isImageRight ? 'lg:flex-row-reverse' : ''}`}>
-                      <div className={`w-full lg:w-[48%]`} data-aos={isImageRight ? 'fade-right' : 'fade-left'}>
-                    <h3 className="text-3xl font-bold mb-6" style={{ color: '#2879b6' }}>{product.title}</h3>
+                      <div className={`w-full lg:w-[48%]`} data-aos={isImageRight ? 'fade-right' : 'fade-left'} style={{ alignSelf: 'flex-start' }}>
+                    <h3 className="text-3xl font-bold mb-6" style={{ 
+                      color: '#2879b6',
+                      marginTop: 0,
+                      paddingTop: 0,
+                      lineHeight: '1.2'
+                    }}>{product.title}</h3>
                     <ul className="space-y-4 text-gray-700">
                       {product.overview && (
                         <li>
@@ -214,11 +220,18 @@ const ImagingAccessoriesPage = () => {
                       )}
                     </ul>
                   </div>
-                      <div className={`w-full lg:w-[52%] flex items-center justify-center`} data-aos={isImageRight ? 'fade-left' : 'fade-right'}>
+                      <div className={`w-full lg:w-[52%]`} data-aos={isImageRight ? 'fade-left' : 'fade-right'} style={{ alignSelf: 'flex-start' }}>
                     <img 
                       src={product.image || ASSETS.PRODUCTS.IMAGING_ACCESSORIES.DMD_D_2000} 
                       alt={product.title} 
-                      className="w-full h-auto object-contain"
+                      className="w-full h-auto object-contain scale-[0.8]"
+                      style={{ 
+                        display: 'block',
+                        verticalAlign: 'top',
+                        margin: 0,
+                        padding: 0,
+                        transformOrigin: 'top center'
+                      }}
                     />
                   </div>
                 </div>
@@ -233,7 +246,7 @@ const ImagingAccessoriesPage = () => {
       {/* DMD D 2000, X-Ray Film Digitizer - Static Fallback */}
       <section 
         id="dmdd2000xrayfilmdigitizer" 
-        className={`py-20 bg-white relative overflow-hidden transition-all duration-500 ${
+        className={`pt-8 pb-6 bg-white relative overflow-hidden transition-all duration-500 ${
           highlightedSection === 'dmdd2000xrayfilmdigitizer' ? 'ring-4 ring-[#E6662F] ring-opacity-75 shadow-2xl' : ''
         }`}
         style={{ scrollMarginTop: '128px' }}
@@ -263,7 +276,7 @@ const ImagingAccessoriesPage = () => {
                 </li>
               </ul>
             </div>
-            <div className="w-full lg:w-[52%] flex items-center justify-center" data-aos="fade-left">
+            <div className="w-full lg:w-[52%] flex items-start justify-center" data-aos="fade-left">
               <img 
                 src={ASSETS.PRODUCTS.IMAGING_ACCESSORIES.DMD_D_2000} 
                 alt="DMD D 2000, X-Ray Film Digitizer" 
@@ -277,7 +290,7 @@ const ImagingAccessoriesPage = () => {
       {/* Image Display Monitors */}
       <section 
         id="imagedisplaymonitors" 
-        className={`py-20 bg-[#F8F9FA] relative overflow-hidden transition-all duration-500 ${
+        className={`pt-8 pb-6 bg-[#F8F9FA] relative overflow-hidden transition-all duration-500 ${
           highlightedSection === 'imagedisplaymonitors' ? 'ring-4 ring-[#E6662F] ring-opacity-75 shadow-2xl' : ''
         }`}
         style={{ scrollMarginTop: '128px' }}
@@ -287,7 +300,7 @@ const ImagingAccessoriesPage = () => {
         
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="flex flex-col lg:flex-row-reverse gap-12 items-start">
-            <div className="w-full lg:w-[52%] flex items-center justify-center" data-aos="fade-right">
+            <div className="w-full lg:w-[52%] flex items-start justify-center" data-aos="fade-right">
               <img 
                 src={ASSETS.PRODUCTS.IMAGING_ACCESSORIES.IMAGE_DISPLAY_MONITORS} 
                 alt="Image Display Monitors" 
@@ -321,7 +334,7 @@ const ImagingAccessoriesPage = () => {
       {/* CT/MR/Mammograph Multi-Modality Workstations */}
       <section 
         id="ctmrmammographmultimodalityworkstations" 
-        className={`py-20 bg-white relative overflow-hidden transition-all duration-500 ${
+        className={`pt-8 pb-6 bg-white relative overflow-hidden transition-all duration-500 ${
           highlightedSection === 'ctmrmammographmultimodalityworkstations' ? 'ring-4 ring-[#E6662F] ring-opacity-75 shadow-2xl' : ''
         }`}
         style={{ scrollMarginTop: '128px' }}
@@ -351,7 +364,7 @@ const ImagingAccessoriesPage = () => {
                 </li>
               </ul>
             </div>
-            <div className="w-full lg:w-[52%] flex items-center justify-center" data-aos="fade-left">
+            <div className="w-full lg:w-[52%] flex items-start justify-center" data-aos="fade-left">
               <img 
                 src={ASSETS.PRODUCTS.IMAGING_ACCESSORIES.CT_MR_MAMMOGRAPH_WORKSTATIONS} 
                 alt="CT/MR/Mammograph Multi-Modality Workstations" 
@@ -365,7 +378,7 @@ const ImagingAccessoriesPage = () => {
       {/* CD/DVD Publishers */}
       <section 
         id="cddvdpublishers" 
-        className={`py-20 bg-[#F8F9FA] relative overflow-hidden transition-all duration-500 ${
+        className={`pt-8 pb-6 bg-[#F8F9FA] relative overflow-hidden transition-all duration-500 ${
           highlightedSection === 'cddvdpublishers' ? 'ring-4 ring-[#E6662F] ring-opacity-75 shadow-2xl' : ''
         }`}
         style={{ scrollMarginTop: '128px' }}
@@ -375,7 +388,7 @@ const ImagingAccessoriesPage = () => {
         
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="flex flex-col lg:flex-row-reverse gap-12 items-start">
-            <div className="w-full lg:w-[52%] flex items-center justify-center" data-aos="fade-right">
+            <div className="w-full lg:w-[52%] flex items-start justify-center" data-aos="fade-right">
               <img 
                 src={ASSETS.PRODUCTS.IMAGING_ACCESSORIES.CD_DVD_PUBLISHERS} 
                 alt="CD/DVD Publishers" 
@@ -409,7 +422,7 @@ const ImagingAccessoriesPage = () => {
       {/* MedE Drive for Patient Data Storage */}
       <section 
         id="mededrive" 
-        className={`py-20 bg-white relative overflow-hidden transition-all duration-500 ${
+        className={`pt-8 pb-6 bg-white relative overflow-hidden transition-all duration-500 ${
           highlightedSection === 'mededrive' ? 'ring-4 ring-[#E6662F] ring-opacity-75 shadow-2xl' : ''
         }`}
         style={{ scrollMarginTop: '128px' }}
@@ -439,7 +452,7 @@ const ImagingAccessoriesPage = () => {
                 </li>
               </ul>
             </div>
-            <div className="w-full lg:w-[52%] flex items-center justify-center" data-aos="fade-left">
+            <div className="w-full lg:w-[52%] flex items-start justify-center" data-aos="fade-left">
               <img 
                 src={ASSETS.PRODUCTS.IMAGING_ACCESSORIES.MEDE_DRIVE} 
                 alt="MedE Drive for Patient Data Storage" 

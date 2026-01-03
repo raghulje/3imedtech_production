@@ -156,25 +156,36 @@ const FlatPanelDetectorsPage = () => {
             <section 
               key={product.id || index} 
               id={sectionId} 
-              className={`py-20 bg-gradient-to-br ${backgroundColor} transition-all duration-500 ${
+              className={`pt-8 pb-6 bg-gradient-to-br ${backgroundColor} transition-all duration-500 ${
                 isHighlighted ? 'ring-4 ring-[#E6662F] ring-opacity-75 shadow-2xl' : ''
               }`}
-              style={{ scrollMarginTop: '100px' }}
+              style={{ 
+                scrollMarginTop: '100px',
+                background: 'linear-gradient(180deg, rgba(0, 0, 0, 0) 10%, rgba(40, 121, 182, 0.08) 90%)'
+              }}
             >
-              <div className="max-w-7xl mx-auto px-6">
+              <div className="container mx-auto px-4">
                 <div className={`flex flex-col lg:flex-row gap-12 items-start ${
                   imagePosition === 'right' ? 'lg:flex-row-reverse' : ''
                 }`}>
                   {/* Image */}
                   <div 
-                    className={`w-full lg:w-[52%] flex items-center justify-center ${imagePosition === 'right' ? '' : ''}`}
+                    className={`w-full lg:w-[52%] ${imagePosition === 'right' ? '' : ''}`}
                     data-aos={imagePosition === 'right' ? 'fade-left' : 'fade-right'}
+                    style={{ alignSelf: 'flex-start' }}
                   >
                     {product.image ? (
                       <img
                         src={product.image}
                         alt={product.title}
-                        className="w-full h-auto rounded-lg shadow-lg object-contain"
+                        className="w-full h-auto rounded-lg shadow-lg object-contain scale-[0.8]"
+                        style={{ 
+                          display: 'block',
+                          verticalAlign: 'top',
+                          margin: 0,
+                          padding: 0,
+                          transformOrigin: 'top center'
+                        }}
                         onError={(e) => {
                           // Fallback to placeholder if image fails to load
                           (e.target as HTMLImageElement).src = 'https://via.placeholder.com/600x400?text=Product+Image';
@@ -191,8 +202,14 @@ const FlatPanelDetectorsPage = () => {
                   <div 
                     className={`w-full lg:w-[48%] ${imagePosition === 'right' ? '' : ''}`}
                     data-aos={imagePosition === 'right' ? 'fade-right' : 'fade-left'}
+                    style={{ alignSelf: 'flex-start' }}
                   >
-                    <h3 className="text-3xl font-bold mb-6" style={{ color: '#2879b6' }}>
+                    <h3 className="text-3xl font-bold mb-6" style={{ 
+                      color: '#2879b6', 
+                      marginTop: 0, 
+                      paddingTop: 0,
+                      lineHeight: '1.2'
+                    }}>
                       {product.title}
                     </h3>
                     <ul className="space-y-4 text-gray-700">
@@ -229,26 +246,41 @@ const FlatPanelDetectorsPage = () => {
       {/* Glass-Free Flat Panel Detector */}
       <section 
         id="glassfreeflatpaneldetector" 
-        className={`py-20 bg-gradient-to-br from-gray-50 to-white transition-all duration-500 ${
+        className={`pt-8 pb-6 bg-gradient-to-br from-gray-50 to-white transition-all duration-500 ${
           highlightedSection === 'glassfreeflatpaneldetector' ? 'ring-4 ring-[#E6662F] ring-opacity-75 shadow-2xl' : ''
         }`}
-        style={{ scrollMarginTop: '100px' }}
+        style={{ 
+          scrollMarginTop: '100px',
+          background: 'linear-gradient(180deg, rgba(0, 0, 0, 0) 10%, #2879b6 90%)'
+        }}
       >
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col lg:flex-row gap-12 items-start">
-            <div className="w-full lg:w-[52%] flex items-center justify-center" data-aos="fade-right">
+            <div className="w-full lg:w-[52%]" data-aos="fade-right" style={{ alignSelf: 'flex-start' }}>
               {/* Product Image - Local Asset */}
               <img
                 src={ASSETS.PRODUCTS.DETECTORS.GLASS_FREE}
                 alt="Glass-Free Flat Panel Detector"
-                className="w-full h-auto rounded-lg shadow-lg object-contain"
+                className="w-full h-auto rounded-lg shadow-lg object-contain scale-[0.8]"
+                style={{ 
+                  display: 'block',
+                  verticalAlign: 'top',
+                  margin: 0,
+                  padding: 0,
+                  transformOrigin: 'top center'
+                }}
               />
             </div>
-            <div className="w-full lg:w-[48%]" data-aos="fade-left">
-              <h3 className="text-3xl font-bold mb-6" style={{ color: '#2879b6' }}>
+            <div className="w-full lg:w-[48%]" data-aos="fade-left" style={{ alignSelf: 'flex-start' }}>
+              <h3 className="text-3xl font-bold mb-4" style={{ 
+                color: '#2879b6',
+                marginTop: 0,
+                paddingTop: 0,
+                lineHeight: '1.2'
+              }}>
                 Glass-Free Flat Panel Detector
               </h3>
-              <ul className="space-y-4 text-gray-700">
+              <ul className="space-y-3 text-gray-700">
                 <li>
                   <strong>Overview:</strong> The new generation glass-free flat panel detector offers high DQE for excellent image quality with robust construction designed to handle up to 150 kg.
                 </li>
@@ -273,18 +305,26 @@ const FlatPanelDetectorsPage = () => {
       {/* Retrofit Mammography Panel */}
       <section 
         id="retrofitmammographypanel" 
-        className={`py-20 bg-gradient-to-br from-white to-gray-50 transition-all duration-500 ${
+        className={`pt-8 pb-6 bg-gradient-to-br from-white to-gray-50 transition-all duration-500 ${
           highlightedSection === 'retrofitmammographypanel' ? 'ring-4 ring-[#E6662F] ring-opacity-75 shadow-2xl' : ''
         }`}
-        style={{ scrollMarginTop: '100px' }}
+        style={{ 
+          scrollMarginTop: '100px',
+          background: 'linear-gradient(180deg, rgba(0, 0, 0, 0) 10%, #2879b6 90%)'
+        }}
       >
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col lg:flex-row-reverse gap-12 items-start">
-            <div className="w-full lg:w-[48%]" data-aos="fade-right">
-              <h3 className="text-3xl font-bold mb-6" style={{ color: '#2879b6' }}>
+            <div className="w-full lg:w-[48%]" data-aos="fade-right" style={{ alignSelf: 'flex-start' }}>
+              <h3 className="text-3xl font-bold mb-4" style={{ 
+                color: '#2879b6',
+                marginTop: 0,
+                paddingTop: 0,
+                lineHeight: '1.2'
+              }}>
                 Retrofit Mammography Panel
               </h3>
-              <ul className="space-y-4 text-gray-700">
+              <ul className="space-y-3 text-gray-700">
                 <li>
                   <strong>Overview:</strong> This slim cassette-type digital mammography upgrade solution is designed by radiologists to provide an optimal user experience.
                 </li>
@@ -302,12 +342,19 @@ const FlatPanelDetectorsPage = () => {
                 </li>
               </ul>
             </div>
-            <div className="w-full lg:w-[52%] flex items-center justify-center" data-aos="fade-left">
+            <div className="w-full lg:w-[52%]" data-aos="fade-left" style={{ alignSelf: 'flex-start' }}>
               {/* Product Image - Local Asset */}
               <img
                 src={ASSETS.PRODUCTS.DETECTORS.RETROFIT_MAMMOGRAPHY}
                 alt="Retrofit Mammography Panel"
-                className="w-full h-auto rounded-lg shadow-lg object-contain"
+                className="w-full h-auto rounded-lg shadow-lg object-contain scale-[0.8]"
+                style={{ 
+                  display: 'block',
+                  verticalAlign: 'top',
+                  margin: 0,
+                  padding: 0,
+                  transformOrigin: 'top center'
+                }}
               />
             </div>
           </div>

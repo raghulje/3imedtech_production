@@ -139,13 +139,13 @@ const HomePage = () => {
             alt="Hero Background"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0066A1]/80 to-[#7AB730]/60"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0066A1]/40 to-[#7AB730]/30"></div>
         </div>
-          <div className="relative h-full max-w-[1920px] mx-auto px-6 lg:px-12 flex items-center justify-between">
+          <div className="relative h-full max-w-[1880px] mx-auto px-6 lg:px-12 flex items-center justify-between">
             {/* Left Side - Title */}
             <div className="max-w-2xl flex-1">
               <h1 
-                className="text-white text-4xl lg:text-5xl xl:text-6xl font-medium leading-tight"
+                className="text-white text-3xl lg:text-4xl xl:text-5xl font-medium leading-tight"
                 dangerouslySetInnerHTML={{
                   __html: homeHero?.title 
                     ? homeHero.title.replace(/\n/g, '<br />') 
@@ -160,7 +160,7 @@ const HomePage = () => {
                   href={homeHero?.badgeLink || ASSETS.EXTERNAL.ANAMAYA_WEBSITE}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block cursor-pointer animate-pulse-slow"
+              className="inline-block cursor-pointer animate-flicker"
             >
                   <img
                     src={homeHero?.badgeImage || ASSETS.BANNERS.NEW_PRODUCT_BADGE}
@@ -177,10 +177,10 @@ const HomePage = () => {
       {/* About Section */}
       {homeAboutSection?.isActive !== false && (
         <section 
-          className="py-20 animate-on-scroll" 
+          className="py-14 pb-24 lg:pb-32 animate-on-scroll" 
           style={{ backgroundColor: homeAboutSection?.backgroundColor || '#1E4C84' }}
         >
-        <div className="max-w-[1920px] mx-auto px-6 lg:px-12">
+        <div className="max-w-[1880px] mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
                 <h6 
@@ -193,7 +193,7 @@ const HomePage = () => {
                 >
                   {homeAboutSection?.label || 'About Us'}
                 </h6>
-                <h3 className="text-4xl lg:text-5xl font-medium text-white mb-6 leading-tight">
+                <h3 className="text-3xl lg:text-4xl font-medium text-white mb-6 leading-tight">
                   {homeAboutSection?.title || 'Your Partner for Clinically Relevant and Viable Imaging Technologies'}
               </h3>
             </div>
@@ -216,10 +216,10 @@ const HomePage = () => {
             <div className="h-1/2 bg-gray-100"></div>
           </div>
           
-          <div className="relative max-w-[1920px] mx-auto px-6 lg:px-12 py-20">
+          <div className="relative max-w-[1880px] mx-auto px-6 lg:px-12 py-14">
             {homeImageBoxes.length > 0 ? (
               <>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 -mt-20 md:-mt-32">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 -mt-12 md:-mt-20">
                   {homeImageBoxes
                     .filter((box: any) => box.isActive !== false)
                     .sort((a: any, b: any) => (a.order || 0) - (b.order || 0))
@@ -245,56 +245,57 @@ const HomePage = () => {
                       
                       {/* White Card - Overlaps both blue and grey sections */}
                       <div className="absolute bottom-0 left-0 right-0 mx-4 mb-4">
-                        <div className="bg-white rounded-lg shadow-xl p-6 overflow-hidden transition-all duration-500 ease-out group-hover:-translate-y-6 group-hover:shadow-2xl h-[120px]">
-                          {/* Content Container with smooth scroll effect */}
-                          <div className="relative transition-transform duration-500 ease-in-out group-hover:-translate-y-full h-full">
-                            {/* Default Content - Scrolls up on hover */}
-                            <div className="h-full flex flex-col justify-center">
-                              {box.label && (
-                                <h6 className="text-sm font-semibold uppercase tracking-wider mb-2" style={{ color: '#2879B6' }}>
-                                  {box.label}
-                                </h6>
-                              )}
-                              <h2 className="text-xl font-bold leading-tight" style={{ color: '#0E2B5C' }}>
-                                {box.title || `Box ${idx + 1}`}
-                              </h2>
+                        <div className="bg-white rounded-lg shadow-xl p-6 overflow-hidden transition-all duration-500 ease-out group-hover:-translate-y-6 group-hover:shadow-2xl min-h-[150px]">
+                          {/* Label - Scrolls up on hover */}
+                          {box.label && (
+                            <div className="relative transition-transform duration-500 ease-in-out group-hover:-translate-y-full mb-2">
+                              <h6 className="text-sm font-semibold uppercase tracking-wider" style={{ color: '#2879B6' }}>
+                                {box.label}
+                              </h6>
                             </div>
-                            
-                            {/* Hover Content - Appears when scrolled up */}
-                            <div className="absolute top-full left-0 right-0 h-full flex flex-col justify-center pt-6">
-                              {box.description && box.description !== box.title && (
-                                <p className="text-gray-700 text-sm leading-relaxed mb-4">
-                                  {box.description}
-                                </p>
-                              )}
-                              {box.link && (
-                                box.link.startsWith('http') || box.link.startsWith('//') ? (
-                                  <a
-                                    href={box.link}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="inline-flex items-center font-semibold transition-all duration-300 group/link"
-                                    style={{ color: '#1dc2ef' }}
-                                    onMouseEnter={(e) => e.currentTarget.style.color = '#7AB730'}
-                                    onMouseLeave={(e) => e.currentTarget.style.color = '#1dc2ef'}
-                                  >
-                                    <span>{box.linkText || 'Discover Now'}</span>
-                                    <span className="ml-2">→</span>
-                                  </a>
-                                ) : (
-                                  <Link
-                                    to={box.link}
-                                    className="inline-flex items-center font-semibold transition-all duration-300 group/link"
-                                    style={{ color: '#1dc2ef' }}
-                                    onMouseEnter={(e) => e.currentTarget.style.color = '#7AB730'}
-                                    onMouseLeave={(e) => e.currentTarget.style.color = '#1dc2ef'}
-                                  >
-                                    <span>{box.linkText || 'Discover Now'}</span>
-                                    <span className="ml-2">→</span>
-                                  </Link>
-                                )
-                              )}
-                            </div>
+                          )}
+                          
+                          {/* Title - Always visible */}
+                          <h2 className="text-xl font-bold leading-tight mb-3" style={{ color: '#0E2B5C' }}>
+                            {box.title || `Box ${idx + 1}`}
+                          </h2>
+                          
+                          {/* Description - Always visible */}
+                          {box.description && box.description !== box.title && (
+                            <p className="text-gray-700 text-sm leading-relaxed mb-4">
+                              {box.description}
+                            </p>
+                          )}
+                          
+                          {/* Link - Appears on hover */}
+                          <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                            {box.link && (
+                              box.link.startsWith('http') || box.link.startsWith('//') ? (
+                                <a
+                                  href={box.link}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="inline-flex items-center font-semibold transition-all duration-300 group/link"
+                                  style={{ color: '#1dc2ef' }}
+                                  onMouseEnter={(e) => e.currentTarget.style.color = '#7AB730'}
+                                  onMouseLeave={(e) => e.currentTarget.style.color = '#1dc2ef'}
+                                >
+                                  <span>{box.linkText || 'Discover Now'}</span>
+                                  <span className="ml-2">→</span>
+                                </a>
+                              ) : (
+                                <Link
+                                  to={box.link}
+                                  className="inline-flex items-center font-semibold transition-all duration-300 group/link"
+                                  style={{ color: '#1dc2ef' }}
+                                  onMouseEnter={(e) => e.currentTarget.style.color = '#7AB730'}
+                                  onMouseLeave={(e) => e.currentTarget.style.color = '#1dc2ef'}
+                                >
+                                  <span>{box.linkText || 'Discover Now'}</span>
+                                  <span className="ml-2">→</span>
+                                </Link>
+                              )
+                            )}
                           </div>
                         </div>
                       </div>
@@ -333,7 +334,7 @@ const HomePage = () => {
             ) : (
               // Fallback static content if no CMS data
               <>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 -mt-20 md:-mt-32">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 -mt-12 md:-mt-20">
                   <div 
                     className="group relative cursor-pointer"
                     data-aos="fade-up"
@@ -349,28 +350,31 @@ const HomePage = () => {
                       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/20 transition-opacity duration-500 group-hover:opacity-100"></div>
                     </div>
                     <div className="absolute bottom-0 left-0 right-0 mx-4 mb-4">
-                      <div className="bg-white rounded-lg shadow-xl p-6 overflow-hidden transition-all duration-500 ease-out group-hover:-translate-y-6 group-hover:shadow-2xl h-[120px]">
-                        <div className="relative transition-transform duration-500 ease-in-out group-hover:-translate-y-full h-full">
-                          <div className="h-full flex flex-col justify-center">
-                            <h6 className="text-sm font-semibold uppercase tracking-wider mb-2" style={{ color: '#2879B6' }}>
-                              IMAGING EQUIPMENT EXPERTS
-                            </h6>
-                            <h2 className="text-xl font-bold leading-tight" style={{ color: '#0E2B5C' }}>
-                              Core competency in manufacturing diagnostic imaging equipment
-                            </h2>
-                          </div>
-                          <div className="absolute top-full left-0 right-0 h-full flex flex-col justify-center pt-6">
-                            <a
-                              href="/about"
-                              className="inline-flex items-center font-semibold transition-all duration-300"
-                              style={{ color: '#1dc2ef' }}
-                              onMouseEnter={(e) => e.currentTarget.style.color = '#7AB730'}
-                              onMouseLeave={(e) => e.currentTarget.style.color = '#1dc2ef'}
-                            >
-                              <span>Discover Now</span>
-                              <span className="ml-2">→</span>
-                            </a>
-                          </div>
+                      <div className="bg-white rounded-lg shadow-xl p-6 overflow-hidden transition-all duration-500 ease-out group-hover:-translate-y-6 group-hover:shadow-2xl min-h-[150px]">
+                        {/* Label - Scrolls up on hover */}
+                        <div className="relative transition-transform duration-500 ease-in-out group-hover:-translate-y-full mb-2">
+                          <h6 className="text-sm font-semibold uppercase tracking-wider" style={{ color: '#2879B6' }}>
+                            IMAGING EQUIPMENT EXPERTS
+                          </h6>
+                        </div>
+                        
+                        {/* Title - Always visible */}
+                        <h2 className="text-xl font-bold leading-tight mb-3" style={{ color: '#0E2B5C' }}>
+                          Core competency in manufacturing diagnostic imaging equipment
+                        </h2>
+                        
+                        {/* Link - Appears on hover */}
+                        <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                          <a
+                            href="/about"
+                            className="inline-flex items-center font-semibold transition-all duration-300"
+                            style={{ color: '#1dc2ef' }}
+                            onMouseEnter={(e) => e.currentTarget.style.color = '#7AB730'}
+                            onMouseLeave={(e) => e.currentTarget.style.color = '#1dc2ef'}
+                          >
+                            <span>Discover Now</span>
+                            <span className="ml-2">→</span>
+                          </a>
                         </div>
                       </div>
                     </div>
@@ -390,28 +394,31 @@ const HomePage = () => {
                       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/20 transition-opacity duration-500 group-hover:opacity-100"></div>
                     </div>
                     <div className="absolute bottom-0 left-0 right-0 mx-4 mb-4">
-                      <div className="bg-white rounded-lg shadow-xl p-6 overflow-hidden transition-all duration-500 ease-out group-hover:-translate-y-6 group-hover:shadow-2xl h-[120px]">
-                        <div className="relative transition-transform duration-500 ease-in-out group-hover:-translate-y-full h-full">
-                          <div className="h-full flex flex-col justify-center">
-                            <h6 className="text-sm font-semibold uppercase tracking-wider mb-2" style={{ color: '#2879B6' }}>
-                              TRUSTED HEALTHCARE PARTNER
-                            </h6>
-                            <h2 className="text-xl font-bold leading-tight" style={{ color: '#0E2B5C' }}>
-                              Strong reputation in the competitive healthcare market
-                            </h2>
-                          </div>
-                          <div className="absolute top-full left-0 right-0 h-full flex flex-col justify-center pt-6">
-                            <a
-                              href="/about"
-                              className="inline-flex items-center font-semibold transition-all duration-300"
-                              style={{ color: '#1dc2ef' }}
-                              onMouseEnter={(e) => e.currentTarget.style.color = '#7AB730'}
-                              onMouseLeave={(e) => e.currentTarget.style.color = '#1dc2ef'}
-                            >
-                              <span>Learn More</span>
-                              <span className="ml-2">→</span>
-                            </a>
-                          </div>
+                      <div className="bg-white rounded-lg shadow-xl p-6 overflow-hidden transition-all duration-500 ease-out group-hover:-translate-y-6 group-hover:shadow-2xl min-h-[150px]">
+                        {/* Label - Scrolls up on hover */}
+                        <div className="relative transition-transform duration-500 ease-in-out group-hover:-translate-y-full mb-2">
+                          <h6 className="text-sm font-semibold uppercase tracking-wider" style={{ color: '#2879B6' }}>
+                            TRUSTED HEALTHCARE PARTNER
+                          </h6>
+                        </div>
+                        
+                        {/* Title - Always visible */}
+                        <h2 className="text-xl font-bold leading-tight mb-3" style={{ color: '#0E2B5C' }}>
+                          Strong reputation in the competitive healthcare market
+                        </h2>
+                        
+                        {/* Link - Appears on hover */}
+                        <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                          <a
+                            href="/about"
+                            className="inline-flex items-center font-semibold transition-all duration-300"
+                            style={{ color: '#1dc2ef' }}
+                            onMouseEnter={(e) => e.currentTarget.style.color = '#7AB730'}
+                            onMouseLeave={(e) => e.currentTarget.style.color = '#1dc2ef'}
+                          >
+                            <span>Learn More</span>
+                            <span className="ml-2">→</span>
+                          </a>
                         </div>
                       </div>
                     </div>
@@ -431,28 +438,31 @@ const HomePage = () => {
                       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/20 transition-opacity duration-500 group-hover:opacity-100"></div>
                     </div>
                     <div className="absolute bottom-0 left-0 right-0 mx-4 mb-4">
-                      <div className="bg-white rounded-lg shadow-xl p-6 overflow-hidden transition-all duration-500 ease-out group-hover:-translate-y-6 group-hover:shadow-2xl h-[120px]">
-                        <div className="relative transition-transform duration-500 ease-in-out group-hover:-translate-y-full h-full">
-                          <div className="h-full flex flex-col justify-center">
-                            <h6 className="text-sm font-semibold uppercase tracking-wider mb-2" style={{ color: '#2879B6' }}>
-                              ENHANCING HEALTHCARE ACCESS
-                            </h6>
-                            <h2 className="text-xl font-bold leading-tight" style={{ color: '#0E2B5C' }}>
-                              Commitment to healthcare efficiency and accessibility
-                            </h2>
-                          </div>
-                          <div className="absolute top-full left-0 right-0 h-full flex flex-col justify-center pt-6">
-                            <a
-                              href="/about"
-                              className="inline-flex items-center font-semibold transition-all duration-300"
-                              style={{ color: '#1dc2ef' }}
-                              onMouseEnter={(e) => e.currentTarget.style.color = '#7AB730'}
-                              onMouseLeave={(e) => e.currentTarget.style.color = '#1dc2ef'}
-                            >
-                              <span>Read More</span>
-                              <span className="ml-2">→</span>
-                            </a>
-                          </div>
+                      <div className="bg-white rounded-lg shadow-xl p-6 overflow-hidden transition-all duration-500 ease-out group-hover:-translate-y-6 group-hover:shadow-2xl min-h-[150px]">
+                        {/* Label - Scrolls up on hover */}
+                        <div className="relative transition-transform duration-500 ease-in-out group-hover:-translate-y-full mb-2">
+                          <h6 className="text-sm font-semibold uppercase tracking-wider" style={{ color: '#2879B6' }}>
+                            ENHANCING HEALTHCARE ACCESS
+                          </h6>
+                        </div>
+                        
+                        {/* Title - Always visible */}
+                        <h2 className="text-xl font-bold leading-tight mb-3" style={{ color: '#0E2B5C' }}>
+                          Commitment to healthcare efficiency and accessibility
+                        </h2>
+                        
+                        {/* Link - Appears on hover */}
+                        <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                          <a
+                            href="/about"
+                            className="inline-flex items-center font-semibold transition-all duration-300"
+                            style={{ color: '#1dc2ef' }}
+                            onMouseEnter={(e) => e.currentTarget.style.color = '#7AB730'}
+                            onMouseLeave={(e) => e.currentTarget.style.color = '#1dc2ef'}
+                          >
+                            <span>Read More</span>
+                            <span className="ml-2">→</span>
+                          </a>
                         </div>
                       </div>
                     </div>
@@ -495,7 +505,7 @@ const HomePage = () => {
       {/* Commitment Section */}
       {homeCommitment?.isActive !== false && (
         <section 
-          className="py-20 relative overflow-hidden" 
+          className="pb-14 relative overflow-hidden" 
           style={{ backgroundColor: homeCommitment?.backgroundColor || '#F9FAFB' }}
           data-aos="fade-in"
           data-aos-duration="200"
@@ -507,7 +517,7 @@ const HomePage = () => {
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-orange-500/3 rounded-full animate-pulse" data-aos="zoom-in" data-aos-delay="900" data-aos-duration="2000"></div>
           </div>
 
-        <div className="max-w-[1920px] mx-auto px-6 lg:px-12 relative z-10">
+        <div className="max-w-[1880px] mx-auto px-6 lg:px-12 relative z-10">
           <div className="text-center mb-16" data-aos="slide-up" data-aos-duration="1000">
               <h6 
                 className="font-semibold uppercase tracking-wider mb-4"

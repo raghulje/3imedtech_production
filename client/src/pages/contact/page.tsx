@@ -193,81 +193,506 @@ export default function Contact() {
       )}
 
       {/* Contact Info Section - CMS or Fallback */}
-      <section className="py-16 bg-gradient-to-r from-[#4A90A4]/10 to-[#7AB730]/10">
+      <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           {contactInfoCards.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {contactInfoCards.map((card: any, idx: number) => (
-                <div key={card.id || idx} className="bg-white rounded-lg p-8 shadow-lg relative">
-                  {card.icon && (
-                    <div className="absolute top-8 right-8 text-[#4A90A4] text-4xl">
-                      <i className={card.icon}></i>
+                <div 
+                  key={card.id || idx} 
+                  className="group relative rounded-lg shadow-lg hover:shadow-2xl transition-all duration-700 transform hover:-translate-y-6 hover:rotate-1 cursor-pointer overflow-hidden border border-gray-100"
+                  style={{ 
+                    backgroundColor: '#F1F1F1',
+                    padding: '30px',
+                    color: '#333842',
+                    fontFamily: 'Montserrat, sans-serif'
+                  }}
+                  data-aos="fade-up"
+                  data-aos-delay={idx * 100}
+                  data-aos-duration="800"
+                  data-aos-easing="ease-out-cubic"
+                >
+                  {/* Background Effects */}
+                  <div className="absolute top-0 right-0 w-32 h-32 opacity-5 group-hover:opacity-20 transition-all duration-700 rounded-full blur-xl" 
+                       style={{ background: 'radial-gradient(circle, #2879B6, #2879B688)' }}>
+                  </div>
+                  
+                  {/* Floating Particles Effect */}
+                  <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                    <div className="absolute top-4 right-4 w-2 h-2 rounded-full animate-ping" style={{ backgroundColor: '#2879B6', animationDuration: '2s' }}></div>
+                    <div className="absolute bottom-8 left-6 w-1 h-1 rounded-full animate-ping" style={{ backgroundColor: '#2879B6', animationDelay: '0.5s', animationDuration: '3s' }}></div>
+                    <div className="absolute top-1/2 left-4 w-1.5 h-1.5 rounded-full animate-ping" style={{ backgroundColor: '#2879B6', animationDelay: '1s', animationDuration: '2.5s' }}></div>
+                  </div>
+                  
+                  <div className="relative z-10">
+                    <div className="flex flex-col items-center text-center">
+                      {/* Title */}
+                      <h4 
+                        className="mb-6 group-hover:scale-105 transition-all duration-500"
+                        style={{
+                          fontFamily: 'Montserrat, sans-serif',
+                          fontWeight: 500,
+                          color: '#2879B6',
+                          fontSize: '1.25rem',
+                          lineHeight: '1.35em'
+                        }}
+                      >
+                        {card.title}
+                      </h4>
+                      
+                      {/* Icon with shadow */}
+                      {card.icon && (
+                        <div className="w-24 h-24 mb-6 flex items-center justify-center relative" style={{ transformOrigin: 'center bottom' }}>
+                          <i 
+                            className={`${card.icon} text-6xl relative z-10 transition-transform duration-500 ease-out group-hover:rotate-6 group-hover:scale-150`}
+                            style={{
+                              color: '#2879B6',
+                              filter: 'drop-shadow(0 6px 12px rgba(0, 0, 0, 0.35))',
+                              transformOrigin: 'center bottom',
+                            }}
+                          ></i>
+                          {/* Enhanced shadow below icon that shrinks on hover */}
+                          <div 
+                            className="absolute bottom-0 left-1/2 -translate-x-1/2 transition-all duration-500 ease-out group-hover:scale-90"
+                            style={{
+                              width: '80px',
+                              height: '20px',
+                              background: 'rgba(0, 0, 0, 0.25)',
+                              borderRadius: '50%',
+                              filter: 'blur(10px)',
+                            }}
+                          >
+                          </div>
+                        </div>
+                      )}
+                      
+                      {/* Content */}
+                      {card.link ? (
+                        <p 
+                          className="mb-6 group-hover:text-gray-700 transition-colors duration-500"
+                          style={{
+                            fontFamily: 'Montserrat, sans-serif',
+                            fontStyle: 'normal',
+                            color: '#333842',
+                            fontSize: '1rem',
+                            lineHeight: '1.625em'
+                          }}
+                        >
+                          <a href={card.link} target={card.link.startsWith('http') ? '_blank' : undefined} rel="noopener noreferrer" className="hover:text-[#2879B6] transition-colors">
+                            {card.content}
+                          </a>
+                        </p>
+                      ) : (
+                        <p 
+                          className="mb-6 group-hover:text-gray-700 transition-colors duration-500"
+                          style={{
+                            fontFamily: 'Montserrat, sans-serif',
+                            fontStyle: 'normal',
+                            color: '#333842',
+                            fontSize: '1rem',
+                            lineHeight: '1.625em'
+                          }}
+                        >
+                          {card.content}
+                        </p>
+                      )}
                     </div>
-                  )}
-                  <h4 className="text-2xl font-bold text-[#4A90A4] mb-4">{card.title}</h4>
-                  {card.link ? (
-                    <p className="text-gray-700 leading-relaxed">
-                      <a href={card.link} target={card.link.startsWith('http') ? '_blank' : undefined} rel="noopener noreferrer" className="hover:text-[#7AB730] transition-colors">
-                        {card.content}
-                      </a>
-                    </p>
-                  ) : (
-                    <p className="text-gray-700 leading-relaxed">{card.content}</p>
-                  )}
+                  </div>
+                  
+                  {/* Enhanced Hover Border Effect */}
+                  <div className="absolute inset-0 border-2 border-transparent rounded-lg transition-all duration-700 opacity-0 group-hover:opacity-30 group-hover:scale-105" 
+                       style={{ borderColor: '#2879B6', filter: 'blur(1px)' }}>
+                  </div>
+                  
+                  {/* Corner Accent */}
+                  <div className="absolute top-0 left-0 w-0 h-0 border-t-4 border-l-4 border-transparent group-hover:border-t-8 group-hover:border-l-8 transition-all duration-500 rounded-tl-lg" 
+                       style={{ borderTopColor: '#2879B6', borderLeftColor: '#2879B6' }}>
+                  </div>
                 </div>
               ))}
             </div>
           ) : (
-            <>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            <div className="bg-white rounded-lg p-8 shadow-lg relative">
-              <div className="absolute top-8 right-8 text-[#4A90A4] text-4xl">
-                <i className="fas fa-map-marked-alt"></i>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* Registered Office */}
+              <div 
+                className="group relative rounded-lg shadow-lg hover:shadow-2xl transition-all duration-700 transform hover:-translate-y-6 hover:rotate-1 cursor-pointer overflow-hidden border border-gray-100"
+                style={{ 
+                  backgroundColor: '#F1F1F1',
+                  padding: '30px',
+                  color: '#333842',
+                  fontFamily: 'Montserrat, sans-serif'
+                }}
+                data-aos="fade-up"
+                data-aos-delay="0"
+                data-aos-duration="800"
+                data-aos-easing="ease-out-cubic"
+              >
+                {/* Background Effects */}
+                <div className="absolute top-0 right-0 w-32 h-32 opacity-5 group-hover:opacity-20 transition-all duration-700 rounded-full blur-xl" 
+                     style={{ background: 'radial-gradient(circle, #2879B6, #2879B688)' }}>
+                </div>
+                
+                {/* Floating Particles Effect */}
+                <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                  <div className="absolute top-4 right-4 w-2 h-2 rounded-full animate-ping" style={{ backgroundColor: '#2879B6', animationDuration: '2s' }}></div>
+                  <div className="absolute bottom-8 left-6 w-1 h-1 rounded-full animate-ping" style={{ backgroundColor: '#2879B6', animationDelay: '0.5s', animationDuration: '3s' }}></div>
+                  <div className="absolute top-1/2 left-4 w-1.5 h-1.5 rounded-full animate-ping" style={{ backgroundColor: '#2879B6', animationDelay: '1s', animationDuration: '2.5s' }}></div>
+                </div>
+                
+                <div className="relative z-10">
+                  <div className="flex flex-col items-center text-center">
+                    {/* Title */}
+                    <h4 
+                      className="mb-6 group-hover:scale-105 transition-all duration-500"
+                      style={{
+                        fontFamily: 'Montserrat, sans-serif',
+                        fontWeight: 500,
+                        color: '#2879B6',
+                        fontSize: '1.25rem',
+                        lineHeight: '1.35em'
+                      }}
+                    >
+                      Registered Office
+                    </h4>
+                    
+                    {/* Icon with shadow */}
+                    <div className="w-24 h-24 mb-6 flex items-center justify-center relative" style={{ transformOrigin: 'center bottom' }}>
+                      <i 
+                        className="fas fa-map-marked-alt text-6xl relative z-10 transition-transform duration-500 ease-out group-hover:rotate-6 group-hover:scale-150"
+                        style={{
+                          color: '#2879B6',
+                          filter: 'drop-shadow(0 6px 12px rgba(0, 0, 0, 0.35))',
+                          transformOrigin: 'center bottom',
+                        }}
+                      ></i>
+                      {/* Enhanced shadow below icon that shrinks on hover */}
+                      <div 
+                        className="absolute bottom-0 left-1/2 -translate-x-1/2 transition-all duration-500 ease-out group-hover:scale-90"
+                        style={{
+                          width: '80px',
+                          height: '20px',
+                          background: 'rgba(0, 0, 0, 0.25)',
+                          borderRadius: '50%',
+                          filter: 'blur(10px)',
+                        }}
+                      >
+                      </div>
+                    </div>
+                    
+                    {/* Content */}
+                    <p 
+                      className="mb-6 group-hover:text-gray-700 transition-colors duration-500"
+                      style={{
+                        fontFamily: 'Montserrat, sans-serif',
+                        fontStyle: 'normal',
+                        color: '#333842',
+                        fontSize: '1rem',
+                        lineHeight: '1.625em'
+                      }}
+                    >
+                      <a href="https://maps.app.goo.gl/MheuF5TBoDraFrgD8" target="_blank" rel="noopener noreferrer" className="hover:text-[#2879B6] transition-colors">
+                        Second Floor, Refex Towers, Sterling Road Signal, 313, Valluvar Kottam High Road, Nungambakkam, Chennai – 600034, Tamil Nadu
+                      </a>
+                    </p>
+                  </div>
+                </div>
+                
+                {/* Enhanced Hover Border Effect */}
+                <div className="absolute inset-0 border-2 border-transparent rounded-lg transition-all duration-700 opacity-0 group-hover:opacity-30 group-hover:scale-105" 
+                     style={{ borderColor: '#2879B6', filter: 'blur(1px)' }}>
+                </div>
+                
+                {/* Corner Accent */}
+                <div className="absolute top-0 left-0 w-0 h-0 border-t-4 border-l-4 border-transparent group-hover:border-t-8 group-hover:border-l-8 transition-all duration-500 rounded-tl-lg" 
+                     style={{ borderTopColor: '#2879B6', borderLeftColor: '#2879B6' }}>
+                </div>
               </div>
-              <h4 className="text-2xl font-bold text-[#4A90A4] mb-4">Registered Office</h4>
-              <p className="text-gray-700 leading-relaxed">
-                <a href="https://maps.app.goo.gl/MheuF5TBoDraFrgD8" target="_blank" rel="noopener noreferrer" className="hover:text-[#7AB730] transition-colors">
-                  Second Floor, Refex Towers, Sterling Road Signal, 313, Valluvar Kottam High Road, Nungambakkam,<br />Chennai – 600034, Tamil Nadu
-                </a>
-              </p>
-            </div>
-            <div className="bg-white rounded-lg p-8 shadow-lg relative">
-              <div className="absolute top-8 right-8 text-[#4A90A4] text-4xl">
-                <i className="fas fa-map-marked-alt"></i>
+              
+              {/* Corporate Office */}
+              <div 
+                className="group relative rounded-lg shadow-lg hover:shadow-2xl transition-all duration-700 transform hover:-translate-y-6 hover:rotate-1 cursor-pointer overflow-hidden border border-gray-100"
+                style={{ 
+                  backgroundColor: '#F1F1F1',
+                  padding: '30px',
+                  color: '#333842',
+                  fontFamily: 'Montserrat, sans-serif'
+                }}
+                data-aos="fade-up"
+                data-aos-delay="100"
+                data-aos-duration="800"
+                data-aos-easing="ease-out-cubic"
+              >
+                {/* Background Effects */}
+                <div className="absolute top-0 right-0 w-32 h-32 opacity-5 group-hover:opacity-20 transition-all duration-700 rounded-full blur-xl" 
+                     style={{ background: 'radial-gradient(circle, #2879B6, #2879B688)' }}>
+                </div>
+                
+                {/* Floating Particles Effect */}
+                <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                  <div className="absolute top-4 right-4 w-2 h-2 rounded-full animate-ping" style={{ backgroundColor: '#2879B6', animationDuration: '2s' }}></div>
+                  <div className="absolute bottom-8 left-6 w-1 h-1 rounded-full animate-ping" style={{ backgroundColor: '#2879B6', animationDelay: '0.5s', animationDuration: '3s' }}></div>
+                  <div className="absolute top-1/2 left-4 w-1.5 h-1.5 rounded-full animate-ping" style={{ backgroundColor: '#2879B6', animationDelay: '1s', animationDuration: '2.5s' }}></div>
+                </div>
+                
+                <div className="relative z-10">
+                  <div className="flex flex-col items-center text-center">
+                    {/* Title */}
+                    <h4 
+                      className="mb-6 group-hover:scale-105 transition-all duration-500"
+                      style={{
+                        fontFamily: 'Montserrat, sans-serif',
+                        fontWeight: 500,
+                        color: '#2879B6',
+                        fontSize: '1.25rem',
+                        lineHeight: '1.35em'
+                      }}
+                    >
+                      Corporate Office
+                    </h4>
+                    
+                    {/* Icon with shadow */}
+                    <div className="w-24 h-24 mb-6 flex items-center justify-center relative" style={{ transformOrigin: 'center bottom' }}>
+                      <i 
+                        className="fas fa-map-marked-alt text-6xl relative z-10 transition-transform duration-500 ease-out group-hover:rotate-6 group-hover:scale-150"
+                        style={{
+                          color: '#2879B6',
+                          filter: 'drop-shadow(0 6px 12px rgba(0, 0, 0, 0.35))',
+                          transformOrigin: 'center bottom',
+                        }}
+                      ></i>
+                      {/* Enhanced shadow below icon that shrinks on hover */}
+                      <div 
+                        className="absolute bottom-0 left-1/2 -translate-x-1/2 transition-all duration-500 ease-out group-hover:scale-90"
+                        style={{
+                          width: '80px',
+                          height: '20px',
+                          background: 'rgba(0, 0, 0, 0.25)',
+                          borderRadius: '50%',
+                          filter: 'blur(10px)',
+                        }}
+                      >
+                      </div>
+                    </div>
+                    
+                    {/* Content */}
+                    <p 
+                      className="mb-6 group-hover:text-gray-700 transition-colors duration-500"
+                      style={{
+                        fontFamily: 'Montserrat, sans-serif',
+                        fontStyle: 'normal',
+                        color: '#333842',
+                        fontSize: '1rem',
+                        lineHeight: '1.625em'
+                      }}
+                    >
+                      <a href="https://maps.app.goo.gl/Kifm5u8hDDXqoT898" target="_blank" rel="noopener noreferrer" className="hover:text-[#2879B6] transition-colors">
+                        Refex Building, 67, Bazullah Road, Parthasarathy Puram, T Nagar, Chennai – 600017
+                      </a>
+                    </p>
+                  </div>
+                </div>
+                
+                {/* Enhanced Hover Border Effect */}
+                <div className="absolute inset-0 border-2 border-transparent rounded-lg transition-all duration-700 opacity-0 group-hover:opacity-30 group-hover:scale-105" 
+                     style={{ borderColor: '#2879B6', filter: 'blur(1px)' }}>
+                </div>
+                
+                {/* Corner Accent */}
+                <div className="absolute top-0 left-0 w-0 h-0 border-t-4 border-l-4 border-transparent group-hover:border-t-8 group-hover:border-l-8 transition-all duration-500 rounded-tl-lg" 
+                     style={{ borderTopColor: '#2879B6', borderLeftColor: '#2879B6' }}>
+                </div>
               </div>
-              <h4 className="text-2xl font-bold text-[#4A90A4] mb-4">Corporate Office</h4>
-              <p className="text-gray-700 leading-relaxed">
-                <a href="https://maps.app.goo.gl/Kifm5u8hDDXqoT898" target="_blank" rel="noopener noreferrer" className="hover:text-[#7AB730] transition-colors">
-                  Refex Building, 67, Bazullah Road, Parthasarathy Puram, T Nagar, Chennai – 600017
-                </a>
-              </p>
-            </div>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-white rounded-lg p-8 shadow-lg relative">
-              <div className="absolute top-8 right-8 text-[#4A90A4] text-4xl">
-                <i className="fas fa-phone-volume"></i>
+              
+              {/* Phone */}
+              <div 
+                className="group relative rounded-lg shadow-lg hover:shadow-2xl transition-all duration-700 transform hover:-translate-y-6 hover:rotate-1 cursor-pointer overflow-hidden border border-gray-100"
+                style={{ 
+                  backgroundColor: '#F1F1F1',
+                  padding: '30px',
+                  color: '#333842',
+                  fontFamily: 'Montserrat, sans-serif'
+                }}
+                data-aos="fade-up"
+                data-aos-delay="200"
+                data-aos-duration="800"
+                data-aos-easing="ease-out-cubic"
+              >
+                {/* Background Effects */}
+                <div className="absolute top-0 right-0 w-32 h-32 opacity-5 group-hover:opacity-20 transition-all duration-700 rounded-full blur-xl" 
+                     style={{ background: 'radial-gradient(circle, #2879B6, #2879B688)' }}>
+                </div>
+                
+                {/* Floating Particles Effect */}
+                <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                  <div className="absolute top-4 right-4 w-2 h-2 rounded-full animate-ping" style={{ backgroundColor: '#2879B6', animationDuration: '2s' }}></div>
+                  <div className="absolute bottom-8 left-6 w-1 h-1 rounded-full animate-ping" style={{ backgroundColor: '#2879B6', animationDelay: '0.5s', animationDuration: '3s' }}></div>
+                  <div className="absolute top-1/2 left-4 w-1.5 h-1.5 rounded-full animate-ping" style={{ backgroundColor: '#2879B6', animationDelay: '1s', animationDuration: '2.5s' }}></div>
+                </div>
+                
+                <div className="relative z-10">
+                  <div className="flex flex-col items-center text-center">
+                    {/* Title */}
+                    <h4 
+                      className="mb-6 group-hover:scale-105 transition-all duration-500"
+                      style={{
+                        fontFamily: 'Montserrat, sans-serif',
+                        fontWeight: 500,
+                        color: '#2879B6',
+                        fontSize: '1.25rem',
+                        lineHeight: '1.35em'
+                      }}
+                    >
+                      Phone
+                    </h4>
+                    
+                    {/* Icon with shadow */}
+                    <div className="w-24 h-24 mb-6 flex items-center justify-center relative" style={{ transformOrigin: 'center bottom' }}>
+                      <i 
+                        className="fas fa-phone-volume text-6xl relative z-10 transition-transform duration-500 ease-out group-hover:rotate-6 group-hover:scale-150"
+                        style={{
+                          color: '#2879B6',
+                          filter: 'drop-shadow(0 6px 12px rgba(0, 0, 0, 0.35))',
+                          transformOrigin: 'center bottom',
+                        }}
+                      ></i>
+                      {/* Enhanced shadow below icon that shrinks on hover */}
+                      <div 
+                        className="absolute bottom-0 left-1/2 -translate-x-1/2 transition-all duration-500 ease-out group-hover:scale-90"
+                        style={{
+                          width: '80px',
+                          height: '20px',
+                          background: 'rgba(0, 0, 0, 0.25)',
+                          borderRadius: '50%',
+                          filter: 'blur(10px)',
+                        }}
+                      >
+                      </div>
+                    </div>
+                    
+                    {/* Content */}
+                    <p 
+                      className="mb-6 group-hover:text-gray-700 transition-colors duration-500"
+                      style={{
+                        fontFamily: 'Montserrat, sans-serif',
+                        fontStyle: 'normal',
+                        color: '#333842',
+                        fontSize: '1rem',
+                        lineHeight: '1.625em'
+                      }}
+                    >
+                      <a href="tel:+919444026307" className="hover:text-[#2879B6] transition-colors">
+                        +91 94440 26307
+                      </a>
+                    </p>
+                  </div>
+                </div>
+                
+                {/* Enhanced Hover Border Effect */}
+                <div className="absolute inset-0 border-2 border-transparent rounded-lg transition-all duration-700 opacity-0 group-hover:opacity-30 group-hover:scale-105" 
+                     style={{ borderColor: '#2879B6', filter: 'blur(1px)' }}>
+                </div>
+                
+                {/* Corner Accent */}
+                <div className="absolute top-0 left-0 w-0 h-0 border-t-4 border-l-4 border-transparent group-hover:border-t-8 group-hover:border-l-8 transition-all duration-500 rounded-tl-lg" 
+                     style={{ borderTopColor: '#2879B6', borderLeftColor: '#2879B6' }}>
+                </div>
               </div>
-              <h4 className="text-2xl font-bold text-[#4A90A4] mb-4">Phone</h4>
-              <p className="text-gray-700">
-                <a href="tel:+919444026307" className="hover:text-[#7AB730] transition-colors text-lg">
-                  +91 94440 26307
-                </a>
-              </p>
-            </div>
-            <div className="bg-white rounded-lg p-8 shadow-lg relative">
-              <div className="absolute top-8 right-8 text-[#4A90A4] text-4xl">
-                <i className="fas fa-envelope-open-text"></i>
+              
+              {/* Email */}
+              <div 
+                className="group relative rounded-lg shadow-lg hover:shadow-2xl transition-all duration-700 transform hover:-translate-y-6 hover:rotate-1 cursor-pointer overflow-hidden border border-gray-100"
+                style={{ 
+                  backgroundColor: '#F1F1F1',
+                  padding: '30px',
+                  color: '#333842',
+                  fontFamily: 'Montserrat, sans-serif'
+                }}
+                data-aos="fade-up"
+                data-aos-delay="300"
+                data-aos-duration="800"
+                data-aos-easing="ease-out-cubic"
+              >
+                {/* Background Effects */}
+                <div className="absolute top-0 right-0 w-32 h-32 opacity-5 group-hover:opacity-20 transition-all duration-700 rounded-full blur-xl" 
+                     style={{ background: 'radial-gradient(circle, #2879B6, #2879B688)' }}>
+                </div>
+                
+                {/* Floating Particles Effect */}
+                <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                  <div className="absolute top-4 right-4 w-2 h-2 rounded-full animate-ping" style={{ backgroundColor: '#2879B6', animationDuration: '2s' }}></div>
+                  <div className="absolute bottom-8 left-6 w-1 h-1 rounded-full animate-ping" style={{ backgroundColor: '#2879B6', animationDelay: '0.5s', animationDuration: '3s' }}></div>
+                  <div className="absolute top-1/2 left-4 w-1.5 h-1.5 rounded-full animate-ping" style={{ backgroundColor: '#2879B6', animationDelay: '1s', animationDuration: '2.5s' }}></div>
+                </div>
+                
+                <div className="relative z-10">
+                  <div className="flex flex-col items-center text-center">
+                    {/* Title */}
+                    <h4 
+                      className="mb-6 group-hover:scale-105 transition-all duration-500"
+                      style={{
+                        fontFamily: 'Montserrat, sans-serif',
+                        fontWeight: 500,
+                        color: '#2879B6',
+                        fontSize: '1.25rem',
+                        lineHeight: '1.35em'
+                      }}
+                    >
+                      Email
+                    </h4>
+                    
+                    {/* Icon with shadow */}
+                    <div className="w-24 h-24 mb-6 flex items-center justify-center relative" style={{ transformOrigin: 'center bottom' }}>
+                      <i 
+                        className="fas fa-envelope-open-text text-6xl relative z-10 transition-transform duration-500 ease-out group-hover:rotate-6 group-hover:scale-150"
+                        style={{
+                          color: '#2879B6',
+                          filter: 'drop-shadow(0 6px 12px rgba(0, 0, 0, 0.35))',
+                          transformOrigin: 'center bottom',
+                        }}
+                      ></i>
+                      {/* Enhanced shadow below icon that shrinks on hover */}
+                      <div 
+                        className="absolute bottom-0 left-1/2 -translate-x-1/2 transition-all duration-500 ease-out group-hover:scale-90"
+                        style={{
+                          width: '80px',
+                          height: '20px',
+                          background: 'rgba(0, 0, 0, 0.25)',
+                          borderRadius: '50%',
+                          filter: 'blur(10px)',
+                        }}
+                      >
+                      </div>
+                    </div>
+                    
+                    {/* Content */}
+                    <p 
+                      className="mb-6 group-hover:text-gray-700 transition-colors duration-500"
+                      style={{
+                        fontFamily: 'Montserrat, sans-serif',
+                        fontStyle: 'normal',
+                        color: '#333842',
+                        fontSize: '1rem',
+                        lineHeight: '1.625em'
+                      }}
+                    >
+                      <a href="mailto:info@3imedtech.com" className="hover:text-[#2879B6] transition-colors">
+                        info@3imedtech.com
+                      </a>
+                    </p>
+                  </div>
+                </div>
+                
+                {/* Enhanced Hover Border Effect */}
+                <div className="absolute inset-0 border-2 border-transparent rounded-lg transition-all duration-700 opacity-0 group-hover:opacity-30 group-hover:scale-105" 
+                     style={{ borderColor: '#2879B6', filter: 'blur(1px)' }}>
+                </div>
+                
+                {/* Corner Accent */}
+                <div className="absolute top-0 left-0 w-0 h-0 border-t-4 border-l-4 border-transparent group-hover:border-t-8 group-hover:border-l-8 transition-all duration-500 rounded-tl-lg" 
+                     style={{ borderTopColor: '#2879B6', borderLeftColor: '#2879B6' }}>
+                </div>
               </div>
-              <h4 className="text-2xl font-bold text-[#4A90A4] mb-4">Email</h4>
-              <p className="text-gray-700">
-                <a href="mailto:info@3imedtech.com" className="hover:text-[#7AB730] transition-colors text-lg">
-                  info@3imedtech.com
-                </a>
-              </p>
             </div>
-          </div>
-            </>
           )}
         </div>
       </section>
@@ -289,7 +714,7 @@ export default function Contact() {
 
       {/* Contact Form Section - CMS or Fallback */}
       {contactForm?.isActive !== false && (
-      <section className="py-20 bg-white">
+      <section className="py-14 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
               {contactForm?.title && (
@@ -365,38 +790,52 @@ export default function Contact() {
                   <label className="block text-gray-700 font-medium mb-2">
                     Company size *
                   </label>
-                  <select 
-                    name="companySize"
-                    value={formData.companySize}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 pr-8 border border-gray-300 rounded focus:outline-none focus:border-[#4A90A4] appearance-none bg-white"
-                  >
-                    <option value="">Please Select</option>
-                    <option value="1">1 (freelancer)</option>
-                    <option value="2-19">2-19</option>
-                    <option value="20-49">20-49</option>
-                    <option value="50+">50+</option>
-                  </select>
+                  <div className="relative">
+                    <select 
+                      name="companySize"
+                      value={formData.companySize}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-3 pr-10 border border-gray-300 rounded focus:outline-none focus:border-[#4A90A4] appearance-none bg-white"
+                    >
+                      <option value="">Please Select</option>
+                      <option value="1">1 (freelancer)</option>
+                      <option value="2-19">2-19</option>
+                      <option value="20-49">20-49</option>
+                      <option value="50+">50+</option>
+                    </select>
+                    <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                      <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </div>
+                  </div>
                 </div>
                 <div>
                   <label className="block text-gray-700 font-medium mb-2">
                     What is your inquiry about? *
                   </label>
-                  <select 
-                    name="inquiry"
-                    value={formData.inquiry}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 pr-8 border border-gray-300 rounded focus:outline-none focus:border-[#4A90A4] appearance-none bg-white"
-                  >
-                    <option value="">Please Select</option>
-                    <option value="General Information Request">General Information Request</option>
-                    <option value="Partner Relations">Partner Relations</option>
-                    <option value="Careers">Careers</option>
-                    <option value="Product Licencing">Product Licencing</option>
-                    <option value="I need help">I need help</option>
-                  </select>
+                  <div className="relative">
+                    <select 
+                      name="inquiry"
+                      value={formData.inquiry}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-3 pr-10 border border-gray-300 rounded focus:outline-none focus:border-[#4A90A4] appearance-none bg-white"
+                    >
+                      <option value="">Please Select</option>
+                      <option value="General Information Request">General Information Request</option>
+                      <option value="Partner Relations">Partner Relations</option>
+                      <option value="Careers">Careers</option>
+                      <option value="Product Licencing">Product Licencing</option>
+                      <option value="I need help">I need help</option>
+                    </select>
+                    <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                      <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </div>
+                  </div>
                 </div>
               </div>
 

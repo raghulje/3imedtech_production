@@ -138,9 +138,9 @@ export default function MissionVision() {
 
       {/* Our Mission Section - CMS or Fallback */}
       {missionVisionMission?.isActive !== false && (
-        <section className="bg-white py-20" data-aos="fade-in" data-aos-duration="1000">
+        <section className="bg-white py-8" data-aos="fade-in" data-aos-duration="1000">
           <div className="container mx-auto px-4 max-w-6xl">
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-2 items-start">
               <div className="md:col-span-3 flex flex-col items-center md:items-start">
                 <div
                   className="mb-3"
@@ -192,9 +192,9 @@ export default function MissionVision() {
 
       {/* Our Vision Section - CMS or Fallback */}
       {missionVisionVision?.isActive !== false && (
-        <section className="py-20" style={{ backgroundColor: '#F4F7FA' }} data-aos="fade-in" data-aos-duration="1000">
+        <section className="py-8" style={{ backgroundColor: '#F4F7FA' }} data-aos="fade-in" data-aos-duration="1000">
           <div className="container mx-auto px-4 max-w-6xl">
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-2 items-start">
               <div className="md:col-span-3 flex flex-col items-center md:items-start">
                 <div
                   className="mb-3"

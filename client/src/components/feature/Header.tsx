@@ -105,7 +105,7 @@ const Header = ({ headerData: propHeaderData }: HeaderProps = {}) => {
   return (
     <>
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md' : 'bg-white'} pb-0`}>
-        <div className="max-w-[1920px] mx-auto px-6 lg:px-12 relative">
+        <div className="max-w-[1880px] mx-auto px-6 lg:px-12 relative">
           {/* Orange top line for navbar - positioned at top of container, animates based on hovered nav item */}
           <div className="absolute top-0 left-0 h-0.5 bg-[#E6662F] transition-all duration-500 ease-out nav-orange-line" style={{ width: '0', transform: 'translateX(0)' }}></div>
           <div className="flex items-center justify-between h-[100px]">
@@ -376,14 +376,6 @@ const Header = ({ headerData: propHeaderData }: HeaderProps = {}) => {
                     </button>
                     <div className="absolute left-full top-0 w-96 bg-white border border-gray-200 shadow-lg rounded-lg opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all duration-300 transform group-hover/sub:translate-x-0 -translate-x-2 overflow-hidden z-50">
                       <Link 
-                        to="/imaging-accessories#mededrive" 
-                        className="flex items-center px-6 py-3 text-[#0E2B5C] hover:bg-blue-50 hover:text-[#0E2B5C] transition-all duration-300 text-sm group/subitem"
-                        onClick={(e) => handleHashNavigation('/imaging-accessories#mededrive', e)}
-                      >
-                        <span className="mr-2 text-[#0E2B5C] -translate-x-4 opacity-0 group-hover/subitem:translate-x-0 group-hover/subitem:opacity-100 transition-all duration-300">→</span>
-                        <span>MedE Drive for Patient Data Storage</span>
-                      </Link>
-                      <Link 
                         to="/imaging-accessories#dmdd2000xrayfilmdigitizer" 
                         className="flex items-center px-6 py-3 text-[#0E2B5C] hover:bg-blue-50 hover:text-[#0E2B5C] transition-all duration-300 text-sm group/subitem"
                         onClick={(e) => handleHashNavigation('/imaging-accessories#dmdd2000xrayfilmdigitizer', e)}
@@ -415,6 +407,14 @@ const Header = ({ headerData: propHeaderData }: HeaderProps = {}) => {
                         <span className="mr-2 text-[#0E2B5C] -translate-x-4 opacity-0 group-hover/subitem:translate-x-0 group-hover/subitem:opacity-100 transition-all duration-300">→</span>
                         <span>CD/DVD Publishers</span>
                       </Link>
+                      <Link 
+                        to="/imaging-accessories#mededrive" 
+                        className="flex items-center px-6 py-3 text-[#0E2B5C] hover:bg-blue-50 hover:text-[#0E2B5C] transition-all duration-300 text-sm group/subitem"
+                        onClick={(e) => handleHashNavigation('/imaging-accessories#mededrive', e)}
+                      >
+                        <span className="mr-2 text-[#0E2B5C] -translate-x-4 opacity-0 group-hover/subitem:translate-x-0 group-hover/subitem:opacity-100 transition-all duration-300">→</span>
+                        <span>MedE Drive for Patient Data Storage</span>
+                      </Link>
                     </div>
                   </div>
 
@@ -429,20 +429,20 @@ const Header = ({ headerData: propHeaderData }: HeaderProps = {}) => {
                         <span>Anamaya</span>
                       </a>
                       <Link 
-                        to="/refurbished-mri-systems#gesignahdxt15tesla" 
-                        className="flex items-center px-6 py-3 text-[#0E2B5C] hover:bg-blue-50 hover:text-[#0E2B5C] transition-all duration-300 text-sm group/subitem"
-                        onClick={(e) => handleHashNavigation('/refurbished-mri-systems#gesignahdxt15tesla', e)}
-                      >
-                        <span className="mr-2 text-[#0E2B5C] -translate-x-4 opacity-0 group-hover/subitem:translate-x-0 group-hover/subitem:opacity-100 transition-all duration-300">→</span>
-                        <span>GE Signa HDxt 1.5Tesla</span>
-                      </Link>
-                      <Link 
                         to="/refurbished-mri-systems#philipsachieva30teslaxseries" 
                         className="flex items-center px-6 py-3 text-[#0E2B5C] hover:bg-blue-50 hover:text-[#0E2B5C] transition-all duration-300 text-sm group/subitem"
                         onClick={(e) => handleHashNavigation('/refurbished-mri-systems#philipsachieva30teslaxseries', e)}
                       >
                         <span className="mr-2 text-[#0E2B5C] -translate-x-4 opacity-0 group-hover/subitem:translate-x-0 group-hover/subitem:opacity-100 transition-all duration-300">→</span>
                         <span>Philips Achieva 3.0Tesla X-Series</span>
+                      </Link>
+                      <Link 
+                        to="/refurbished-mri-systems#gesignahdxt15tesla" 
+                        className="flex items-center px-6 py-3 text-[#0E2B5C] hover:bg-blue-50 hover:text-[#0E2B5C] transition-all duration-300 text-sm group/subitem"
+                        onClick={(e) => handleHashNavigation('/refurbished-mri-systems#gesignahdxt15tesla', e)}
+                      >
+                        <span className="mr-2 text-[#0E2B5C] -translate-x-4 opacity-0 group-hover/subitem:translate-x-0 group-hover/subitem:opacity-100 transition-all duration-300">→</span>
+                        <span>GE Signa HDxt 1.5Tesla</span>
                       </Link>
                     </div>
                   </div>
@@ -500,31 +500,6 @@ const Header = ({ headerData: propHeaderData }: HeaderProps = {}) => {
                       </a>
                     </div>
                   </div>
-                  
-                  {/* Vertical divider line */}
-                  <div className="h-8 w-px bg-gray-300"></div>
-                  
-                  {/* Search icon button */}
-                  <button
-                    onClick={(e) => {
-                      const currentTime = new Date().getTime();
-                      const timeDiff = currentTime - lastClickTime;
-                      
-                      if (timeDiff < 300 && timeDiff > 0) {
-                        // Double click detected - navigate to search page
-                        e.preventDefault();
-                        navigate('/search');
-                      } else {
-                        // Single click - toggle search bar
-                        setIsSearchOpen(true);
-                      }
-                      setLastClickTime(currentTime);
-                    }}
-                    className="text-gray-700 hover:text-[#7AB730] transition-colors duration-300 cursor-pointer"
-                    aria-label="Open search"
-                  >
-                    <i className="fa fa-search text-xl"></i>
-                  </button>
                 </>
               )}
               

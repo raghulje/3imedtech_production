@@ -141,25 +141,36 @@ const RadiographySystemsPage = () => {
             <section 
               key={product.id || index} 
               id={sectionId} 
-              className={`py-20 bg-gradient-to-br ${backgroundColor} transition-all duration-500 ${
+              className={`pt-8 pb-6 bg-gradient-to-br ${backgroundColor} transition-all duration-500 ${
                 isHighlighted ? 'ring-4 ring-[#E6662F] ring-opacity-75 shadow-2xl' : ''
               }`}
-              style={{ scrollMarginTop: '100px' }}
+              style={{ 
+                scrollMarginTop: '100px',
+                background: 'linear-gradient(180deg, rgba(0, 0, 0, 0) 10%, rgba(40, 121, 182, 0.08) 90%)'
+              }}
             >
-              <div className="max-w-7xl mx-auto px-6">
+              <div className="container mx-auto px-4">
                 <div className={`flex flex-col lg:flex-row gap-12 items-start ${
                   imagePosition === 'right' ? 'lg:flex-row-reverse' : ''
                 }`}>
                   {/* Image */}
                   <div 
-                    className={`w-full lg:w-[52%] flex items-center justify-center ${imagePosition === 'right' ? '' : ''}`}
+                    className={`w-full lg:w-[52%] ${imagePosition === 'right' ? '' : ''}`}
                     data-aos={imagePosition === 'right' ? 'fade-left' : 'fade-right'}
+                    style={{ alignSelf: 'flex-start' }}
                   >
                     {product.image ? (
                       <img
                         src={product.image}
                         alt={product.title}
-                        className="w-full h-auto rounded-lg shadow-lg object-contain"
+                        className="w-full h-auto rounded-lg shadow-lg object-contain scale-[0.8]"
+                        style={{ 
+                          display: 'block',
+                          verticalAlign: 'top',
+                          margin: 0,
+                          padding: 0,
+                          transformOrigin: 'top center'
+                        }}
                         onError={(e) => {
                           // Fallback to placeholder if image fails to load
                           (e.target as HTMLImageElement).src = 'https://via.placeholder.com/600x400?text=Product+Image';
@@ -176,11 +187,17 @@ const RadiographySystemsPage = () => {
                   <div 
                     className={`w-full lg:w-[48%] ${imagePosition === 'right' ? '' : ''}`}
                     data-aos={imagePosition === 'right' ? 'fade-right' : 'fade-left'}
+                    style={{ alignSelf: 'flex-start' }}
                   >
-                    <h3 className="text-3xl font-bold mb-6" style={{ color: '#2879b6' }}>
+                    <h3 className="text-3xl font-bold mb-4" style={{ 
+                      color: '#2879b6',
+                      marginTop: 0,
+                      paddingTop: 0,
+                      lineHeight: '1.2'
+                    }}>
                       {product.title}
                     </h3>
-                    <ul className="space-y-4 text-gray-700">
+                    <ul className="space-y-3 text-gray-700">
                       {product.overview && (
                         <li>
                           <strong>Overview:</strong> {product.overview}
@@ -214,26 +231,29 @@ const RadiographySystemsPage = () => {
       {/* DReam CMT-Dual */}
       <section 
         id="dreamcmtdual" 
-        className={`py-20 bg-gradient-to-br from-gray-50 to-white transition-all duration-500 ${
+        className={`pt-8 pb-6 bg-gradient-to-br from-gray-50 to-white transition-all duration-500 ${
           highlightedSection === 'dreamcmtdual' ? 'ring-4 ring-[#E6662F] ring-opacity-75 shadow-2xl' : ''
         }`}
-        style={{ scrollMarginTop: '100px' }}
+        style={{ 
+          scrollMarginTop: '100px',
+          background: 'linear-gradient(180deg, rgba(0, 0, 0, 0) 10%, #2879b6 90%)'
+        }}
       >
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col lg:flex-row gap-12 items-start">
-            <div className="w-full lg:w-[52%] flex items-center justify-center" data-aos="fade-right">
+            <div className="w-full lg:w-[52%] flex items-start justify-center" data-aos="fade-right">
               {/* Product Image - Local Asset */}
               <img
                 src={ASSETS.PRODUCTS.RADIOGRAPHY.DREAM_CMT_DUAL}
                 alt="DReam CMT-Dual (Ceiling Type, Dual Detector)"
-                className="w-full h-auto rounded-lg shadow-lg object-contain"
+                className="w-full h-auto rounded-lg shadow-lg object-contain scale-[0.8]"
               />
             </div>
             <div className="w-full lg:w-[48%]" data-aos="fade-left">
-              <h3 className="text-3xl font-bold mb-6" style={{ color: '#2879b6' }}>
+              <h3 className="text-3xl font-bold mb-4" style={{ color: '#2879b6' }}>
                 DReam CMT-Dual (Ceiling Type, Dual Detector)
               </h3>
-              <ul className="space-y-4 text-gray-700">
+              <ul className="space-y-3 text-gray-700">
                 <li>
                   <strong>Overview:</strong> The DReam CMT-Dual system is designed to enhance patient throughput and optimize performance. Its dual detector system allows for rapid, high-quality image acquisition, coupled with ergonomic design for easy operation.
                 </li>
@@ -258,18 +278,21 @@ const RadiographySystemsPage = () => {
       {/* DReam CMT-Single */}
       <section 
         id="dreamcmtsingle" 
-        className={`py-20 bg-gradient-to-br from-white to-gray-50 transition-all duration-500 ${
+        className={`pt-8 pb-6 bg-gradient-to-br from-white to-gray-50 transition-all duration-500 ${
           highlightedSection === 'dreamcmtsingle' ? 'ring-4 ring-[#E6662F] ring-opacity-75 shadow-2xl' : ''
         }`}
-        style={{ scrollMarginTop: '100px' }}
+        style={{ 
+          scrollMarginTop: '100px',
+          background: 'linear-gradient(180deg, rgba(0, 0, 0, 0) 10%, #2879b6 90%)'
+        }}
       >
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col lg:flex-row-reverse gap-12 items-start">
             <div className="w-full lg:w-[48%]" data-aos="fade-right">
-              <h3 className="text-3xl font-bold mb-6" style={{ color: '#2879b6' }}>
+              <h3 className="text-3xl font-bold mb-4" style={{ color: '#2879b6' }}>
                 DReam CMT-Single (Ceiling Type, Single Detector)
               </h3>
-              <ul className="space-y-4 text-gray-700">
+              <ul className="space-y-3 text-gray-700">
                 <li>
                   <strong>Overview:</strong> The DReam CMT-Single system is designed for smaller rooms and moderate patient throughput, offering flexibility and extended freedom of movement for challenging clinical examinations.
                 </li>
@@ -287,12 +310,12 @@ const RadiographySystemsPage = () => {
                 </li>
               </ul>
             </div>
-            <div data-aos="fade-left" className="w-full lg:w-[52%] flex items-center justify-center">
+            <div data-aos="fade-left" className="w-full lg:w-[52%] flex items-start justify-center">
               {/* Product Image - Local Asset */}
               <img
                 src={ASSETS.PRODUCTS.RADIOGRAPHY.DREAM_CMT_SINGLE}
                 alt="DReam CMT-Single (Ceiling Type, Single Detector)"
-                className="w-full h-auto rounded-lg shadow-lg object-contain"
+                className="w-full h-auto rounded-lg shadow-lg object-contain scale-[0.8]"
               />
             </div>
           </div>
@@ -302,26 +325,29 @@ const RadiographySystemsPage = () => {
       {/* DReam Floor Mounted DR */}
       <section 
         id="dreamfloormounteddr" 
-        className={`py-20 bg-gradient-to-br from-gray-50 to-white transition-all duration-500 ${
+        className={`pt-8 pb-6 bg-gradient-to-br from-gray-50 to-white transition-all duration-500 ${
           highlightedSection === 'dreamfloormounteddr' ? 'ring-4 ring-[#E6662F] ring-opacity-75 shadow-2xl' : ''
         }`}
-        style={{ scrollMarginTop: '100px' }}
+        style={{ 
+          scrollMarginTop: '100px',
+          background: 'linear-gradient(180deg, rgba(0, 0, 0, 0) 10%, #2879b6 90%)'
+        }}
       >
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col lg:flex-row gap-12 items-start">
-            <div className="w-full lg:w-[52%] flex items-center justify-center" data-aos="fade-right">
+            <div className="w-full lg:w-[52%] flex items-start justify-center" data-aos="fade-right">
               {/* Product Image - Local Asset */}
               <img
                 src={ASSETS.PRODUCTS.RADIOGRAPHY.DREAM_FLOOR_MOUNTED}
                 alt="DReam Floor Mounted DR"
-                className="w-full h-auto rounded-lg shadow-lg object-contain"
+                className="w-full h-auto rounded-lg shadow-lg object-contain scale-[0.8]"
               />
             </div>
             <div className="w-full lg:w-[48%]" data-aos="fade-left">
-              <h3 className="text-3xl font-bold mb-6" style={{ color: '#2879b6' }}>
+              <h3 className="text-3xl font-bold mb-4" style={{ color: '#2879b6' }}>
                 DReam Floor Mounted DR
               </h3>
-              <ul className="space-y-4 text-gray-700">
+              <ul className="space-y-3 text-gray-700">
                 <li>
                   <strong>Overview:</strong> The DReam Floor Mounted DR system provides a cost-effective and high-performance radiography solution with advanced features and easy operability.
                 </li>
@@ -346,18 +372,21 @@ const RadiographySystemsPage = () => {
       {/* ADONIS 100HF/150HF Mobile X-Ray */}
       <section 
         id="addonis100hf150hfmobilexray" 
-        className={`py-20 bg-gradient-to-br from-white to-gray-50 transition-all duration-500 ${
+        className={`pt-8 pb-6 bg-gradient-to-br from-white to-gray-50 transition-all duration-500 ${
           highlightedSection === 'addonis100hf150hfmobilexray' ? 'ring-4 ring-[#E6662F] ring-opacity-75 shadow-2xl' : ''
         }`}
-        style={{ scrollMarginTop: '100px' }}
+        style={{ 
+          scrollMarginTop: '100px',
+          background: 'linear-gradient(180deg, rgba(0, 0, 0, 0) 10%, #2879b6 90%)'
+        }}
       >
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col lg:flex-row-reverse gap-12 items-start">
             <div className="w-full lg:w-[48%]" data-aos="fade-right">
-              <h3 className="text-3xl font-bold mb-6" style={{ color: '#2879b6' }}>
+              <h3 className="text-3xl font-bold mb-4" style={{ color: '#2879b6' }}>
                 ADONIS 100HF/150HF Mobile X-Ray
               </h3>
-              <ul className="space-y-4 text-gray-700">
+              <ul className="space-y-3 text-gray-700">
                 <li>
                   <strong>Overview:</strong> The ADONIS Mobile X-Ray system is compact and lightweight, designed for easy mobility in all directions with effective braking, making it ideal for bedside X-Ray needs.
                 </li>
@@ -375,12 +404,12 @@ const RadiographySystemsPage = () => {
                 </li>
               </ul>
             </div>
-            <div data-aos="fade-left" className="w-full lg:w-[52%] flex items-center justify-center">
+            <div data-aos="fade-left" className="w-full lg:w-[52%] flex items-start justify-center">
               {/* Product Image - Local Asset */}
               <img
                 src={ASSETS.PRODUCTS.RADIOGRAPHY.ADONIS_MOBILE_XRAY}
                 alt="ADONIS 100HF/150HF Mobile X-ray"
-                className="w-full h-auto rounded-lg shadow-lg object-contain"
+                className="w-full h-auto rounded-lg shadow-lg object-contain scale-[0.8]"
               />
             </div>
           </div>
@@ -390,26 +419,29 @@ const RadiographySystemsPage = () => {
       {/* ADONIS HF Radiographic Systems */}
       <section 
         id="adonishfradiographicsystems300ma500ma600ma" 
-        className={`py-20 bg-gradient-to-br from-gray-50 to-white transition-all duration-500 ${
+        className={`pt-8 pb-6 bg-gradient-to-br from-gray-50 to-white transition-all duration-500 ${
           highlightedSection === 'adonishfradiographicsystems300ma500ma600ma' ? 'ring-4 ring-[#E6662F] ring-opacity-75 shadow-2xl' : ''
         }`}
-        style={{ scrollMarginTop: '100px' }}
+        style={{ 
+          scrollMarginTop: '100px',
+          background: 'linear-gradient(180deg, rgba(0, 0, 0, 0) 10%, #2879b6 90%)'
+        }}
       >
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col lg:flex-row gap-12 items-start">
-            <div className="w-full lg:w-[52%] flex items-center justify-center" data-aos="fade-right">
+            <div className="w-full lg:w-[52%] flex items-start justify-center" data-aos="fade-right">
               {/* Product Image - Local Asset */}
               <img
                 src={ASSETS.PRODUCTS.RADIOGRAPHY.ADONIS_HF_RADIOGRAPHIC}
                 alt="Adonis HF Radiographic Systems 300mA / 500mA / 600mA"
-                className="w-full h-auto rounded-lg shadow-lg object-contain"
+                className="w-full h-auto rounded-lg shadow-lg object-contain scale-[0.8]"
               />
             </div>
             <div className="w-full lg:w-[48%]" data-aos="fade-left">
-              <h3 className="text-3xl font-bold mb-6" style={{ color: '#2879b6' }}>
+              <h3 className="text-3xl font-bold mb-4" style={{ color: '#2879b6' }}>
                 Adonis HF Radiographic Systems 300mA / 500mA / 600mA
               </h3>
-              <ul className="space-y-4 text-gray-700">
+              <ul className="space-y-3 text-gray-700">
                 <li>
                   <strong>Overview:</strong> The Adonis HF Radiographic Systems are high-frequency X-ray systems developed to meet a broad range of radiological needs with high-contrast imaging and reduced patient skin dose.
                 </li>

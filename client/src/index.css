@@ -72,6 +72,22 @@
     }
   }
 
+  .animate-flicker {
+    animation: flicker 3s ease-in-out infinite;
+  }
+
+  @keyframes flicker {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
   /* Page transition animations */
   .page-enter {
     animation: pageEnter 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;

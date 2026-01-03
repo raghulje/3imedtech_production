@@ -89,7 +89,7 @@ const Footer = ({ footerData: propFooterData }: FooterProps = {}) => {
 
   return (
     <footer className="bg-white border-t border-gray-200">
-      <div className="max-w-[1920px] mx-auto px-6 lg:px-12 py-12">
+      <div className="max-w-[1880px] mx-auto px-6 lg:px-12 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-6">
           {/* Logo and Contact Info - Left Section */}
           <div className="lg:col-span-4">
@@ -304,7 +304,7 @@ const Footer = ({ footerData: propFooterData }: FooterProps = {}) => {
 
       {/* Copyright */}
       <div className="border-t border-gray-200 py-4">
-        <div className="max-w-[1920px] mx-auto px-6 lg:px-12">
+        <div className="max-w-[1880px] mx-auto px-6 lg:px-12">
           <p className="text-center text-gray-600 text-sm">
             {footerData?.copyright || 'Copyright © 2024 3i Medical Technologies'}
           </p>

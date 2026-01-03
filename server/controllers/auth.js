@@ -1,5 +1,5 @@
 const { User, LoginHistory } = require("../models");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 const { FRONT_END_URL, APP_KEY, API_KEY, DEFAULT_PASSWORD } = process.env;
 // const sendMail = require("../helpers/sendMail");
 const jwt = require("jsonwebtoken");

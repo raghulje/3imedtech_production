@@ -176,14 +176,14 @@ export default function WhyChooseUs() {
       </div>
 
       {/* Main Content */}
-      <div className="py-16 lg:py-20">
+      <div className="py-16 lg:py-14">
         <div className="container mx-auto px-4">
           {/* Our Offerings Section - CMS or Fallback */}
           {whyChooseUsOfferings?.isActive !== false && (
             <section className="max-w-6xl mx-auto mb-20 fade-right">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
                 {/* Image - Left Side */}
-                <div className="order-1 lg:order-1">
+                <div className="order-1 lg:order-1 lg:sticky lg:top-24">
                   <img
                     src={whyChooseUsOfferings?.image || ASSETS.BANNERS.WHY_CHOOSE_US}
                     alt="Our Offerings"
@@ -204,24 +204,83 @@ export default function WhyChooseUs() {
                     {whyChooseUsOfferings?.listItems ? (
                       (typeof whyChooseUsOfferings.listItems === 'string' 
                         ? JSON.parse(whyChooseUsOfferings.listItems) 
-                        : whyChooseUsOfferings.listItems).map((item: any, idx: number) => (
-                        <li key={idx}>
-                          <strong className="text-black">{item.boldText || item.title}:</strong> {item.description || item.text}
-                        </li>
-                      ))
+                        : whyChooseUsOfferings.listItems).map((item: any, idx: number) => {
+                        // Icon mapping based on title
+                        const getIcon = (title: string) => {
+                          const titleLower = title.toLowerCase();
+                          if (titleLower.includes('portfolio') || titleLower.includes('product')) {
+                            return 'ri-stack-line';
+                          } else if (titleLower.includes('innovation') || titleLower.includes('patent')) {
+                            return 'ri-lightbulb-flash-line';
+                          } else if (titleLower.includes('pre-owned') || titleLower.includes('equipment')) {
+                            return 'ri-recycle-line';
+                          } else if (titleLower.includes('service') || titleLower.includes('exceptional')) {
+                            return 'ri-customer-service-2-line';
+                          }
+                          return 'ri-checkbox-circle-line';
+                        };
+                        
+                        const icon = item.icon || getIcon(item.boldText || item.title || '');
+                        
+                        return (
+                          <li key={idx} className="flex items-start gap-4">
+                            <div className="flex-shrink-0 mt-1">
+                              <div className="w-12 h-12 rounded-lg flex items-center justify-center" style={{ backgroundColor: '#2879b6', color: 'white' }}>
+                                <i className={`${icon} text-2xl`}></i>
+                              </div>
+                            </div>
+                            <div className="flex-1">
+                              <strong className="text-black block mb-1">{item.boldText || item.title}:</strong>
+                              <span className="text-[#555]">{item.description || item.text}</span>
+                            </div>
+                          </li>
+                        );
+                      })
                     ) : (
                       <>
-                        <li>
-                          <strong className="text-black">Comprehensive Product Portfolio:</strong> Our product range encompasses X-ray systems, digital radiography solutions, C-Arms, mammography equipment, and pre-owned MRI scanners.
+                        <li className="flex items-start gap-4">
+                          <div className="flex-shrink-0 mt-1">
+                            <div className="w-12 h-12 rounded-lg flex items-center justify-center" style={{ backgroundColor: '#2879b6', color: 'white' }}>
+                              <i className="ri-stack-line text-2xl"></i>
+                            </div>
+                          </div>
+                          <div className="flex-1">
+                            <strong className="text-black block mb-1">Comprehensive Product Portfolio:</strong>
+                            <span className="text-[#555]">Our product range encompasses X-ray systems, digital radiography solutions, C-Arms, mammography equipment, and pre-owned MRI scanners.</span>
+                          </div>
                         </li>
-                        <li>
-                          <strong className="text-black">Patented Innovations:</strong> We are proud to offer specialty products like the Dream ERA range of DR systems, showcasing our commitment to research and development.
+                        <li className="flex items-start gap-4">
+                          <div className="flex-shrink-0 mt-1">
+                            <div className="w-12 h-12 rounded-lg flex items-center justify-center" style={{ backgroundColor: '#2879b6', color: 'white' }}>
+                              <i className="ri-lightbulb-flash-line text-2xl"></i>
+                            </div>
+                          </div>
+                          <div className="flex-1">
+                            <strong className="text-black block mb-1">Patented Innovations:</strong>
+                            <span className="text-[#555]">We are proud to offer specialty products like the Dream ERA range of DR systems, showcasing our commitment to research and development.</span>
+                          </div>
                         </li>
-                        <li>
-                          <strong className="text-black">Pre-owned Equipment Expertise:</strong> Our expertise in processing and marketing high-end pre-owned imaging systems provides cost-effective solutions for healthcare facilities.
+                        <li className="flex items-start gap-4">
+                          <div className="flex-shrink-0 mt-1">
+                            <div className="w-12 h-12 rounded-lg flex items-center justify-center" style={{ backgroundColor: '#2879b6', color: 'white' }}>
+                              <i className="ri-recycle-line text-2xl"></i>
+                            </div>
+                          </div>
+                          <div className="flex-1">
+                            <strong className="text-black block mb-1">Pre-owned Equipment Expertise:</strong>
+                            <span className="text-[#555]">Our expertise in processing and marketing high-end pre-owned imaging systems provides cost-effective solutions for healthcare facilities.</span>
+                          </div>
                         </li>
-                        <li>
-                          <strong className="text-black">Exceptional Service:</strong> Our dedicated service team ensures maximum uptime, rapid response, and comprehensive support for all our products.
+                        <li className="flex items-start gap-4">
+                          <div className="flex-shrink-0 mt-1">
+                            <div className="w-12 h-12 rounded-lg flex items-center justify-center" style={{ backgroundColor: '#2879b6', color: 'white' }}>
+                              <i className="ri-customer-service-2-line text-2xl"></i>
+                            </div>
+                          </div>
+                          <div className="flex-1">
+                            <strong className="text-black block mb-1">Exceptional Service:</strong>
+                            <span className="text-[#555]">Our dedicated service team ensures maximum uptime, rapid response, and comprehensive support for all our products.</span>
+                          </div>
                         </li>
                       </>
                     )}

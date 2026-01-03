@@ -120,7 +120,7 @@ const FPDCArmPage = () => {
           } : {}}
         >
           <div className={`absolute inset-0 ${hero?.backgroundImage ? 'bg-black/50' : ''}`}></div>
-          <div className="max-w-7xl mx-auto px-6 lg:px-12 text-center relative z-10 w-full">
+          <div className="container mx-auto px-4 text-center relative z-10 w-full">
             <h1 
               className="text-4xl md:text-5xl font-bold text-white mb-6 animate-fade-up"
               style={{ fontFamily: 'Montserrat, sans-serif' }}
@@ -149,19 +149,22 @@ const FPDCArmPage = () => {
 
       {/* Product Content Section */}
       {content?.isActive !== false && (
-        <section className="pt-32 pb-20 bg-white">
-          <div className="max-w-[1920px] mx-auto px-6 lg:px-12">
+        <section className="pt-32 pb-14 bg-white">
+          <div className="container mx-auto px-4">
             <div className="flex flex-col lg:flex-row gap-12 items-start">
               {/* Content - Left Side */}
               <div 
                 className="w-full lg:w-[48%]"
-                style={{ fontFamily: 'Montserrat, sans-serif' }}
+                style={{ fontFamily: 'Montserrat, sans-serif', alignSelf: 'flex-start' }}
               >
                 <h2 
                   className="text-4xl font-bold mb-8 uppercase"
                   style={{ 
                     fontFamily: 'Montserrat, sans-serif',
-                    color: '#2879b6'
+                    color: '#2879b6',
+                    marginTop: 0,
+                    paddingTop: 0,
+                    lineHeight: '1.2'
                   }}
                 >
                   FPD C-ARM
@@ -245,12 +248,19 @@ const FPDCArmPage = () => {
 
               {/* Product Image - Right Side */}
               <div 
-                className="w-full lg:w-[52%] flex items-center justify-center"
+                className="w-full lg:w-[52%]"
+                style={{ alignSelf: 'flex-start' }}
               >
                 <img
                   src={content?.productImage || 'https://3imedtech.com/wp-content/uploads/2025/11/fpd-crm.jpg'}
                   alt="FPD C-ARM Product"
                   className="w-full h-auto object-contain"
+                  style={{ 
+                    display: 'block',
+                    verticalAlign: 'top',
+                    margin: 0,
+                    padding: 0
+                  }}
                   onError={(e) => {
                     // Fallback to default image if CMS image fails
                     (e.target as HTMLImageElement).src = 'https://3imedtech.com/wp-content/uploads/2025/11/fpd-crm.jpg';

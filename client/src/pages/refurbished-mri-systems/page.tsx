@@ -141,12 +141,15 @@ const RefurbishedMRISystemsPage = () => {
             <section 
               key={product.id || index} 
               id={sectionId} 
-              className={`py-20 bg-gradient-to-br ${backgroundColor} transition-all duration-500 ${
+              className={`pt-8 pb-6 bg-gradient-to-br ${backgroundColor} transition-all duration-500 ${
                 isHighlighted ? 'ring-4 ring-[#E6662F] ring-opacity-75 shadow-2xl' : ''
               }`}
-              style={{ scrollMarginTop: '100px' }}
+              style={{ 
+                scrollMarginTop: '100px',
+                background: 'linear-gradient(180deg, rgba(0, 0, 0, 0) 10%, rgba(40, 121, 182, 0.08) 90%)'
+              }}
             >
-              <div className="max-w-7xl mx-auto px-6">
+              <div className="container mx-auto px-4">
                 <div className={`flex flex-col lg:flex-row gap-12 items-start ${
                   imagePosition === 'right' ? 'lg:flex-row-reverse' : ''
                 }`}>
@@ -154,12 +157,20 @@ const RefurbishedMRISystemsPage = () => {
                   <div 
                     className={`w-full lg:w-[52%] ${imagePosition === 'right' ? '' : ''}`}
                     data-aos={imagePosition === 'right' ? 'fade-left' : 'fade-right'}
+                    style={{ alignSelf: 'flex-start' }}
                   >
                     {product.image ? (
                       <img
                         src={product.image}
                         alt={product.title}
-                        className="w-full h-auto rounded-lg shadow-lg object-contain"
+                        className="w-full h-auto rounded-lg shadow-lg object-contain scale-[0.8]"
+                        style={{ 
+                          display: 'block',
+                          verticalAlign: 'top',
+                          margin: 0,
+                          padding: 0,
+                          transformOrigin: 'top center'
+                        }}
                         onError={(e) => {
                           // Fallback to placeholder if image fails to load
                           (e.target as HTMLImageElement).src = 'https://via.placeholder.com/600x400?text=Product+Image';
@@ -176,11 +187,17 @@ const RefurbishedMRISystemsPage = () => {
                   <div 
                     className={`w-full lg:w-[48%]`}
                     data-aos={imagePosition === 'right' ? 'fade-right' : 'fade-left'}
+                    style={{ alignSelf: 'flex-start' }}
                   >
-                    <h3 className="text-3xl font-bold mb-6" style={{ color: '#2879b6' }}>
+                    <h3 className="text-3xl font-bold mb-4" style={{ 
+                      color: '#2879b6',
+                      marginTop: 0,
+                      paddingTop: 0,
+                      lineHeight: '1.2'
+                    }}>
                       {product.title}
                     </h3>
-                    <ul className="space-y-4 text-gray-700">
+                    <ul className="space-y-3 text-gray-700">
                       {product.overview && (
                         <li>
                           <strong>Overview:</strong> {product.overview}
@@ -212,22 +229,25 @@ const RefurbishedMRISystemsPage = () => {
         // Fallback to hardcoded content if no CMS data
         <>
       {/* GE Signa HDxt 1.5Tesla */}
-      <section id="gesignahdxt15tesla" className="py-20 bg-gradient-to-br from-gray-50 to-white" style={{ scrollMarginTop: '100px' }}>
+      <section id="gesignahdxt15tesla" className="pt-8 pb-6 bg-gradient-to-br from-gray-50 to-white" style={{ 
+        scrollMarginTop: '100px',
+        background: 'linear-gradient(180deg, rgba(0, 0, 0, 0) 10%, #2879b6 90%)'
+      }}>
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col lg:flex-row gap-12 items-start">
-            <div className="w-full lg:w-[52%]" data-aos="fade-right">
+            <div className="w-full lg:w-[52%] flex items-start justify-center" data-aos="fade-right">
               {/* Product Image - Local Asset */}
               <img
                 src={ASSETS.PRODUCTS.MRI.GE_SIGNA_HDXT}
                 alt="GE Signa HDxt 1.5Tesla"
-                className="w-full h-auto rounded-lg shadow-lg object-contain"
+                className="w-full h-auto rounded-lg shadow-lg object-contain scale-[0.8]"
               />
             </div>
             <div className="w-full lg:w-[48%]" data-aos="fade-left">
-              <h3 className="text-3xl font-bold mb-6" style={{ color: '#2879b6' }}>
+              <h3 className="text-3xl font-bold mb-4" style={{ color: '#2879b6' }}>
                 GE Signa HDxt 1.5Tesla
               </h3>
-              <ul className="space-y-4 text-gray-700">
+              <ul className="space-y-3 text-gray-700">
                 <li>
                   <strong>Overview:</strong> The GE Signa HDxt 1.5T delivers superior imaging results, equipped with advanced gradient systems and optimized for high-performance image generation across all applications.
                 </li>
@@ -252,26 +272,29 @@ const RefurbishedMRISystemsPage = () => {
       {/* Philips Achieva 3.0Tesla X-Series */}
       <section 
         id="philipsachieva30teslaxseries" 
-        className={`py-20 bg-gradient-to-br from-white to-gray-50 transition-all duration-500 ${
+        className={`pt-8 pb-6 bg-gradient-to-br from-white to-gray-50 transition-all duration-500 ${
           highlightedSection === 'philipsachieva30teslaxseries' ? 'ring-4 ring-[#E6662F] ring-opacity-75 shadow-2xl' : ''
         }`}
-        style={{ scrollMarginTop: '100px' }}
+        style={{ 
+          scrollMarginTop: '100px',
+          background: 'linear-gradient(180deg, rgba(0, 0, 0, 0) 10%, #2879b6 90%)'
+        }}
       >
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col lg:flex-row-reverse gap-12 items-center">
-            <div className="w-full lg:w-[52%]" data-aos="fade-left">
+            <div className="w-full lg:w-[52%] flex items-start justify-center" data-aos="fade-left">
               {/* Product Image - Local Asset */}
               <img
                 src={ASSETS.PRODUCTS.MRI.PHILIPS_ACHIEVA}
                 alt="Philips Achieva 3.0Tesla X-Series"
-                className="w-full h-auto rounded-lg shadow-lg object-contain"
+                className="w-full h-auto rounded-lg shadow-lg object-contain scale-[0.8]"
               />
             </div>
             <div className="w-full lg:w-[48%]" data-aos="fade-right">
-              <h3 className="text-3xl font-bold mb-6" style={{ color: '#2879b6' }}>
+              <h3 className="text-3xl font-bold mb-4" style={{ color: '#2879b6' }}>
                 Philips Achieva 3.0Tesla X-Series
               </h3>
-              <ul className="space-y-4 text-gray-700">
+              <ul className="space-y-3 text-gray-700">
                 <li>
                   <strong>Overview:</strong> The Philips Achieva 3.0T X-series offers comprehensive MRI capabilities, featuring advanced imaging technology for a broad range of clinical needs.
                 </li>

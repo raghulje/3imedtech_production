@@ -144,12 +144,12 @@ export default function About() {
       </div>
 
       {/* Main Content */}
-      <div className="py-16 lg:py-20" style={{ paddingTop: '48px' }}>
+      <div className="py-16 lg:py-14" style={{ paddingTop: '48px' }}>
         <div className="container mx-auto px-4">
           {/* Redefining Healthcare Section - CMS or Fallback */}
           {aboutRedefiningHealthcare?.isActive !== false && (
-            <section className="max-w-4xl mx-auto text-center mb-16 lg:mb-20" data-aos="fade-up" data-aos-duration="1000">
-              <h2 className="text-3xl lg:text-4xl font-bold text-[#027C8E] mb-6 lg:mb-8" data-aos="slide-up" data-aos-delay="100" data-aos-duration="800">
+            <section className="max-w-4xl mx-auto text-center mb-8 lg:mb-10" data-aos="fade-up" data-aos-duration="1000">
+              <h2 className="text-3xl lg:text-4xl font-bold text-[#0e2b5c] mb-6 lg:mb-8" data-aos="slide-up" data-aos-delay="100" data-aos-duration="800">
                 {aboutRedefiningHealthcare?.title || 'Redefining Healthcare Through Innovation'}
               </h2>
               <div className="text-base lg:text-lg text-gray-700 leading-relaxed mb-8 lg:mb-10">
@@ -196,7 +196,7 @@ export default function About() {
                   href={(aboutRedefiningHealthcare?.buttonLink && aboutRedefiningHealthcare.buttonLink.trim() !== '') ? aboutRedefiningHealthcare.buttonLink : ASSETS.DOCUMENTS.PRODUCT_BROCHURE}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="about-btn inline-flex items-center gap-3 bg-[#027C8E] text-white px-8 py-4 rounded-full text-base lg:text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl whitespace-nowrap cursor-pointer relative overflow-hidden group"
+                  className="about-btn inline-flex items-center gap-3 bg-[#2879b6] text-white px-8 py-4 rounded-full text-base lg:text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl whitespace-nowrap cursor-pointer relative overflow-hidden group"
                 >
                   <span className="absolute inset-0 bg-[#E6662F] transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out rounded-full"></span>
                   {aboutRedefiningHealthcare?.buttonIcon && <i className={`${aboutRedefiningHealthcare.buttonIcon} text-2xl relative z-10`}></i>}
@@ -208,8 +208,8 @@ export default function About() {
 
           {/* Explore Refex Group Section - CMS or Fallback */}
           {aboutRefexGroup?.isActive !== false && (
-            <section className="max-w-4xl mx-auto text-center" style={{ marginTop: '32px' }} data-aos="fade-up" data-aos-duration="1000">
-              <h2 className="text-3xl lg:text-4xl font-bold text-[#027C8E] mb-6 lg:mb-8" data-aos="slide-up" data-aos-delay="100" data-aos-duration="800">
+            <section className="max-w-4xl mx-auto text-center" style={{ marginTop: '16px' }} data-aos="fade-up" data-aos-duration="1000">
+              <h2 className="text-3xl lg:text-4xl font-bold text-[#0e2b5c] mb-6 lg:mb-8" data-aos="slide-up" data-aos-delay="100" data-aos-duration="800">
                 {aboutRefexGroup?.title || 'Explore Refex Group'}
               </h2>
               <div className="text-base lg:text-lg text-gray-700 leading-relaxed space-y-6 mb-8 lg:mb-10">
@@ -273,7 +273,7 @@ export default function About() {
                     href={aboutRefexGroup.buttonLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="about-btn inline-flex items-center justify-center bg-[#027C8E] text-white px-8 py-4 rounded-full text-base lg:text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl whitespace-nowrap cursor-pointer relative overflow-hidden group"
+                    className="about-btn inline-flex items-center justify-center bg-[#2879b6] text-white px-8 py-4 rounded-full text-base lg:text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl whitespace-nowrap cursor-pointer relative overflow-hidden group"
                   >
                     <span className="absolute inset-0 bg-[#E6662F] transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out rounded-full"></span>
                     <span className="relative z-10">{aboutRefexGroup?.buttonText || 'Explore Refex Group'}</span>
