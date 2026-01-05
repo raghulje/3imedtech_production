@@ -3,68 +3,58 @@
 ## Problem
 When pulling updates, git tries to update `config.json` because it was previously tracked. Your production config needs to be preserved.
 
-## Solution
+## Solution - Run These Commands on Production Server
 
-### Step 1: Backup and Remove from Git Tracking
+### Step 1: Remove config.json from Git Tracking (Keep Your Local File)
 
 ```bash
-# Backup your production config.json
-cp server/config/config.json server/config/config.json.production
-
-# Remove the file from git's index (but keep your local file)
+# Remove from git index but keep your local file
 git rm --cached server/config/config.json
 
-# Commit this removal
-git commit -m "Remove config.json from tracking - keep production config"
-
-# Now pull should work
-git pull origin master
-
-# Restore your production config
-cp server/config/config.json.production server/config/config.json
+# Commit this removal locally
+git commit -m "Remove config.json from tracking on production"
 ```
 
-### Alternative: Quick Fix (Recommended)
+### Step 2: Now Pull Will Work
 
 ```bash
-# Method 1: Stash your local changes, pull, then restore
-git stash push -m "Production config backup" server/config/config.json
+# Pull the updates
 git pull origin master
-git stash pop
+```
 
-# Method 2: Force keep your local version
+### Step 3: Verify Your Config is Still Intact
+
+```bash
+# Check that your config.json still has your production settings
+cat server/config/config.json | grep -i "your_production_username"
+```
+
+### Step 4: Build and Restart
+
+```bash
+# Build frontend
+cd client
+npm run build
+cd ..
+
+# Restart Docker
+docker-compose restart
+```
+
+## Alternative: Quick One-Line Fix
+
+If you want to keep your local version and force the pull:
+
+```bash
+# Keep your local config.json and pull
 git checkout --ours server/config/config.json
-git pull origin master
+git add server/config/config.json
+git pull origin master --no-edit
 ```
 
-### Method 3: Tell Git to Ignore Local Changes (Permanent Fix)
+## After This One-Time Fix
 
-```bash
-# This tells git to always ignore changes to this file
-git update-index --assume-unchanged server/config/config.json
-
-# Now pull will work without issues
-git pull origin master
-```
-
-## Recommended One-Time Setup
-
-Run these commands once on your production server:
-
-```bash
-# 1. Backup your config
-cp server/config/config.json server/config/config.json.backup
-
-# 2. Tell git to ignore this file permanently
-git update-index --assume-unchanged server/config/config.json
-
-# 3. Now pull will work
-git pull origin master
-
-# 4. Verify your config is still intact
-diff server/config/config.json server/config/config.json.backup
-# (Should show no differences if everything is good)
-```
-
-After this one-time setup, `git pull` will work smoothly without touching your `config.json`.
-
+Once you've removed `config.json` from git tracking on your production server, future pulls will work smoothly because:
+- The file is now in `.gitignore` in the repository
+- It's no longer tracked on your production server
+- Git will never try to update it again
