@@ -358,7 +358,7 @@ export default function HomePage_cms({
             <div className="p-12" style={{ backgroundColor: homeAboutSection?.backgroundColor || '#1E4C84' }}>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div>
-                  <h6 className="uppercase tracking-wider mb-4" style={{ fontSize: '23px', color: '#7DC244', fontFamily: 'Montserrat, sans-serif', fontWeight: 400 }}>
+                  <h6 className="uppercase tracking-wider mb-4" style={{ fontSize: '23px', color: '#7DC244', fontFamily: 'Rubik, sans-serif', fontWeight: 400 }}>
                     {homeAboutSection?.label || 'About Us'}
                   </h6>
                   <h3 className="text-4xl lg:text-5xl font-medium text-white mb-6 leading-tight">

@@ -193,7 +193,7 @@ export default function Contact() {
       )}
 
       {/* Contact Info Section - CMS or Fallback */}
-      <section className="py-16 bg-gray-50">
+      <section className="pb-16 bg-gray-50" style={{ marginLeft: '50px', marginRight: '50px' }}>
         <div className="container mx-auto px-4">
           {contactInfoCards.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -205,7 +205,7 @@ export default function Contact() {
                     backgroundColor: '#F1F1F1',
                     padding: '30px',
                     color: '#333842',
-                    fontFamily: 'Montserrat, sans-serif'
+                    fontFamily: 'Rubik, sans-serif'
                   }}
                   data-aos="fade-up"
                   data-aos-delay={idx * 100}
@@ -230,7 +230,7 @@ export default function Contact() {
                       <h4 
                         className="mb-6 group-hover:scale-105 transition-all duration-500"
                         style={{
-                          fontFamily: 'Montserrat, sans-serif',
+                          fontFamily: 'Rubik, sans-serif',
                           fontWeight: 500,
                           color: '#2879B6',
                           fontSize: '1.25rem',
@@ -271,7 +271,7 @@ export default function Contact() {
                         <p 
                           className="mb-6 group-hover:text-gray-700 transition-colors duration-500"
                           style={{
-                            fontFamily: 'Montserrat, sans-serif',
+                            fontFamily: 'Rubik, sans-serif',
                             fontStyle: 'normal',
                             color: '#333842',
                             fontSize: '1rem',
@@ -286,7 +286,7 @@ export default function Contact() {
                         <p 
                           className="mb-6 group-hover:text-gray-700 transition-colors duration-500"
                           style={{
-                            fontFamily: 'Montserrat, sans-serif',
+                            fontFamily: 'Rubik, sans-serif',
                             fontStyle: 'normal',
                             color: '#333842',
                             fontSize: '1rem',
@@ -320,7 +320,7 @@ export default function Contact() {
                   backgroundColor: '#F1F1F1',
                   padding: '30px',
                   color: '#333842',
-                  fontFamily: 'Montserrat, sans-serif'
+                  fontFamily: 'Rubik, sans-serif'
                 }}
                 data-aos="fade-up"
                 data-aos-delay="0"
@@ -345,7 +345,7 @@ export default function Contact() {
                     <h4 
                       className="mb-6 group-hover:scale-105 transition-all duration-500"
                       style={{
-                        fontFamily: 'Montserrat, sans-serif',
+                        fontFamily: 'Rubik, sans-serif',
                         fontWeight: 500,
                         color: '#2879B6',
                         fontSize: '1.25rem',
@@ -383,7 +383,7 @@ export default function Contact() {
                     <p 
                       className="mb-6 group-hover:text-gray-700 transition-colors duration-500"
                       style={{
-                        fontFamily: 'Montserrat, sans-serif',
+                        fontFamily: 'Rubik, sans-serif',
                         fontStyle: 'normal',
                         color: '#333842',
                         fontSize: '1rem',
@@ -415,7 +415,7 @@ export default function Contact() {
                   backgroundColor: '#F1F1F1',
                   padding: '30px',
                   color: '#333842',
-                  fontFamily: 'Montserrat, sans-serif'
+                  fontFamily: 'Rubik, sans-serif'
                 }}
                 data-aos="fade-up"
                 data-aos-delay="100"
@@ -440,7 +440,7 @@ export default function Contact() {
                     <h4 
                       className="mb-6 group-hover:scale-105 transition-all duration-500"
                       style={{
-                        fontFamily: 'Montserrat, sans-serif',
+                        fontFamily: 'Rubik, sans-serif',
                         fontWeight: 500,
                         color: '#2879B6',
                         fontSize: '1.25rem',
@@ -478,7 +478,7 @@ export default function Contact() {
                     <p 
                       className="mb-6 group-hover:text-gray-700 transition-colors duration-500"
                       style={{
-                        fontFamily: 'Montserrat, sans-serif',
+                        fontFamily: 'Rubik, sans-serif',
                         fontStyle: 'normal',
                         color: '#333842',
                         fontSize: '1rem',
@@ -510,7 +510,7 @@ export default function Contact() {
                   backgroundColor: '#F1F1F1',
                   padding: '30px',
                   color: '#333842',
-                  fontFamily: 'Montserrat, sans-serif'
+                  fontFamily: 'Rubik, sans-serif'
                 }}
                 data-aos="fade-up"
                 data-aos-delay="200"
@@ -535,7 +535,7 @@ export default function Contact() {
                     <h4 
                       className="mb-6 group-hover:scale-105 transition-all duration-500"
                       style={{
-                        fontFamily: 'Montserrat, sans-serif',
+                        fontFamily: 'Rubik, sans-serif',
                         fontWeight: 500,
                         color: '#2879B6',
                         fontSize: '1.25rem',
@@ -573,7 +573,7 @@ export default function Contact() {
                     <p 
                       className="mb-6 group-hover:text-gray-700 transition-colors duration-500"
                       style={{
-                        fontFamily: 'Montserrat, sans-serif',
+                        fontFamily: 'Rubik, sans-serif',
                         fontStyle: 'normal',
                         color: '#333842',
                         fontSize: '1rem',
@@ -605,7 +605,7 @@ export default function Contact() {
                   backgroundColor: '#F1F1F1',
                   padding: '30px',
                   color: '#333842',
-                  fontFamily: 'Montserrat, sans-serif'
+                  fontFamily: 'Rubik, sans-serif'
                 }}
                 data-aos="fade-up"
                 data-aos-delay="300"
@@ -630,7 +630,7 @@ export default function Contact() {
                     <h4 
                       className="mb-6 group-hover:scale-105 transition-all duration-500"
                       style={{
-                        fontFamily: 'Montserrat, sans-serif',
+                        fontFamily: 'Rubik, sans-serif',
                         fontWeight: 500,
                         color: '#2879B6',
                         fontSize: '1.25rem',
@@ -668,7 +668,7 @@ export default function Contact() {
                     <p 
                       className="mb-6 group-hover:text-gray-700 transition-colors duration-500"
                       style={{
-                        fontFamily: 'Montserrat, sans-serif',
+                        fontFamily: 'Rubik, sans-serif',
                         fontStyle: 'normal',
                         color: '#333842',
                         fontSize: '1rem',

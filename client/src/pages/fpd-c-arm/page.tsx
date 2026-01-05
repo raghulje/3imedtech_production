@@ -123,14 +123,14 @@ const FPDCArmPage = () => {
           <div className="container mx-auto px-4 text-center relative z-10 w-full">
             <h1 
               className="text-4xl md:text-5xl font-bold text-white mb-6 animate-fade-up"
-              style={{ fontFamily: 'Montserrat, sans-serif' }}
+              style={{ fontFamily: 'Rubik, sans-serif' }}
             >
               {hero?.title || 'FPD C-ARM'}
             </h1>
             {hero?.subtitle && (
               <p 
                 className="text-xl md:text-2xl text-white/90 mb-4"
-                style={{ fontFamily: 'Montserrat, sans-serif' }}
+                style={{ fontFamily: 'Rubik, sans-serif' }}
               >
                 {hero.subtitle}
               </p>
@@ -138,7 +138,7 @@ const FPDCArmPage = () => {
             {hero?.description && (
               <p 
                 className="text-base md:text-lg text-white/80 max-w-3xl mx-auto"
-                style={{ fontFamily: 'Montserrat, sans-serif' }}
+                style={{ fontFamily: 'Rubik, sans-serif' }}
               >
                 {hero.description}
               </p>
@@ -149,18 +149,18 @@ const FPDCArmPage = () => {
 
       {/* Product Content Section */}
       {content?.isActive !== false && (
-        <section className="pt-32 pb-14 bg-white">
+        <section className="pt-32 pb-4 bg-white">
           <div className="container mx-auto px-4">
-            <div className="flex flex-col lg:flex-row gap-12 items-start">
+            <div className="flex flex-col lg:flex-row gap-6 items-start">
               {/* Content - Left Side */}
               <div 
                 className="w-full lg:w-[48%]"
-                style={{ fontFamily: 'Montserrat, sans-serif', alignSelf: 'flex-start' }}
+                style={{ fontFamily: 'Rubik, sans-serif', alignSelf: 'flex-start', marginRight: '60px' }}
               >
                 <h2 
                   className="text-4xl font-bold mb-8 uppercase"
                   style={{ 
-                    fontFamily: 'Montserrat, sans-serif',
+                    fontFamily: 'Rubik, sans-serif',
                     color: '#2879b6',
                     marginTop: 0,
                     paddingTop: 0,
@@ -174,7 +174,7 @@ const FPDCArmPage = () => {
                   <p 
                     className="text-gray-700 leading-relaxed mb-6"
                     style={{ 
-                      fontFamily: 'Montserrat, sans-serif',
+                      fontFamily: 'Rubik, sans-serif',
                       fontSize: '1rem',
                       lineHeight: '1.625em'
                     }}
@@ -188,7 +188,7 @@ const FPDCArmPage = () => {
                     <p 
                       className="text-gray-700 mb-3"
                       style={{ 
-                        fontFamily: 'Montserrat, sans-serif',
+                        fontFamily: 'Rubik, sans-serif',
                         fontSize: '1rem',
                         fontWeight: 600
                       }}
@@ -201,7 +201,7 @@ const FPDCArmPage = () => {
                           key={index} 
                           className="flex items-start"
                           style={{ 
-                            fontFamily: 'Montserrat, sans-serif',
+                            fontFamily: 'Rubik, sans-serif',
                             fontSize: '1rem',
                             color: '#333842'
                           }}
@@ -219,7 +219,7 @@ const FPDCArmPage = () => {
                     <p 
                       className="text-gray-700 mb-3"
                       style={{ 
-                        fontFamily: 'Montserrat, sans-serif',
+                        fontFamily: 'Rubik, sans-serif',
                         fontSize: '1rem',
                         fontWeight: 600
                       }}
@@ -232,7 +232,7 @@ const FPDCArmPage = () => {
                           key={index} 
                           className="flex items-start"
                           style={{ 
-                            fontFamily: 'Montserrat, sans-serif',
+                            fontFamily: 'Rubik, sans-serif',
                             fontSize: '1rem',
                             color: '#333842'
                           }}

@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.43, for Win64 (x86_64)
 --
--- Host: localhost    Database: 3imedtechcms
+-- Host: localhost    Database: 3imedtech_production
 -- ------------------------------------------------------
 -- Server version	8.0.43
 
@@ -74,7 +74,7 @@ CREATE TABLE `about_hero` (
 
 LOCK TABLES `about_hero` WRITE;
 /*!40000 ALTER TABLE `about_hero` DISABLE KEYS */;
-INSERT INTO `about_hero` VALUES (1,'About 3i Medical Technologies','3i Med Tech is an esteemed player in the medical devices industry, specializing in diagnostic imaging solutions.','/uploads/images/image-1766928209065-528554872.jpg',1,'2025-12-28 09:00:49','2025-12-28 16:36:16',0,NULL);
+INSERT INTO `about_hero` VALUES (1,'About 3i Medical Technologies','3i Med Tech is an esteemed player in the medical devices industry with a core competency in the manufacturing of sophisticated diagnostic imaging equipment such as Digital X-rays, MRI machines, Digital C-arm.','/uploads/images/image-1766928209065-528554872.jpg',1,'2025-12-28 09:00:49','2025-12-30 11:49:20',0,NULL);
 /*!40000 ALTER TABLE `about_hero` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -169,7 +169,7 @@ CREATE TABLE `about_refex_group` (
 
 LOCK TABLES `about_refex_group` WRITE;
 /*!40000 ALTER TABLE `about_refex_group` DISABLE KEYS */;
-INSERT INTO `about_refex_group` VALUES (1,'Explore Refex Group','[\"3i MedTech, part of the Refex Group, is rapidly emerging as one of India’s leading MedTech companies. With ambitious growth strategies, the company has strengthened its position in the diagnostic imaging sector through the acquisition of Cura and Adonis Medical Systems—both highly reputed companies with over two decades of expertise.\\n\",\"Refex Group is among the leading business conglomerates of India and it has expanded during the past 2 decades of its operation across multiple business verticals – Renewables (Solar IPP), Chemicals (refilling of environment friendly refrigerant gases), Medical Technologies (manufacturing Digital X-rays, Flat Panel Detectors, and refurbishing MRI machines), Pharma (API manufacturing pertaining to the Central Nervous System), Green Mobility (offering 4 wheeler EV as a technology backed service), Ash handling (mitigating environmental pollution from the thermal power plants by handling the ash), and Airport operations among other such business verticals.\"]','','Explore Refex Group','https://www.refex.co.in',1,0,NULL,'2025-12-28 09:00:49','2025-12-28 13:51:23');
+INSERT INTO `about_refex_group` VALUES (1,'Explore Refex Group','[\"3i MedTech, part of the Refex Group, is rapidly emerging as one of India’s leading MedTech companies. With ambitious growth strategies, the company has strengthened its position in the diagnostic imaging sector through the acquisition of Cura and Adonis Medical Systems—both highly reputed companies with over two decades of expertise.\\n\",\"Refex Group is among the leading business conglomerates of India and it has expanded during the past 2 decades of its operation across multiple business verticals – Renewables (Solar IPP), Chemicals (refilling of environment friendly refrigerant gases), Medical Technologies (manufacturing Digital X-rays, Flat Panel Detectors, and refurbishing MRI machines), Pharma (API manufacturing pertaining to the Central Nervous System), Green Mobility (offering 4 wheeler EV as a technology backed service), Ash handling (mitigating environmental pollution from the thermal power plants by handling the ash), and Airport operations among other such business verticals.\"]','','Explore Refex Group','https://www.refex.group',1,0,NULL,'2025-12-28 09:00:49','2025-12-30 12:19:44');
 /*!40000 ALTER TABLE `about_refex_group` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -243,15 +243,15 @@ DROP TABLE IF EXISTS `capabilities_facility`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `capabilities_facility` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `location` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `capacity` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `established` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `image` text COLLATE utf8mb4_unicode_ci,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `type` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `location` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `capacity` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `established` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `capabilities` json DEFAULT NULL,
   `approvals` json DEFAULT NULL,
-  `color` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `color` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `order` int DEFAULT '0',
   `is_active` tinyint(1) DEFAULT '1',
   `created_at` datetime NOT NULL,
@@ -278,11 +278,11 @@ DROP TABLE IF EXISTS `capabilities_hero`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `capabilities_hero` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `subtitle` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `description` text COLLATE utf8mb4_unicode_ci,
-  `sub_description` text COLLATE utf8mb4_unicode_ci,
-  `background_image` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `subtitle` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `sub_description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `background_image` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `is_active` tinyint(1) DEFAULT '1',
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
@@ -308,9 +308,9 @@ DROP TABLE IF EXISTS `capabilities_research`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `capabilities_research` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` text COLLATE utf8mb4_unicode_ci,
-  `image` text COLLATE utf8mb4_unicode_ci,
+  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `image` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `api_card` json DEFAULT NULL,
   `fdf_card` json DEFAULT NULL,
   `promise` json DEFAULT NULL,
@@ -398,11 +398,11 @@ DROP TABLE IF EXISTS `contact_info`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `contact_info` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `info_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `content` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `link` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `icon` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `info_type` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `content` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `link` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `icon` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `order` int NOT NULL DEFAULT '0',
   `is_active` tinyint(1) NOT NULL DEFAULT '1',
   `created_at` datetime NOT NULL,
@@ -494,9 +494,9 @@ DROP TABLE IF EXISTS `digital_solutions`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `digital_solutions` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `card_title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `card_subtitle` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `card_description` text COLLATE utf8mb4_unicode_ci,
+  `card_title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `card_subtitle` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `card_description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `order` int DEFAULT '0',
   `is_active` tinyint(1) DEFAULT '1',
   `created_at` datetime NOT NULL,
@@ -715,7 +715,7 @@ CREATE TABLE `header_footer` (
 
 LOCK TABLES `header_footer` WRITE;
 /*!40000 ALTER TABLE `header_footer` DISABLE KEYS */;
-INSERT INTO `header_footer` VALUES (1,'header','/uploads/images/image-1766927055283-965562148.png','+91 94440 26307','info@3imedtech.com',NULL,NULL,NULL,NULL,1,'2025-12-28 09:00:49','2025-12-28 13:19:17',0,NULL,'/uploads/images/image-1766927103006-218244369.png','[{\"label\":\"Home\",\"link\":\"/\",\"order\":1,\"external\":false},{\"label\":\"About\",\"link\":\"/about\",\"order\":2,\"external\":false},{\"label\":\"Products\",\"link\":\"/products\",\"order\":3,\"external\":false},{\"label\":\"Why Choose Us\",\"link\":\"/why-choose-us\",\"order\":4,\"external\":false},{\"label\":\"Contact\",\"link\":\"/contact\",\"order\":5,\"external\":false}]',NULL,NULL,NULL),(2,'footer','/uploads/images/image-1766927322894-536458977.png','+91 94440 26307','info@3imedtech.com','Second Floor, Refex Towers, Sterling Road Signal, 313, Valluvar Kottam High Road, Nungambakkam, Chennai – 600034, Tamil Nadu','Refex Building, 67, Bazullah Road, Parthasarathy Puram, T Nagar, Chennai – 600017','[{\"platform\":\"LinkedIn\",\"url\":\"https://www.linkedin.com/company/refex-group/\",\"icon\":\"fa-linkedin\",\"order\":1},{\"platform\":\"Facebook\",\"url\":\"https://www.facebook.com/refexindustrieslimited/\",\"icon\":\"fa-facebook\",\"order\":2},{\"platform\":\"Twitter\",\"url\":\"https://x.com/GroupRefex\",\"icon\":\"fa-twitter\",\"order\":3},{\"platform\":\"YouTube\",\"url\":\"https://www.youtube.com/@refexgroup\",\"icon\":\"fa-youtube\",\"order\":4},{\"platform\":\"Instagram\",\"url\":\"https://www.instagram.com/refexgroup/\",\"icon\":\"fa-instagram\",\"order\":5}]','Copyright © 2024 3i Medical Technologies',1,'2025-12-28 09:00:49','2025-12-28 13:20:38',0,NULL,NULL,NULL,'[{\"title\":\"About 3i MedTech\",\"links\":[{\"label\":\"About\",\"link\":\"/about\",\"order\":1,\"external\":false},{\"label\":\"Mission & Vision\",\"link\":\"/mission-vision-and-values\",\"order\":2,\"external\":false},{\"label\":\"Why Choose Us\",\"link\":\"/why-choose-us\",\"order\":3,\"external\":false}],\"order\":1},{\"title\":\"Know More\",\"links\":[{\"label\":\"Radiography Systems\",\"link\":\"/radiography-systems\",\"order\":1,\"external\":false},{\"label\":\"Portable X-Ray Solutions\",\"link\":\"/portable-x-ray-solutions\",\"order\":2,\"external\":false},{\"label\":\"Mammography Systems\",\"link\":\"/mammography-systems\",\"order\":3,\"external\":false},{\"label\":\"Flat Panel Detectors\",\"link\":\"/flat-panel-detectors\",\"order\":4,\"external\":false},{\"label\":\"Imaging Accessories\",\"link\":\"/imaging-accessories\",\"order\":5,\"external\":false},{\"label\":\"Refurbished MRI Systems\",\"link\":\"/refurbished-mri-systems\",\"order\":6,\"external\":false},{\"label\":\"Anamaya\",\"link\":\"https://anamaya.3imedtech.com/\",\"order\":7,\"external\":true}],\"order\":2}]','IMAGING • INFORMATION • INSIGHTS','a refex group company');
+INSERT INTO `header_footer` VALUES (1,'header','/uploads/images/image-1766927055283-965562148.png','+91 94440 26307','info@3imedtech.com',NULL,NULL,NULL,NULL,1,'2025-12-28 09:00:49','2025-12-28 13:19:17',0,NULL,'/uploads/images/image-1766927103006-218244369.png','[{\"label\":\"Home\",\"link\":\"/\",\"order\":1,\"external\":false},{\"label\":\"About\",\"link\":\"/about\",\"order\":2,\"external\":false},{\"label\":\"Products\",\"link\":\"/products\",\"order\":3,\"external\":false},{\"label\":\"Why Choose Us\",\"link\":\"/why-choose-us\",\"order\":4,\"external\":false},{\"label\":\"Contact\",\"link\":\"/contact\",\"order\":5,\"external\":false}]',NULL,NULL,NULL),(2,'footer','/uploads/images/image-1766927322894-536458977.png','+91 94440 26307','info@3imedtech.com','Second Floor, Refex Towers, Sterling Road Signal, 313, Valluvar Kottam High Road, Nungambakkam, Chennai – 600034, Tamil Nadu','Refex Building, 67, Bazullah Road, Parthasarathy Puram, T Nagar, Chennai – 600017','[{\"platform\":\"LinkedIn\",\"url\":\"https://www.linkedin.com/company/3i-medtech/\",\"icon\":\"fa-linkedin\",\"order\":1},{\"platform\":\"Facebook\",\"url\":\"https://www.facebook.com/3imedtech\",\"icon\":\"fa-facebook\",\"order\":2},{\"platform\":\"Twitter\",\"url\":\"https://x.com/GroupRefex\",\"icon\":\"/uploads/images/image-1767101010123-396511672.png\",\"order\":3},{\"platform\":\"YouTube\",\"url\":\"https://www.youtube.com/@refexgroup\",\"icon\":\"/uploads/images/image-1767101707474-824620881.png\",\"order\":4},{\"platform\":\"Instagram\",\"url\":\"https://www.instagram.com/refexgroup/\",\"icon\":\"fa-instagram\",\"order\":5}]','Copyright © 2024 3i Medical Technologies',1,'2025-12-28 09:00:49','2025-12-30 13:35:09',0,NULL,NULL,NULL,'[{\"title\":\"About 3i MedTech\",\"links\":[{\"label\":\"About\",\"link\":\"/about\",\"order\":1,\"external\":false},{\"label\":\"Mission & Vision\",\"link\":\"/mission-vision-and-values\",\"order\":2,\"external\":false},{\"label\":\"Why Choose Us\",\"link\":\"/why-choose-us\",\"order\":3,\"external\":false}],\"order\":1},{\"title\":\"Know More\",\"links\":[{\"label\":\"Radiography Systems\",\"link\":\"/radiography-systems\",\"order\":1,\"external\":false},{\"label\":\"Portable X-Ray Solutions\",\"link\":\"/portable-x-ray-solutions\",\"order\":2,\"external\":false},{\"label\":\"Mammography Systems\",\"link\":\"/mammography-systems\",\"order\":3,\"external\":false},{\"label\":\"Flat Panel Detectors\",\"link\":\"/flat-panel-detectors\",\"order\":4,\"external\":false},{\"label\":\"Imaging Accessories\",\"link\":\"/imaging-accessories\",\"order\":5,\"external\":false},{\"label\":\"Refurbished MRI Systems\",\"link\":\"/refurbished-mri-systems\",\"order\":6,\"external\":false},{\"label\":\"Anamaya\",\"link\":\"https://anamaya.3imedtech.com/\",\"order\":7,\"external\":true}],\"order\":2}]','IMAGING • INFORMATION • INSIGHTS','a refex group company');
 /*!40000 ALTER TABLE `header_footer` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -962,8 +962,8 @@ DROP TABLE IF EXISTS `innovation_transformation`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `innovation_transformation` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `section_title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `section_description` text COLLATE utf8mb4_unicode_ci,
+  `section_title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `section_description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `is_active` tinyint(1) DEFAULT '1',
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
@@ -1020,15 +1020,15 @@ DROP TABLE IF EXISTS `leadership_members`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `leadership_members` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `position` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `category` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` text COLLATE utf8mb4_unicode_ci,
-  `achievements_json` text COLLATE utf8mb4_unicode_ci,
-  `experience` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `education` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `image` text COLLATE utf8mb4_unicode_ci,
-  `color` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `position` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `category` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `achievements_json` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `experience` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `education` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `color` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `order` int NOT NULL DEFAULT '0',
   `is_active` tinyint(1) NOT NULL DEFAULT '1',
   `created_at` datetime NOT NULL,
@@ -1056,7 +1056,7 @@ DROP TABLE IF EXISTS `login_histories`;
 CREATE TABLE `login_histories` (
   `id` char(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
   `user_id` char(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL,
-  `status` enum('Logged-In','Logged-Out') COLLATE utf8mb4_unicode_ci DEFAULT 'Logged-In',
+  `status` enum('Logged-In','Logged-Out') CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT 'Logged-In',
   `login_time` datetime NOT NULL,
   `logout_time` datetime NOT NULL,
   PRIMARY KEY (`id`),
@@ -1200,7 +1200,7 @@ CREATE TABLE `login_histories` (
 
 LOCK TABLES `login_histories` WRITE;
 /*!40000 ALTER TABLE `login_histories` DISABLE KEYS */;
-INSERT INTO `login_histories` VALUES ('15c7b55b-97f8-4e2d-966b-3b2795833029','16cd5241-bd1c-44df-be31-fa40ffa75217','Logged-In','2025-12-28 11:08:30','2025-12-28 11:08:30'),('22f3ac6c-6a42-4b53-89c3-ac829fbb951c','16cd5241-bd1c-44df-be31-fa40ffa75217','Logged-In','2025-12-28 17:42:51','2025-12-28 17:42:51'),('2eaeb897-17ab-4aae-b11a-25ccb203b60a','16cd5241-bd1c-44df-be31-fa40ffa75217','Logged-Out','2025-12-28 15:32:57','2025-12-28 17:42:27'),('371d1d62-49ef-431d-9951-cb2e5640c659','16cd5241-bd1c-44df-be31-fa40ffa75217','Logged-In','2025-12-28 10:40:42','2025-12-28 10:40:42'),('3d57ddfd-bdf1-41f3-858c-eb144c2e0ced','16cd5241-bd1c-44df-be31-fa40ffa75217','Logged-In','2025-12-28 10:48:40','2025-12-28 10:48:40'),('46d423d8-f9f1-4658-afa0-5155bf590a5d','16cd5241-bd1c-44df-be31-fa40ffa75217','Logged-In','2025-12-28 09:39:12','2025-12-28 09:39:12'),('4e3a646b-972e-4730-8186-ce6f90a3d9db','16cd5241-bd1c-44df-be31-fa40ffa75217','Logged-In','2025-12-28 11:03:00','2025-12-28 11:03:00'),('5606fb22-ec80-4658-843d-41b72057dc9c','16cd5241-bd1c-44df-be31-fa40ffa75217','Logged-In','2025-12-28 10:43:32','2025-12-28 10:43:32'),('564fe950-fa88-4ca8-8709-a8cedb1339fd','16cd5241-bd1c-44df-be31-fa40ffa75217','Logged-In','2025-12-28 11:08:56','2025-12-28 11:08:56'),('5bc94673-cadd-4d78-a36a-0ae7b4808914','16cd5241-bd1c-44df-be31-fa40ffa75217','Logged-In','2025-12-28 11:12:08','2025-12-28 11:12:08'),('65b35485-a8d7-40c0-b5dd-0cac344eb423','16cd5241-bd1c-44df-be31-fa40ffa75217','Logged-In','2025-12-28 11:44:33','2025-12-28 11:44:33'),('6c7dbda2-50ce-4a20-98b7-720f3b6a625d','16cd5241-bd1c-44df-be31-fa40ffa75217','Logged-In','2025-12-28 10:41:37','2025-12-28 10:41:37'),('8237334a-19dd-47f3-a78d-031ce623b447','16cd5241-bd1c-44df-be31-fa40ffa75217','Logged-In','2025-12-28 10:42:14','2025-12-28 10:42:14'),('83556bad-9a4c-49d0-8ef6-ee2cbb9cd79c','16cd5241-bd1c-44df-be31-fa40ffa75217','Logged-In','2025-12-29 07:12:12','2025-12-29 07:12:12'),('85c24907-5716-41fe-b133-282a58176e05','16cd5241-bd1c-44df-be31-fa40ffa75217','Logged-In','2025-12-28 10:48:18','2025-12-28 10:48:18'),('8769832f-a931-441c-91a8-debaa251fd36','16cd5241-bd1c-44df-be31-fa40ffa75217','Logged-In','2025-12-29 05:48:56','2025-12-29 05:48:56'),('8d889778-41a9-494c-a193-8da877e236a2','16cd5241-bd1c-44df-be31-fa40ffa75217','Logged-In','2025-12-29 05:21:40','2025-12-29 05:21:40'),('8f8540a3-2648-4942-adac-b2ce3d14bf36','16cd5241-bd1c-44df-be31-fa40ffa75217','Logged-In','2025-12-29 07:25:34','2025-12-29 07:25:34'),('b6fe3fa7-34e6-44b6-87ef-a86914320f37','16cd5241-bd1c-44df-be31-fa40ffa75217','Logged-Out','2025-12-29 07:22:01','2025-12-29 07:22:38'),('b83bf1ef-bcc8-4b2a-b81f-eac51632a780','16cd5241-bd1c-44df-be31-fa40ffa75217','Logged-In','2025-12-28 11:11:22','2025-12-28 11:11:22'),('c5f744d9-1a4b-4d66-80d4-edadb279f4d5','16cd5241-bd1c-44df-be31-fa40ffa75217','Logged-In','2025-12-28 10:36:41','2025-12-28 10:36:41'),('c682223f-11bb-470d-b288-2c8f936b4998','16cd5241-bd1c-44df-be31-fa40ffa75217','Logged-In','2025-12-28 09:42:04','2025-12-28 09:42:04'),('d00aacd3-9152-47df-a265-559298b4ea0b','16cd5241-bd1c-44df-be31-fa40ffa75217','Logged-Out','2025-12-28 11:17:58','2025-12-28 11:18:12'),('d0f32335-ce87-454e-8292-f98bd3c0b9b3','ccd7cac0-21f6-4d4a-9fd9-42058528c074','Logged-Out','2025-12-29 07:22:43','2025-12-29 07:25:15'),('dbb1cbcc-d2c6-42f6-8880-d4834d040853','ccd7cac0-21f6-4d4a-9fd9-42058528c074','Logged-Out','2025-12-29 07:10:44','2025-12-29 07:12:04'),('e7795dba-644e-4705-8cdf-caf74c4b74aa','16cd5241-bd1c-44df-be31-fa40ffa75217','Logged-In','2025-12-28 11:18:20','2025-12-28 11:18:20'),('f6c25852-1377-4732-adb5-92b11314f67d','16cd5241-bd1c-44df-be31-fa40ffa75217','Logged-Out','2025-12-29 07:06:04','2025-12-29 07:10:34');
+INSERT INTO `login_histories` VALUES ('15c7b55b-97f8-4e2d-966b-3b2795833029','16cd5241-bd1c-44df-be31-fa40ffa75217','Logged-In','2025-12-28 11:08:30','2025-12-28 11:08:30'),('22f3ac6c-6a42-4b53-89c3-ac829fbb951c','16cd5241-bd1c-44df-be31-fa40ffa75217','Logged-In','2025-12-28 17:42:51','2025-12-28 17:42:51'),('2eaeb897-17ab-4aae-b11a-25ccb203b60a','16cd5241-bd1c-44df-be31-fa40ffa75217','Logged-Out','2025-12-28 15:32:57','2025-12-28 17:42:27'),('35b7789a-6bb2-4d76-94d3-ae45bfa6e059','16cd5241-bd1c-44df-be31-fa40ffa75217','Logged-In','2025-12-30 13:11:28','2025-12-30 13:11:28'),('371d1d62-49ef-431d-9951-cb2e5640c659','16cd5241-bd1c-44df-be31-fa40ffa75217','Logged-In','2025-12-28 10:40:42','2025-12-28 10:40:42'),('3d57ddfd-bdf1-41f3-858c-eb144c2e0ced','16cd5241-bd1c-44df-be31-fa40ffa75217','Logged-In','2025-12-28 10:48:40','2025-12-28 10:48:40'),('46d423d8-f9f1-4658-afa0-5155bf590a5d','16cd5241-bd1c-44df-be31-fa40ffa75217','Logged-In','2025-12-28 09:39:12','2025-12-28 09:39:12'),('487246c6-9a3b-4ee0-9a80-f669cd4a29bc','16cd5241-bd1c-44df-be31-fa40ffa75217','Logged-In','2026-01-02 14:06:05','2026-01-02 14:06:05'),('4e3a646b-972e-4730-8186-ce6f90a3d9db','16cd5241-bd1c-44df-be31-fa40ffa75217','Logged-In','2025-12-28 11:03:00','2025-12-28 11:03:00'),('5606fb22-ec80-4658-843d-41b72057dc9c','16cd5241-bd1c-44df-be31-fa40ffa75217','Logged-In','2025-12-28 10:43:32','2025-12-28 10:43:32'),('564fe950-fa88-4ca8-8709-a8cedb1339fd','16cd5241-bd1c-44df-be31-fa40ffa75217','Logged-In','2025-12-28 11:08:56','2025-12-28 11:08:56'),('5aa1854d-5dca-473d-80c4-91542a51ab55','16cd5241-bd1c-44df-be31-fa40ffa75217','Logged-In','2026-01-05 07:24:15','2026-01-05 07:24:15'),('5bc94673-cadd-4d78-a36a-0ae7b4808914','16cd5241-bd1c-44df-be31-fa40ffa75217','Logged-In','2025-12-28 11:12:08','2025-12-28 11:12:08'),('65b35485-a8d7-40c0-b5dd-0cac344eb423','16cd5241-bd1c-44df-be31-fa40ffa75217','Logged-In','2025-12-28 11:44:33','2025-12-28 11:44:33'),('6c7dbda2-50ce-4a20-98b7-720f3b6a625d','16cd5241-bd1c-44df-be31-fa40ffa75217','Logged-In','2025-12-28 10:41:37','2025-12-28 10:41:37'),('8237334a-19dd-47f3-a78d-031ce623b447','16cd5241-bd1c-44df-be31-fa40ffa75217','Logged-In','2025-12-28 10:42:14','2025-12-28 10:42:14'),('83556bad-9a4c-49d0-8ef6-ee2cbb9cd79c','16cd5241-bd1c-44df-be31-fa40ffa75217','Logged-In','2025-12-29 07:12:12','2025-12-29 07:12:12'),('85c24907-5716-41fe-b133-282a58176e05','16cd5241-bd1c-44df-be31-fa40ffa75217','Logged-In','2025-12-28 10:48:18','2025-12-28 10:48:18'),('8769832f-a931-441c-91a8-debaa251fd36','16cd5241-bd1c-44df-be31-fa40ffa75217','Logged-In','2025-12-29 05:48:56','2025-12-29 05:48:56'),('8d889778-41a9-494c-a193-8da877e236a2','16cd5241-bd1c-44df-be31-fa40ffa75217','Logged-In','2025-12-29 05:21:40','2025-12-29 05:21:40'),('8f8540a3-2648-4942-adac-b2ce3d14bf36','16cd5241-bd1c-44df-be31-fa40ffa75217','Logged-In','2025-12-29 07:25:34','2025-12-29 07:25:34'),('b1e13fa9-4224-42fe-ab90-79c3da727b35','16cd5241-bd1c-44df-be31-fa40ffa75217','Logged-In','2025-12-29 14:56:36','2025-12-29 14:56:36'),('b6fe3fa7-34e6-44b6-87ef-a86914320f37','16cd5241-bd1c-44df-be31-fa40ffa75217','Logged-Out','2025-12-29 07:22:01','2025-12-29 07:22:38'),('b83bf1ef-bcc8-4b2a-b81f-eac51632a780','16cd5241-bd1c-44df-be31-fa40ffa75217','Logged-In','2025-12-28 11:11:22','2025-12-28 11:11:22'),('c5f744d9-1a4b-4d66-80d4-edadb279f4d5','16cd5241-bd1c-44df-be31-fa40ffa75217','Logged-In','2025-12-28 10:36:41','2025-12-28 10:36:41'),('c682223f-11bb-470d-b288-2c8f936b4998','16cd5241-bd1c-44df-be31-fa40ffa75217','Logged-In','2025-12-28 09:42:04','2025-12-28 09:42:04'),('d00aacd3-9152-47df-a265-559298b4ea0b','16cd5241-bd1c-44df-be31-fa40ffa75217','Logged-Out','2025-12-28 11:17:58','2025-12-28 11:18:12'),('d0f32335-ce87-454e-8292-f98bd3c0b9b3','ccd7cac0-21f6-4d4a-9fd9-42058528c074','Logged-Out','2025-12-29 07:22:43','2025-12-29 07:25:15'),('dbb1cbcc-d2c6-42f6-8880-d4834d040853','ccd7cac0-21f6-4d4a-9fd9-42058528c074','Logged-Out','2025-12-29 07:10:44','2025-12-29 07:12:04'),('e7795dba-644e-4705-8cdf-caf74c4b74aa','16cd5241-bd1c-44df-be31-fa40ffa75217','Logged-In','2025-12-28 11:18:20','2025-12-28 11:18:20'),('f6c25852-1377-4732-adb5-92b11314f67d','16cd5241-bd1c-44df-be31-fa40ffa75217','Logged-Out','2025-12-29 07:06:04','2025-12-29 07:10:34');
 /*!40000 ALTER TABLE `login_histories` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1213,7 +1213,7 @@ DROP TABLE IF EXISTS `mammography_hero`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `mammography_hero` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `is_active` tinyint(1) NOT NULL DEFAULT '1',
   `is_deleted` tinyint(1) NOT NULL DEFAULT '0',
   `deleted_at` datetime DEFAULT NULL,
@@ -1242,14 +1242,14 @@ DROP TABLE IF EXISTS `mammography_products`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `mammography_products` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `overview` text COLLATE utf8mb4_unicode_ci,
-  `features` text COLLATE utf8mb4_unicode_ci,
-  `benefits` text COLLATE utf8mb4_unicode_ci,
-  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `section_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `image_position` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT 'left',
-  `background_color` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT 'from-gray-50 to-white',
+  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `overview` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `features` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `benefits` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `image` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `section_id` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image_position` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT 'left',
+  `background_color` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT 'from-gray-50 to-white',
   `order` int NOT NULL DEFAULT '0',
   `is_active` tinyint(1) NOT NULL DEFAULT '1',
   `is_deleted` tinyint(1) NOT NULL DEFAULT '0',
@@ -1279,10 +1279,10 @@ DROP TABLE IF EXISTS `mission_vision_content`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `mission_vision_content` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `section_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `icon` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` text COLLATE utf8mb4_unicode_ci,
+  `section_type` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `icon` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `is_active` tinyint(1) NOT NULL DEFAULT '1',
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
@@ -1311,9 +1311,9 @@ DROP TABLE IF EXISTS `mission_vision_hero`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `mission_vision_hero` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` text COLLATE utf8mb4_unicode_ci,
-  `background_image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `background_image` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `is_active` tinyint(1) NOT NULL DEFAULT '1',
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
@@ -1342,13 +1342,13 @@ DROP TABLE IF EXISTS `offerings`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `offerings` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `metric` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `icon` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `gradient` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `unit` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `color` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `metric` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `icon` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `gradient` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `unit` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `color` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `order` int NOT NULL DEFAULT '0',
   `is_active` tinyint(1) NOT NULL DEFAULT '1',
   `created_at` datetime NOT NULL,
@@ -1375,9 +1375,9 @@ DROP TABLE IF EXISTS `portable_xray_features`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `portable_xray_features` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` text COLLATE utf8mb4_unicode_ci,
-  `icon` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `icon` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `order` int NOT NULL DEFAULT '0',
   `is_active` tinyint(1) NOT NULL DEFAULT '1',
   `is_deleted` tinyint(1) NOT NULL DEFAULT '0',
@@ -1407,15 +1407,15 @@ DROP TABLE IF EXISTS `portable_xray_hero`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `portable_xray_hero` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'Portable X-Ray Systems',
+  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'Portable X-Ray Systems',
   `is_active` tinyint(1) NOT NULL DEFAULT '1',
   `is_deleted` tinyint(1) NOT NULL DEFAULT '0',
   `deleted_at` datetime DEFAULT NULL,
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
-  `subtitle` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `description` text COLLATE utf8mb4_unicode_ci,
-  `background_image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `subtitle` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `background_image` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -1439,8 +1439,8 @@ DROP TABLE IF EXISTS `portable_xray_overview`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `portable_xray_overview` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `description` text COLLATE utf8mb4_unicode_ci,
+  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `is_active` tinyint(1) NOT NULL DEFAULT '1',
   `is_deleted` tinyint(1) NOT NULL DEFAULT '0',
   `deleted_at` datetime DEFAULT NULL,
@@ -1469,14 +1469,14 @@ DROP TABLE IF EXISTS `portable_xray_products`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `portable_xray_products` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `overview` text COLLATE utf8mb4_unicode_ci,
-  `features` text COLLATE utf8mb4_unicode_ci,
-  `benefits` text COLLATE utf8mb4_unicode_ci,
-  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `section_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `image_position` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT 'left',
-  `background_color` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT 'from-gray-50 to-white',
+  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `overview` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `features` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `benefits` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `image` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `section_id` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image_position` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT 'left',
+  `background_color` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT 'from-gray-50 to-white',
   `order` int NOT NULL DEFAULT '0',
   `is_active` tinyint(1) NOT NULL DEFAULT '1',
   `is_deleted` tinyint(1) NOT NULL DEFAULT '0',
@@ -1493,7 +1493,7 @@ CREATE TABLE `portable_xray_products` (
 
 LOCK TABLES `portable_xray_products` WRITE;
 /*!40000 ALTER TABLE `portable_xray_products` DISABLE KEYS */;
-INSERT INTO `portable_xray_products` VALUES (1,'Sample Portable X-Ray Product','Advanced portable X-Ray system','[\"Portable\",\"High quality\",\"Easy to use\"]','Convenient point-of-care imaging','','sample-portable','left','from-gray-50 to-white',1,1,1,'2025-12-29 05:58:47','2025-12-28 09:00:49','2025-12-29 05:58:47'),(2,'Mini 90 Point-of-Care X-Ray','The Mini 90 is a lightweight, compact, portable X-Ray unit designed for point-of-care emergencies, homecare, accident sites, and smaller clinics.','[\"High penetration with selectable kV range from 40 kV to 90 kV\",\"Programmable exposure settings\",\"Small focal spot of 0.8mm\",\"Built-in Lithium-polymer batteries for up to 150 exposures per charge\"]','Offers exceptional portability with high-quality imaging in critical and remote care situations.','','mini90pointofcarexray','left','from-gray-50 to-white',1,1,0,NULL,'2025-12-28 15:57:38','2025-12-28 15:57:38'),(3,'ADONIS HF Mobile DR','The ADONIS HF Mobile DR system is a compact and lightweight digital radiography solution that ensures productivity and flexibility in ICUs, ERs, and operating rooms.','[\"Featherweight design\",\"Actuator-based motorized vertical movement\",\"Dual battery system\",\"Soft touch keypad with auto-programmable features\"]','Ensures ease of use and mobility for high-demand environments where space and flexibility are crucial.','','adonishfmobiledr','right','from-white to-gray-50',2,1,0,NULL,'2025-12-28 15:57:38','2025-12-28 15:57:38');
+INSERT INTO `portable_xray_products` VALUES (2,'Mini 90 Point-of-Care X-Ray','The Mini 90 is a lightweight, compact, portable X-Ray unit designed for point-of-care emergencies, homecare, accident sites, and smaller clinics.','[\"High penetration with selectable kV range from 40 kV to 90 kV\",\"Programmable exposure settings\",\"Small focal spot of 0.8mm\",\"Built-in Lithium-polymer batteries for up to 150 exposures per charge\"]','Offers exceptional portability with high-quality imaging in critical and remote care situations.','/uploads/images/image-1767020286476-216579518.jpg','mini90pointofcarexray','left','from-gray-50 to-white',1,1,0,NULL,'2025-12-28 15:57:38','2025-12-29 14:58:08'),(3,'ADONIS HF Mobile DR','The ADONIS HF Mobile DR system is a compact and lightweight digital radiography solution that ensures productivity and flexibility in ICUs, ERs, and operating rooms.','[\"Featherweight design\",\"Actuator-based motorized vertical movement\",\"Dual battery system\",\"Soft touch keypad with auto-programmable features\"]','Ensures ease of use and mobility for high-demand environments where space and flexibility are crucial.','/uploads/images/image-1767020315943-597141740.jpg','adonishfmobiledr','right','from-white to-gray-50',2,1,0,NULL,'2025-12-28 15:57:38','2025-12-29 14:58:37');
 /*!40000 ALTER TABLE `portable_xray_products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1506,8 +1506,8 @@ DROP TABLE IF EXISTS `portable_xray_specifications`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `portable_xray_specifications` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `value` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `value` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `order` int NOT NULL DEFAULT '0',
   `is_active` tinyint(1) NOT NULL DEFAULT '1',
   `is_deleted` tinyint(1) NOT NULL DEFAULT '0',
@@ -1537,18 +1537,18 @@ DROP TABLE IF EXISTS `product_hero`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `product_hero` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `background_image` text COLLATE utf8mb4_unicode_ci,
-  `overlay_from` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT 'rgba(0,0,0,0.5)',
-  `overlay_to` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT 'rgba(0,0,0,0.3)',
-  `title_line1` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `title_line2` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `subtitle` text COLLATE utf8mb4_unicode_ci,
-  `highlight_text` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `description` text COLLATE utf8mb4_unicode_ci,
-  `title_color` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT '#ffffff',
-  `subtitle_color` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT 'rgba(255,255,255,0.9)',
-  `description_color` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT 'rgba(255,255,255,0.8)',
-  `aos_type` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `background_image` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `overlay_from` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT 'rgba(0,0,0,0.5)',
+  `overlay_to` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT 'rgba(0,0,0,0.3)',
+  `title_line1` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title_line2` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `subtitle` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `highlight_text` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `title_color` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT '#ffffff',
+  `subtitle_color` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT 'rgba(255,255,255,0.9)',
+  `description_color` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT 'rgba(255,255,255,0.8)',
+  `aos_type` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `aos_duration` int DEFAULT NULL,
   `aos_delay` int DEFAULT NULL,
   `is_active` tinyint(1) DEFAULT '1',
@@ -1576,7 +1576,7 @@ DROP TABLE IF EXISTS `radiography_hero`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `radiography_hero` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `is_active` tinyint(1) NOT NULL DEFAULT '1',
   `is_deleted` tinyint(1) NOT NULL DEFAULT '0',
   `deleted_at` datetime DEFAULT NULL,
@@ -1605,14 +1605,14 @@ DROP TABLE IF EXISTS `radiography_products`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `radiography_products` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `overview` text COLLATE utf8mb4_unicode_ci,
-  `features` text COLLATE utf8mb4_unicode_ci,
-  `benefits` text COLLATE utf8mb4_unicode_ci,
-  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `section_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `image_position` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT 'left',
-  `background_color` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT 'from-gray-50 to-white',
+  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `overview` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `features` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `benefits` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `image` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `section_id` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image_position` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT 'left',
+  `background_color` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT 'from-gray-50 to-white',
   `order` int NOT NULL DEFAULT '0',
   `is_active` tinyint(1) NOT NULL DEFAULT '1',
   `is_deleted` tinyint(1) NOT NULL DEFAULT '0',
@@ -1620,7 +1620,7 @@ CREATE TABLE `radiography_products` (
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1629,7 +1629,7 @@ CREATE TABLE `radiography_products` (
 
 LOCK TABLES `radiography_products` WRITE;
 /*!40000 ALTER TABLE `radiography_products` DISABLE KEYS */;
-INSERT INTO `radiography_products` VALUES (1,'DReam CMT-Dual (Ceiling Type, Dual Detector)','The DReam CMT-Dual system is designed to enhance patient throughput and optimize performance. Its dual detector system allows for rapid, high-quality image acquisition, coupled with ergonomic design for easy operation.\n','[\"Synchronized detector stand and tube movement (optional)\",\"Automatic positioning for versatile applications\",\"Elevating horizontal table\",\"Bucky tilt for upper extremity studies\"]','This system translates into higher performance, reduces non-essential work steps, and is ideal for high-demand environments.','/uploads/images/image-1766986483763-155369456.jpg','DReam CMT-Dual (Ceiling Type, Dual Detector)','left','from-gray-50 to-white',1,1,0,NULL,'2025-12-28 09:00:49','2025-12-29 05:34:46'),(2,'DReam CMT-Single (Ceiling Type, Single Detector)','The DReam CMT-Single system is designed for smaller rooms and moderate patient throughput, offering flexibility and extended freedom of movement for challenging clinical examinations.','[\"Tube mounted auto tracking and positioning\",\"High spatial resolution for best image quality\",\"Auto exposure and pre-set programs for faster throughput\",\"Optimized image processing software\"]','Ideal for stand-alone diagnostic centers, emergency care, and specialty hospitals where space is limited but high-quality imaging is required.','/uploads/images/image-1766986523439-585416781.jpg','DReam-CMT-Single-Ceiling-Type-Single-Detector','right','from-gray-50 to-white',2,1,0,NULL,'2025-12-28 15:30:41','2025-12-29 05:36:11'),(3,'DReam Floor Mounted DR','The DReam Floor Mounted DR system provides a cost-effective and high-performance radiography solution with advanced features and easy operability.','[\"Digital display for kV/mA/mAs selection\",\"APR-based control for all body parts\",\"Microprocessor control tube for overload protection\",\"Automatic voltage compensation\"]','This system ensures high reliability and accuracy, making it suitable for various radiological needs.','/uploads/images/image-1766986592480-887824812.jpg','dream-floor-mounted-dr','left','from-gray-50 to-white',3,1,0,NULL,'2025-12-28 15:30:41','2025-12-29 05:36:52'),(4,'ADONIS 100HF/150HF Mobile X-Ray','The ADONIS Mobile X-Ray system is compact and lightweight, designed for easy mobility in all directions with effective braking, making it ideal for bedside X-Ray needs.\n','[\"Actuator-based motorized vertical movement\",\"Soft-touch keypad with auto-programmable features\",\"Detachable exposure release switch\",\"Horizontal table/semi-motorized table/vertical bucky (optional)\"]','Offers portability and flexibility for on-the-go radiography, particularly in hospital wards or remote locations.','/uploads/images/image-1766986630355-503715749.jpg','adonis-100hf-150hf-mobile-xray','right','from-gray-50 to-white',4,1,0,NULL,'2025-12-28 15:30:41','2025-12-29 05:37:37'),(5,'Adonis HF Radiographic Systems 300mA / 500mA / 600mA','The Adonis HF Radiographic Systems are high-frequency X-ray systems developed to meet a broad range of radiological needs with high-contrast imaging and reduced patient skin dose.','[\"Digital display of factors\",\"APR-based control with 200 programs\",\"Motorized table (depending on the system)\",\"Automatic voltage compensation\"]','These systems are built for high efficiency and reliability, providing superior imaging performance at an affordable price.','/uploads/images/image-1766986829280-767402483.jpg','ADONIS 100HF/150HF Mobile X-Ray','left','from-gray-50 to-white',5,1,0,NULL,'2025-12-29 05:39:33','2025-12-29 05:40:45');
+INSERT INTO `radiography_products` VALUES (1,'DReam CMT-Dual (Ceiling Type, Dual Detector)','The DReam CMT-Dual system is designed to enhance patient throughput and optimize performance. Its dual detector system allows for rapid, high-quality image acquisition, coupled with ergonomic design for easy operation.\n','[\"Synchronized detector stand and tube movement (optional)\",\"Automatic positioning for versatile applications\",\"Elevating horizontal table\",\"Bucky tilt for upper extremity studies\"]','This system translates into higher performance, reduces non-essential work steps, and is ideal for high-demand environments.','/uploads/images/image-1766986483763-155369456.jpg','dreamcmtdual','left','from-gray-50 to-white',2,1,0,NULL,'2025-12-28 09:00:49','2026-01-05 08:44:18'),(2,'DReam CMT-Single (Ceiling Type, Single Detector)','The DReam CMT-Single system is designed for smaller rooms and moderate patient throughput, offering flexibility and extended freedom of movement for challenging clinical examinations.','[\"Tube mounted auto tracking and positioning\",\"High spatial resolution for best image quality\",\"Auto exposure and pre-set programs for faster throughput\",\"Optimized image processing software\"]','Ideal for stand-alone diagnostic centers, emergency care, and specialty hospitals where space is limited but high-quality imaging is required.','/uploads/images/image-1766986523439-585416781.jpg','dreamcmtsingle','right','from-gray-50 to-white',3,1,0,NULL,'2025-12-28 15:30:41','2026-01-05 08:43:53'),(3,'DReam Floor Mounted DR','The DReam Floor Mounted DR system provides a cost-effective and high-performance radiography solution with advanced features and easy operability.','[\"Digital display for kV/mA/mAs selection\",\"APR-based control for all body parts\",\"Microprocessor control tube for overload protection\",\"Automatic voltage compensation\"]','This system ensures high reliability and accuracy, making it suitable for various radiological needs.','/uploads/images/image-1766986592480-887824812.jpg','dreamfloormounteddr','left','from-gray-50 to-white',4,1,0,NULL,'2025-12-28 15:30:41','2026-01-05 08:43:33'),(4,'ADONIS 100HF/150HF Mobile X-Ray','The ADONIS Mobile X-Ray system is compact and lightweight, designed for easy mobility in all directions with effective braking, making it ideal for bedside X-Ray needs.\n','[\"Actuator-based motorized vertical movement\",\"Soft-touch keypad with auto-programmable features\",\"Detachable exposure release switch\",\"Horizontal table/semi-motorized table/vertical bucky (optional)\"]','Offers portability and flexibility for on-the-go radiography, particularly in hospital wards or remote locations.','/uploads/images/image-1766986630355-503715749.jpg','addonis100hf150hfmobilexray','right','from-gray-50 to-white',5,1,0,NULL,'2025-12-28 15:30:41','2026-01-05 08:43:14'),(5,'Adonis HF Radiographic Systems 300mA / 500mA / 600mA','The Adonis HF Radiographic Systems are high-frequency X-ray systems developed to meet a broad range of radiological needs with high-contrast imaging and reduced patient skin dose.','[\"Digital display of factors\",\"APR-based control with 200 programs\",\"Motorized table (depending on the system)\",\"Automatic voltage compensation\"]','These systems are built for high efficiency and reliability, providing superior imaging performance at an affordable price.','/uploads/images/image-1766986829280-767402483.jpg','adonishfradiographicsystems300ma500ma600ma','left','from-gray-50 to-white',6,1,0,NULL,'2025-12-29 05:39:33','2026-01-05 08:42:44'),(6,'FPD C-ARM','A Made-in-India advanced imaging system offering high-resolution, low-dose imaging for a wide range of surgical procedures.','[\"CsI Flat Panel Detector\",\"Large Field of View\",\"ADONIS TIALIC low-dose technology\",\"Wireless connectivity with PACS\",\"Compact, space-saving design\"]','Clear, detailed images\nReduced radiation exposure\nFaster, smoother workflow\nSuitable for multiple surgical specialties\nEasy hospital system integration','/uploads/images/image-1767601797350-796844051.jpg','fpd-c-arm','right','from-gray-50 to-white',1,1,0,NULL,'2026-01-05 08:30:00','2026-01-05 08:42:10');
 /*!40000 ALTER TABLE `radiography_products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1642,7 +1642,7 @@ DROP TABLE IF EXISTS `refurbished_mri_hero`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `refurbished_mri_hero` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `is_active` tinyint(1) NOT NULL DEFAULT '1',
   `is_deleted` tinyint(1) NOT NULL DEFAULT '0',
   `deleted_at` datetime DEFAULT NULL,
@@ -1671,14 +1671,14 @@ DROP TABLE IF EXISTS `refurbished_mri_products`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `refurbished_mri_products` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `overview` text COLLATE utf8mb4_unicode_ci,
-  `features` text COLLATE utf8mb4_unicode_ci,
-  `benefits` text COLLATE utf8mb4_unicode_ci,
-  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `section_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `image_position` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT 'left',
-  `background_color` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT 'from-gray-50 to-white',
+  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `overview` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `features` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `benefits` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `image` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `section_id` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image_position` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT 'left',
+  `background_color` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT 'from-gray-50 to-white',
   `order` int NOT NULL DEFAULT '0',
   `is_active` tinyint(1) NOT NULL DEFAULT '1',
   `is_deleted` tinyint(1) NOT NULL DEFAULT '0',
@@ -1695,7 +1695,7 @@ CREATE TABLE `refurbished_mri_products` (
 
 LOCK TABLES `refurbished_mri_products` WRITE;
 /*!40000 ALTER TABLE `refurbished_mri_products` DISABLE KEYS */;
-INSERT INTO `refurbished_mri_products` VALUES (2,'GE Signa HDxt 1.5Tesla','The GE Signa HDxt 1.5T delivers superior imaging results, equipped with advanced gradient systems and optimized for high-performance image generation across all applications.','[\"48 cm field of view (FOV)\",\"High accuracy gradients and real-time image processing\",\"Enhanced contrast and reduced blurring for small FOV\",\"Advanced applications including Propeller 3.0, Lavaflex, DTI\"]','Provides high-definition imaging for a wide range of clinical applications, ensuring top-quality diagnostic performance.','/uploads/images/image-1766939230316-673130234.jpg','gesignahdxt15tesla','left','from-gray-50 to-white',2,1,0,NULL,'2025-12-28 15:57:24','2025-12-28 16:27:12'),(3,'Philips Achieva 3.0Tesla X-Series','The Philips Achieva 3.0T X-series offers comprehensive MRI capabilities, featuring advanced imaging technology for a broad range of clinical needs.','[\"Exclusive quaser gradient systems for superb performance\",\"SENSE for reduced scan times and enhanced resolution\",\"Smart Exams for consistent MRI examination results\",\"Powerful Transmit Technology for optimal RF uniformity\"]','Delivers exceptional image quality and operational efficiency, making it a preferred choice for advanced MRI imaging.','/uploads/images/image-1766988352056-331043757.jpg','philipsachieva30teslaxseries','right','from-white to-gray-50',1,1,0,NULL,'2025-12-28 15:57:24','2025-12-29 06:05:54');
+INSERT INTO `refurbished_mri_products` VALUES (2,'GE Signa HDxt 1.5 Tesla','The GE Signa HDxt 1.5T delivers superior imaging results, equipped with advanced gradient systems and optimized for high-performance image generation across all applications.','[\"48 cm field of view (FOV)\",\"High accuracy gradients and real-time image processing\",\"Enhanced contrast and reduced blurring for small FOV\",\"Advanced applications including Propeller 3.0, Lavaflex, DTI\"]','Provides high-definition imaging for a wide range of clinical applications, ensuring top-quality diagnostic performance.','/uploads/images/image-1766939230316-673130234.jpg','gesignahdxt15tesla','left','from-gray-50 to-white',2,1,0,NULL,'2025-12-28 15:57:24','2026-01-05 08:46:39'),(3,'Philips Achieva 3.0 Tesla X-Series','The Philips Achieva 3.0T X-series offers comprehensive MRI capabilities, featuring advanced imaging technology for a broad range of clinical needs.','[\"Exclusive quaser gradient systems for superb performance\",\"SENSE for reduced scan times and enhanced resolution\",\"Smart Exams for consistent MRI examination results\",\"Powerful Transmit Technology for optimal RF uniformity\"]','Delivers exceptional image quality and operational efficiency, making it a preferred choice for advanced MRI imaging.','/uploads/images/image-1766988352056-331043757.jpg','philipsachieva30teslaxseries','right','from-white to-gray-50',1,1,0,NULL,'2025-12-28 15:57:24','2026-01-05 08:46:33');
 /*!40000 ALTER TABLE `refurbished_mri_products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1708,11 +1708,11 @@ DROP TABLE IF EXISTS `regulatory_approvals`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `regulatory_approvals` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `image` text COLLATE utf8mb4_unicode_ci,
-  `link` text COLLATE utf8mb4_unicode_ci,
-  `color` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `link` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `color` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `order` int NOT NULL DEFAULT '0',
   `is_active` tinyint(1) NOT NULL DEFAULT '1',
   `created_at` datetime NOT NULL,
@@ -1739,9 +1739,9 @@ DROP TABLE IF EXISTS `research_innovations`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `research_innovations` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `card_title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `card_subtitle` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `card_description` text COLLATE utf8mb4_unicode_ci,
+  `card_title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `card_subtitle` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `card_description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `order` int DEFAULT '0',
   `is_active` tinyint(1) DEFAULT '1',
   `created_at` datetime NOT NULL,
@@ -1768,9 +1768,9 @@ DROP TABLE IF EXISTS `search_results`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `search_results` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `date` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `url` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `date` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `url` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `page_number` int NOT NULL DEFAULT '1',
   `display_order` int NOT NULL DEFAULT '0',
   `is_active` tinyint(1) NOT NULL DEFAULT '1',
@@ -1801,11 +1801,11 @@ DROP TABLE IF EXISTS `statistics`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `statistics` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `value` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `image` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `color` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `value` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `color` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `order` int NOT NULL DEFAULT '0',
   `is_active` tinyint(1) NOT NULL DEFAULT '1',
   `created_at` datetime NOT NULL,
@@ -1832,11 +1832,11 @@ DROP TABLE IF EXISTS `sustainability_footer_section`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `sustainability_footer_section` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `subtitle` text COLLATE utf8mb4_unicode_ci,
-  `cta_text` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `cta_icon` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `background_image_url` text COLLATE utf8mb4_unicode_ci,
+  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `subtitle` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `cta_text` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `cta_icon` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `background_image_url` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `is_active` tinyint(1) DEFAULT '1',
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
@@ -1862,8 +1862,8 @@ DROP TABLE IF EXISTS `sustainability_heart`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `sustainability_heart` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `main_title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `main_subtitle` text COLLATE utf8mb4_unicode_ci,
+  `main_title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `main_subtitle` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `sections` json DEFAULT NULL,
   `commitments` json DEFAULT NULL,
   `is_active` tinyint(1) DEFAULT '1',
@@ -1891,9 +1891,9 @@ DROP TABLE IF EXISTS `sustainability_hero`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `sustainability_hero` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` text COLLATE utf8mb4_unicode_ci,
-  `background_image` text COLLATE utf8mb4_unicode_ci,
+  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `background_image` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `is_active` tinyint(1) DEFAULT '1',
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
@@ -1919,10 +1919,10 @@ DROP TABLE IF EXISTS `sustainability_policy`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `sustainability_policy` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` text COLLATE utf8mb4_unicode_ci,
-  `icon` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `color` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `icon` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `color` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `order` int DEFAULT '0',
   `is_active` tinyint(1) DEFAULT '1',
   `created_at` datetime NOT NULL,
@@ -1950,10 +1950,10 @@ DROP TABLE IF EXISTS `sustainability_sdg_card`;
 CREATE TABLE `sustainability_sdg_card` (
   `id` int NOT NULL AUTO_INCREMENT,
   `number` int NOT NULL,
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `contribution` text COLLATE utf8mb4_unicode_ci,
-  `icon` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `color` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `contribution` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `icon` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `color` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `order` int DEFAULT '0',
   `is_active` tinyint(1) DEFAULT '1',
   `created_at` datetime NOT NULL,
@@ -1980,12 +1980,12 @@ DROP TABLE IF EXISTS `sustainability_social_section`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `sustainability_social_section` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `section_title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `section_description` text COLLATE utf8mb4_unicode_ci,
+  `section_title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `section_description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `is_active` tinyint(1) DEFAULT '1',
   `csr_cards` json DEFAULT NULL,
-  `csr_impact_title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `csr_impact_description` text COLLATE utf8mb4_unicode_ci,
+  `csr_impact_title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `csr_impact_description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `csr_impact_items` json DEFAULT NULL,
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
@@ -2011,14 +2011,14 @@ DROP TABLE IF EXISTS `sustainability_vision_mission`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `sustainability_vision_mission` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `section_title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `section_subtitle` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `vision_title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `vision_subtitle` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `vision_description` text COLLATE utf8mb4_unicode_ci,
+  `section_title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `section_subtitle` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `vision_title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `vision_subtitle` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `vision_description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `vision_points` json DEFAULT NULL,
-  `mission_title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `mission_subtitle` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `mission_title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `mission_subtitle` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `mission_points` json DEFAULT NULL,
   `stats` json DEFAULT NULL,
   `is_active` tinyint(1) DEFAULT '1',
@@ -2060,46 +2060,11 @@ CREATE TABLE `users` (
   `created_at` datetime NOT NULL,
   `modified_at` datetime NOT NULL,
   `deleted_at` datetime DEFAULT NULL,
-  `allowed_cms_pages` text COLLATE utf8mb4_unicode_ci COMMENT 'JSON array of allowed CMS page IDs',
+  `allowed_cms_pages` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci COMMENT 'JSON array of allowed CMS page IDs',
   PRIMARY KEY (`id`),
   KEY `created_by` (`created_by`),
   KEY `modified_by` (`modified_by`),
   KEY `deleted_by` (`deleted_by`),
-  CONSTRAINT `users_ibfk_1` FOREIGN KEY (`created_by`) REFERENCES `users` (`id`) ON UPDATE CASCADE,
-  CONSTRAINT `users_ibfk_10` FOREIGN KEY (`created_by`) REFERENCES `users` (`id`) ON UPDATE CASCADE,
-  CONSTRAINT `users_ibfk_100` FOREIGN KEY (`created_by`) REFERENCES `users` (`id`) ON UPDATE CASCADE,
-  CONSTRAINT `users_ibfk_101` FOREIGN KEY (`modified_by`) REFERENCES `users` (`id`) ON UPDATE CASCADE,
-  CONSTRAINT `users_ibfk_102` FOREIGN KEY (`deleted_by`) REFERENCES `users` (`id`) ON UPDATE CASCADE,
-  CONSTRAINT `users_ibfk_103` FOREIGN KEY (`created_by`) REFERENCES `users` (`id`) ON UPDATE CASCADE,
-  CONSTRAINT `users_ibfk_104` FOREIGN KEY (`modified_by`) REFERENCES `users` (`id`) ON UPDATE CASCADE,
-  CONSTRAINT `users_ibfk_105` FOREIGN KEY (`deleted_by`) REFERENCES `users` (`id`) ON UPDATE CASCADE,
-  CONSTRAINT `users_ibfk_106` FOREIGN KEY (`created_by`) REFERENCES `users` (`id`) ON UPDATE CASCADE,
-  CONSTRAINT `users_ibfk_107` FOREIGN KEY (`modified_by`) REFERENCES `users` (`id`) ON UPDATE CASCADE,
-  CONSTRAINT `users_ibfk_108` FOREIGN KEY (`deleted_by`) REFERENCES `users` (`id`) ON UPDATE CASCADE,
-  CONSTRAINT `users_ibfk_109` FOREIGN KEY (`created_by`) REFERENCES `users` (`id`) ON UPDATE CASCADE,
-  CONSTRAINT `users_ibfk_11` FOREIGN KEY (`modified_by`) REFERENCES `users` (`id`) ON UPDATE CASCADE,
-  CONSTRAINT `users_ibfk_110` FOREIGN KEY (`modified_by`) REFERENCES `users` (`id`) ON UPDATE CASCADE,
-  CONSTRAINT `users_ibfk_111` FOREIGN KEY (`deleted_by`) REFERENCES `users` (`id`) ON UPDATE CASCADE,
-  CONSTRAINT `users_ibfk_112` FOREIGN KEY (`created_by`) REFERENCES `users` (`id`) ON UPDATE CASCADE,
-  CONSTRAINT `users_ibfk_113` FOREIGN KEY (`modified_by`) REFERENCES `users` (`id`) ON UPDATE CASCADE,
-  CONSTRAINT `users_ibfk_114` FOREIGN KEY (`deleted_by`) REFERENCES `users` (`id`) ON UPDATE CASCADE,
-  CONSTRAINT `users_ibfk_115` FOREIGN KEY (`created_by`) REFERENCES `users` (`id`) ON UPDATE CASCADE,
-  CONSTRAINT `users_ibfk_116` FOREIGN KEY (`modified_by`) REFERENCES `users` (`id`) ON UPDATE CASCADE,
-  CONSTRAINT `users_ibfk_117` FOREIGN KEY (`deleted_by`) REFERENCES `users` (`id`) ON UPDATE CASCADE,
-  CONSTRAINT `users_ibfk_118` FOREIGN KEY (`created_by`) REFERENCES `users` (`id`) ON UPDATE CASCADE,
-  CONSTRAINT `users_ibfk_119` FOREIGN KEY (`modified_by`) REFERENCES `users` (`id`) ON UPDATE CASCADE,
-  CONSTRAINT `users_ibfk_12` FOREIGN KEY (`deleted_by`) REFERENCES `users` (`id`) ON UPDATE CASCADE,
-  CONSTRAINT `users_ibfk_120` FOREIGN KEY (`deleted_by`) REFERENCES `users` (`id`) ON UPDATE CASCADE,
-  CONSTRAINT `users_ibfk_121` FOREIGN KEY (`created_by`) REFERENCES `users` (`id`) ON UPDATE CASCADE,
-  CONSTRAINT `users_ibfk_122` FOREIGN KEY (`modified_by`) REFERENCES `users` (`id`) ON UPDATE CASCADE,
-  CONSTRAINT `users_ibfk_123` FOREIGN KEY (`deleted_by`) REFERENCES `users` (`id`) ON UPDATE CASCADE,
-  CONSTRAINT `users_ibfk_124` FOREIGN KEY (`created_by`) REFERENCES `users` (`id`) ON UPDATE CASCADE,
-  CONSTRAINT `users_ibfk_125` FOREIGN KEY (`modified_by`) REFERENCES `users` (`id`) ON UPDATE CASCADE,
-  CONSTRAINT `users_ibfk_126` FOREIGN KEY (`deleted_by`) REFERENCES `users` (`id`) ON UPDATE CASCADE,
-  CONSTRAINT `users_ibfk_127` FOREIGN KEY (`created_by`) REFERENCES `users` (`id`) ON UPDATE CASCADE,
-  CONSTRAINT `users_ibfk_128` FOREIGN KEY (`modified_by`) REFERENCES `users` (`id`) ON UPDATE CASCADE,
-  CONSTRAINT `users_ibfk_129` FOREIGN KEY (`deleted_by`) REFERENCES `users` (`id`) ON UPDATE CASCADE,
-  CONSTRAINT `users_ibfk_13` FOREIGN KEY (`created_by`) REFERENCES `users` (`id`) ON UPDATE CASCADE,
   CONSTRAINT `users_ibfk_130` FOREIGN KEY (`created_by`) REFERENCES `users` (`id`) ON UPDATE CASCADE,
   CONSTRAINT `users_ibfk_131` FOREIGN KEY (`modified_by`) REFERENCES `users` (`id`) ON UPDATE CASCADE,
   CONSTRAINT `users_ibfk_132` FOREIGN KEY (`deleted_by`) REFERENCES `users` (`id`) ON UPDATE CASCADE,
@@ -2616,10 +2581,10 @@ DROP TABLE IF EXISTS `value_items`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `value_items` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `icon` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `color` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `icon` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `color` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `order` int NOT NULL DEFAULT '0',
   `is_active` tinyint(1) NOT NULL DEFAULT '1',
   `created_at` datetime NOT NULL,
@@ -2646,12 +2611,12 @@ DROP TABLE IF EXISTS `version_control`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `version_control` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `section_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Type of section: home-hero, home-about-section, home-image-box, home-commitment',
+  `section_type` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Type of section: home-hero, home-about-section, home-image-box, home-commitment',
   `section_id` int DEFAULT NULL COMMENT 'ID of the specific item (null for single-instance sections like hero)',
   `version_number` int NOT NULL DEFAULT '1',
-  `data` text COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'JSON string of the section data at this version',
+  `data` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'JSON string of the section data at this version',
   `user_id` int DEFAULT NULL COMMENT 'User who created this version',
-  `change_description` text COLLATE utf8mb4_unicode_ci COMMENT 'Optional description of what changed',
+  `change_description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci COMMENT 'Optional description of what changed',
   `is_active` tinyint(1) NOT NULL DEFAULT '1',
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
@@ -2679,16 +2644,16 @@ DROP TABLE IF EXISTS `why_choose_us`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `why_choose_us` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `section_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `title` text COLLATE utf8mb4_unicode_ci,
-  `subtitle` text COLLATE utf8mb4_unicode_ci,
-  `description` text COLLATE utf8mb4_unicode_ci,
-  `background_image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `button_text` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `button_link` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `list_items` text COLLATE utf8mb4_unicode_ci,
-  `cards` text COLLATE utf8mb4_unicode_ci,
+  `section_type` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `subtitle` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `background_image` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `button_text` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `button_link` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `list_items` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `cards` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `is_active` tinyint(1) NOT NULL DEFAULT '1',
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
@@ -2716,9 +2681,9 @@ DROP TABLE IF EXISTS `why_choose_us_advantages`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `why_choose_us_advantages` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `subtitle` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `cards` text COLLATE utf8mb4_unicode_ci,
+  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `subtitle` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `cards` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `is_active` tinyint(1) NOT NULL DEFAULT '1',
   `is_deleted` tinyint(1) NOT NULL DEFAULT '0',
   `deleted_at` datetime DEFAULT NULL,
@@ -2747,11 +2712,11 @@ DROP TABLE IF EXISTS `why_choose_us_hero`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `why_choose_us_hero` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` text COLLATE utf8mb4_unicode_ci,
-  `background_image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `button_text` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `button_link` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `background_image` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `button_text` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `button_link` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `is_active` tinyint(1) NOT NULL DEFAULT '1',
   `is_deleted` tinyint(1) NOT NULL DEFAULT '0',
   `deleted_at` datetime DEFAULT NULL,
@@ -2780,9 +2745,9 @@ DROP TABLE IF EXISTS `why_choose_us_offerings`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `why_choose_us_offerings` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `list_items` text COLLATE utf8mb4_unicode_ci,
+  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `list_items` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `is_active` tinyint(1) NOT NULL DEFAULT '1',
   `is_deleted` tinyint(1) NOT NULL DEFAULT '0',
   `deleted_at` datetime DEFAULT NULL,
@@ -2803,11 +2768,11 @@ INSERT INTO `why_choose_us_offerings` VALUES (1,'Our Offerings','/uploads/images
 UNLOCK TABLES;
 
 --
--- Dumping events for database '3imedtechcms'
+-- Dumping events for database '3imedtech_production'
 --
 
 --
--- Dumping routines for database '3imedtechcms'
+-- Dumping routines for database '3imedtech_production'
 --
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -2819,4 +2784,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-12-29 12:57:05
+-- Dump completed on 2026-01-05 14:31:54

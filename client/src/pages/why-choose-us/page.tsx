@@ -110,7 +110,7 @@ export default function WhyChooseUs() {
               <h4 
                 className="text-white"
                 style={{
-                  fontFamily: 'Montserrat, sans-serif',
+                  fontFamily: 'Rubik, sans-serif',
                   fontWeight: 500,
                   color: 'white',
                   fontSize: '1.25rem',

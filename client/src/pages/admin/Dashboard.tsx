@@ -4499,10 +4499,10 @@ export default function AdminDashboard() {
                 <div className="p-6">
                   <div className="space-y-6">
                     <div>
-                      <h4 className="text-2xl font-bold text-gray-900 mb-4 font-montserrat">
+                      <h4 className="text-2xl font-bold text-gray-900 mb-4 font-rubik">
                         {(data as any).contactGetInTouch?.title || 'Get in Touch'}
                       </h4>
-                      <p className="text-lg text-gray-600 leading-relaxed font-montserrat">
+                      <p className="text-lg text-gray-600 leading-relaxed font-rubik">
                         {(data as any).contactGetInTouch?.description || 'Description not set'}
                       </p>
                     </div>
@@ -4518,10 +4518,10 @@ export default function AdminDashboard() {
                           <i className={`${(data as any).contactGetInTouch?.location?.icon || 'ri-map-pin-line'} text-white text-xl`}></i>
                         </div>
                         <div>
-                          <h5 className="text-lg font-semibold text-gray-900 mb-2 font-montserrat">
+                          <h5 className="text-lg font-semibold text-gray-900 mb-2 font-rubik">
                             {(data as any).contactGetInTouch?.location?.title || 'Our Location'}
                           </h5>
-                          <p className="text-gray-600 font-montserrat" dangerouslySetInnerHTML={{
+                          <p className="text-gray-600 font-rubik" dangerouslySetInnerHTML={{
                             __html: (data as any).contactGetInTouch?.location?.address || 'Address not set'
                           }}></p>
                         </div>
@@ -4536,13 +4536,13 @@ export default function AdminDashboard() {
                           <i className={`${(data as any).contactGetInTouch?.phone?.icon || 'ri-phone-line'} text-white text-xl`}></i>
                         </div>
                         <div>
-                          <h5 className="text-lg font-semibold text-gray-900 mb-2 font-montserrat">
+                          <h5 className="text-lg font-semibold text-gray-900 mb-2 font-rubik">
                             {(data as any).contactGetInTouch?.phone?.title || 'Phone'}
                           </h5>
-                          <p className="text-gray-600 font-montserrat">
+                          <p className="text-gray-600 font-rubik">
                             {(data as any).contactGetInTouch?.phone?.number || 'Phone number not set'}
                           </p>
-                          <p className="text-sm text-gray-500 font-montserrat">
+                          <p className="text-sm text-gray-500 font-rubik">
                             {(data as any).contactGetInTouch?.phone?.hours || 'Hours not set'}
                           </p>
                         </div>
@@ -4557,13 +4557,13 @@ export default function AdminDashboard() {
                           <i className={`${(data as any).contactGetInTouch?.email?.icon || 'ri-mail-line'} text-white text-xl`}></i>
                         </div>
                         <div>
-                          <h5 className="text-lg font-semibold text-gray-900 mb-2 font-montserrat">
+                          <h5 className="text-lg font-semibold text-gray-900 mb-2 font-rubik">
                             {(data as any).contactGetInTouch?.email?.title || 'Email'}
                           </h5>
-                          <p className="text-gray-600 font-montserrat">
+                          <p className="text-gray-600 font-rubik">
                             {(data as any).contactGetInTouch?.email?.address || 'Email address not set'}
                           </p>
-                          <p className="text-sm text-gray-500 font-montserrat">
+                          <p className="text-sm text-gray-500 font-rubik">
                             {(data as any).contactGetInTouch?.email?.responseTime || 'Response time not set'}
                           </p>
                         </div>
@@ -4572,25 +4572,25 @@ export default function AdminDashboard() {
 
                     {/* Business Hours Preview */}
                     <div className="bg-gray-50 rounded-xl p-6">
-                      <h5 className="text-lg font-semibold text-gray-900 mb-4 font-montserrat">
+                      <h5 className="text-lg font-semibold text-gray-900 mb-4 font-rubik">
                         {(data as any).contactGetInTouch?.businessHours?.title || 'Business Hours'}
                       </h5>
                       <div className="space-y-2">
                         <div className="flex justify-between">
-                          <span className="text-gray-600 font-montserrat">Monday - Friday</span>
-                          <span className="text-gray-900 font-semibold font-montserrat">
+                          <span className="text-gray-600 font-rubik">Monday - Friday</span>
+                          <span className="text-gray-900 font-semibold font-rubik">
                             {(data as any).contactGetInTouch?.businessHours?.mondayFriday || 'Not set'}
                           </span>
                         </div>
                         <div className="flex justify-between">
-                          <span className="text-gray-600 font-montserrat">Saturday</span>
-                          <span className="text-gray-900 font-semibold font-montserrat">
+                          <span className="text-gray-600 font-rubik">Saturday</span>
+                          <span className="text-gray-900 font-semibold font-rubik">
                             {(data as any).contactGetInTouch?.businessHours?.saturday || 'Not set'}
                           </span>
                         </div>
                         <div className="flex justify-between">
-                          <span className="text-gray-600 font-montserrat">Sunday</span>
-                          <span className="text-gray-900 font-semibold font-montserrat">
+                          <span className="text-gray-600 font-rubik">Sunday</span>
+                          <span className="text-gray-900 font-semibold font-rubik">
                             {(data as any).contactGetInTouch?.businessHours?.sunday || 'Not set'}
                           </span>
                         </div>

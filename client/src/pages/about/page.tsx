@@ -108,8 +108,8 @@ export default function About() {
         </section>
       )}
 
-      {/* Horizontal Tab Navigation */}
-      <div className="bg-white border-b border-gray-200" style={{ marginTop: '0' }}>
+      {/* Horizontal Tab Navigation - Hidden on Mobile */}
+      <div className="hidden lg:block bg-white border-b border-gray-200" style={{ marginTop: '0' }}>
         <div className="container mx-auto px-4">
           <nav className="flex items-center justify-center gap-10 py-2">
             <a

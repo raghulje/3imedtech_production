@@ -133,7 +133,7 @@ const Footer = ({ footerData: propFooterData }: FooterProps = {}) => {
                     className="block hover:text-[#E6662F] transition-colors"
                     style={{
                       color: '#0E2B5C',
-                      fontFamily: 'Montserrat, sans-serif',
+                      fontFamily: 'Rubik, sans-serif',
                       fontSize: '15px'
                     }}
                   >
@@ -146,7 +146,7 @@ const Footer = ({ footerData: propFooterData }: FooterProps = {}) => {
                     className="block hover:text-[#E6662F] transition-colors"
                     style={{
                       color: '#0E2B5C',
-                      fontFamily: 'Montserrat, sans-serif',
+                      fontFamily: 'Rubik, sans-serif',
                       fontSize: '15px'
                     }}
                   >
@@ -166,7 +166,7 @@ const Footer = ({ footerData: propFooterData }: FooterProps = {}) => {
                 className="font-bold mb-4"
                 style={{
                   color: '#7DC244',
-                  fontFamily: 'Montserrat, sans-serif',
+                  fontFamily: 'Rubik, sans-serif',
                   fontSize: '18px',
                   margin: '0px 0px 30px'
                 }}
@@ -186,7 +186,7 @@ const Footer = ({ footerData: propFooterData }: FooterProps = {}) => {
                         className="relative inline-block transition-colors duration-300 group"
                         style={{
                           color: '#0E2B5C',
-                          fontFamily: 'Montserrat, sans-serif',
+                          fontFamily: 'Rubik, sans-serif',
                           fontSize: '15px'
                         }}
                         onMouseEnter={(e) => {
@@ -207,7 +207,7 @@ const Footer = ({ footerData: propFooterData }: FooterProps = {}) => {
                         className="relative inline-block transition-colors duration-300 group"
                         style={{
                           color: '#0E2B5C',
-                          fontFamily: 'Montserrat, sans-serif',
+                          fontFamily: 'Rubik, sans-serif',
                           fontSize: '15px'
                         }}
                         onClick={() => {
@@ -241,7 +241,7 @@ const Footer = ({ footerData: propFooterData }: FooterProps = {}) => {
               className="font-bold mb-4"
               style={{
                 color: '#7DC244',
-                fontFamily: 'Montserrat, sans-serif',
+                          fontFamily: 'Rubik, sans-serif',
                 fontSize: '18px',
                 margin: '0px 0px 30px'
               }}
@@ -261,7 +261,7 @@ const Footer = ({ footerData: propFooterData }: FooterProps = {}) => {
                     title={social.platform}
                     style={{
                       color: '#333842',
-                      fontFamily: 'Montserrat, sans-serif',
+                      fontFamily: 'Rubik, sans-serif',
                       fontSize: '15px'
                     }}
                     onMouseEnter={(e) => {

@@ -141,35 +141,38 @@ const HomePage = () => {
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#0066A1]/40 to-[#7AB730]/30"></div>
         </div>
-          <div className="relative h-full max-w-[1880px] mx-auto px-6 lg:px-12 flex items-center justify-between">
-            {/* Left Side - Title */}
-            <div className="max-w-2xl flex-1">
-              <h1 
-                className="text-white text-3xl lg:text-4xl xl:text-5xl font-medium leading-tight"
-                dangerouslySetInnerHTML={{
-                  __html: homeHero?.title 
-                    ? homeHero.title.replace(/\n/g, '<br />') 
-                    : 'Affordable Diagnostic<br />Imaging Solutions'
-                }}
-              />
+          <div className="relative h-full max-w-[1880px] mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-center justify-center lg:items-center lg:justify-between">
+            {/* Mobile: Stacked and Centered, Desktop: Side by Side */}
+            <div className="flex flex-col lg:contents items-center justify-center w-full">
+              {/* Left Side - Title */}
+              <div className="max-w-2xl lg:flex-1 text-center lg:text-left">
+                <h1 
+                  className="text-white text-3xl lg:text-4xl xl:text-5xl font-medium leading-tight"
+                  dangerouslySetInnerHTML={{
+                    __html: homeHero?.title 
+                      ? homeHero.title.replace(/\n/g, '<br />') 
+                      : 'Affordable Diagnostic<br />Imaging Solutions'
+                  }}
+                />
+              </div>
+              {/* Right Side - New Product Badge */}
+              {(homeHero?.badgeImage || ASSETS.BANNERS.NEW_PRODUCT_BADGE) && (
+                <div className="flex-shrink-0 mt-4 lg:mt-0 lg:ml-8">
+                  <a
+                    href={homeHero?.badgeLink || ASSETS.EXTERNAL.ANAMAYA_WEBSITE}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block cursor-pointer animate-flicker"
+              >
+                    <img
+                      src={homeHero?.badgeImage || ASSETS.BANNERS.NEW_PRODUCT_BADGE}
+                      alt={homeHero?.badgeAltText || 'New Product'}
+                      className="w-64 lg:w-72 h-auto hover:scale-105 transition-transform duration-300"
+                />
+              </a>
             </div>
-            {/* Right Side - New Product Badge */}
-            {(homeHero?.badgeImage || ASSETS.BANNERS.NEW_PRODUCT_BADGE) && (
-              <div className="flex-shrink-0 ml-8">
-                <a
-                  href={homeHero?.badgeLink || ASSETS.EXTERNAL.ANAMAYA_WEBSITE}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block cursor-pointer animate-flicker"
-            >
-                  <img
-                    src={homeHero?.badgeImage || ASSETS.BANNERS.NEW_PRODUCT_BADGE}
-                    alt={homeHero?.badgeAltText || 'New Product'}
-                    className="w-64 lg:w-72 h-auto hover:scale-105 transition-transform duration-300"
-              />
-            </a>
-          </div>
-            )}
+              )}
+            </div>
         </div>
       </section>
       )}
@@ -307,7 +310,7 @@ const HomePage = () => {
                   <p 
                     className="text-lg"
                     style={{
-                      fontFamily: 'Montserrat, sans-serif',
+                      fontFamily: 'Rubik, sans-serif',
                       color: '#333842'
                     }}
                   >
@@ -473,7 +476,7 @@ const HomePage = () => {
                   <p 
                     className="text-lg"
                     style={{
-                      fontFamily: 'Montserrat, sans-serif',
+                      fontFamily: 'Rubik, sans-serif',
                       color: '#333842'
                     }}
                   >
@@ -535,7 +538,7 @@ const HomePage = () => {
             <h3 
               className="font-medium"
               style={{ 
-                fontFamily: 'Montserrat, sans-serif',
+                fontFamily: 'Rubik, sans-serif',
                 fontWeight: 500,
                 color: '#2879b6',
                 fontSize: '1.875rem',
@@ -584,7 +587,7 @@ const HomePage = () => {
                         backgroundColor: '#F1F1F1',
                         padding: '30px',
                         color: '#333842',
-                        fontFamily: 'Montserrat, sans-serif',
+                        fontFamily: 'Rubik, sans-serif',
                         fontSize: '16px'
                       }}
                     >
@@ -605,7 +608,7 @@ const HomePage = () => {
                         <h4 
                           className="mb-6 group-hover:scale-105 transition-all duration-500"
                           style={{
-                            fontFamily: 'Montserrat, sans-serif',
+                            fontFamily: 'Rubik, sans-serif',
                             fontWeight: 500,
                             color: '#2879B6',
                             fontSize: '1.25rem',
@@ -646,7 +649,7 @@ const HomePage = () => {
                         <p 
                           className="mb-6 group-hover:text-gray-700 transition-colors duration-500"
                           style={{
-                            fontFamily: 'Montserrat, sans-serif',
+                            fontFamily: 'Rubik, sans-serif',
                             fontStyle: 'normal',
                             color: '#333842',
                             fontSize: '1rem',
@@ -677,6 +680,9 @@ const HomePage = () => {
                               to={card.link}
                               className="relative inline-flex items-center px-6 py-3 rounded font-medium transition-all duration-500 cursor-pointer whitespace-nowrap group/link overflow-hidden"
                               style={{ color: '#2879B6' }}
+                              onClick={() => {
+                                window.scrollTo({ top: 0, behavior: 'smooth' });
+                              }}
                             >
                               <span className="relative z-10 flex items-center">
                                 {card.linkText || 'Learn More'} <i className="ri-arrow-right-line ml-2 group-hover/link:translate-x-1 transition-transform"></i>
@@ -718,7 +724,7 @@ const HomePage = () => {
                 backgroundColor: '#F1F1F1',
                 padding: '30px',
                 color: '#333842',
-                fontFamily: 'Montserrat, sans-serif',
+                fontFamily: 'Rubik, sans-serif',
                 fontSize: '16px'
               }}
             >
@@ -739,7 +745,7 @@ const HomePage = () => {
                 <h4 
                   className="mb-6 group-hover:scale-105 transition-all duration-500"
                   style={{
-                    fontFamily: 'Montserrat, sans-serif',
+                    fontFamily: 'Rubik, sans-serif',
                     fontWeight: 500,
                     color: '#2879B6',
                     fontSize: '1.25rem',
@@ -774,7 +780,7 @@ const HomePage = () => {
                 <p 
                   className="mb-6 group-hover:text-gray-700 transition-colors duration-500"
                   style={{
-                    fontFamily: 'Montserrat, sans-serif',
+                    fontFamily: 'Rubik, sans-serif',
                     fontStyle: 'normal',
                     color: '#333842',
                     fontSize: '1rem',
@@ -787,6 +793,9 @@ const HomePage = () => {
                   to="/about"
                   className="relative inline-flex items-center px-6 py-3 rounded font-medium transition-all duration-500 cursor-pointer whitespace-nowrap group/link overflow-hidden"
                   style={{ color: '#2879B6' }}
+                  onClick={() => {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
                 >
                   <span className="relative z-10 flex items-center">
                     Explore Our Products <i className="ri-arrow-right-line ml-2 group-hover/link:translate-x-1 transition-transform"></i>
@@ -819,7 +828,7 @@ const HomePage = () => {
                 backgroundColor: '#F1F1F1',
                 padding: '30px',
                 color: '#333842',
-                fontFamily: 'Montserrat, sans-serif',
+                fontFamily: 'Rubik, sans-serif',
                 fontSize: '16px'
               }}
             >
@@ -840,7 +849,7 @@ const HomePage = () => {
                 <h4 
                   className="mb-6 group-hover:scale-105 transition-all duration-500"
                   style={{
-                    fontFamily: 'Montserrat, sans-serif',
+                    fontFamily: 'Rubik, sans-serif',
                     fontWeight: 500,
                     color: '#2879B6',
                     fontSize: '1.25rem',
@@ -875,7 +884,7 @@ const HomePage = () => {
                 <p 
                   className="mb-6 group-hover:text-gray-700 transition-colors duration-500"
                   style={{
-                    fontFamily: 'Montserrat, sans-serif',
+                    fontFamily: 'Rubik, sans-serif',
                     fontStyle: 'normal',
                     color: '#333842',
                     fontSize: '1rem',
@@ -888,6 +897,9 @@ const HomePage = () => {
                   to="/about"
                   className="relative inline-flex items-center px-6 py-3 rounded font-medium transition-all duration-500 cursor-pointer whitespace-nowrap group/link overflow-hidden"
                   style={{ color: '#2879B6' }}
+                  onClick={() => {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
                 >
                   <span className="relative z-10 flex items-center">
                     Discover Our Services <i className="ri-arrow-right-line ml-2 group-hover/link:translate-x-1 transition-transform"></i>
@@ -920,7 +932,7 @@ const HomePage = () => {
                 backgroundColor: '#F1F1F1',
                 padding: '30px',
                 color: '#333842',
-                fontFamily: 'Montserrat, sans-serif',
+                fontFamily: 'Rubik, sans-serif',
                 fontSize: '16px'
               }}
             >
@@ -941,7 +953,7 @@ const HomePage = () => {
                 <h4 
                   className="mb-6 group-hover:scale-105 transition-all duration-500"
                   style={{
-                    fontFamily: 'Montserrat, sans-serif',
+                    fontFamily: 'Rubik, sans-serif',
                     fontWeight: 500,
                     color: '#2879B6',
                     fontSize: '1.25rem',
@@ -976,7 +988,7 @@ const HomePage = () => {
                 <p 
                   className="mb-6 group-hover:text-gray-700 transition-colors duration-500"
                   style={{
-                    fontFamily: 'Montserrat, sans-serif',
+                    fontFamily: 'Rubik, sans-serif',
                     fontStyle: 'normal',
                     color: '#333842',
                     fontSize: '1rem',
@@ -989,6 +1001,9 @@ const HomePage = () => {
                   to="/contact"
                   className="relative inline-flex items-center px-6 py-3 rounded font-medium transition-all duration-500 cursor-pointer whitespace-nowrap group/link overflow-hidden"
                   style={{ color: '#2879B6' }}
+                  onClick={() => {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
                 >
                   <span className="relative z-10 flex items-center">
                     Contact Us Today <i className="ri-arrow-right-line ml-2 group-hover/link:translate-x-1 transition-transform"></i>

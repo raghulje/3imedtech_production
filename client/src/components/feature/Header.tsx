@@ -242,11 +242,9 @@ const Header = ({ headerData: propHeaderData }: HeaderProps = {}) => {
                     </button>
                     <div className="absolute left-full top-0 w-96 bg-white border border-gray-200 shadow-lg rounded-lg opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all duration-300 transform group-hover/sub:translate-x-0 -translate-x-2 overflow-hidden z-50">
                       <Link 
-                        to="/fpd-c-arm" 
+                        to="/radiography-systems#fpd-c-arm" 
                         className="flex items-center px-6 py-3 text-[#0E2B5C] hover:bg-blue-50 hover:text-[#0E2B5C] transition-all duration-300 text-sm group/subitem"
-                        onClick={() => {
-                          window.scrollTo({ top: 0, behavior: 'smooth' });
-                        }}
+                        onClick={(e) => handleHashNavigation('/radiography-systems#fpd-c-arm', e)}
                       >
                         <span className="mr-2 text-[#0E2B5C] -translate-x-4 opacity-0 group-hover/subitem:translate-x-0 group-hover/subitem:opacity-100 transition-all duration-300">→</span>
                         <span>FPD C-ARM</span>
@@ -424,7 +422,7 @@ const Header = ({ headerData: propHeaderData }: HeaderProps = {}) => {
                       <span className="truncate">Advanced MRI Imaging</span>
                     </button>
                     <div className="absolute left-full top-0 w-80 bg-white border border-gray-200 shadow-lg rounded-lg opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all duration-300 transform group-hover/sub:translate-x-0 -translate-x-2 overflow-hidden z-50">
-                      <a href="https://anamaya.3imedtech.com/" className="flex items-center px-6 py-3 text-[#0E2B5C] hover:bg-blue-50 hover:text-[#0E2B5C] transition-all duration-300 text-sm group/subitem">
+                      <a href="https://anamaya.3imedtech.com/" target="_blank" rel="noopener noreferrer" className="flex items-center px-6 py-3 text-[#0E2B5C] hover:bg-blue-50 hover:text-[#0E2B5C] transition-all duration-300 text-sm group/subitem">
                         <span className="mr-2 text-[#0E2B5C] -translate-x-4 opacity-0 group-hover/subitem:translate-x-0 group-hover/subitem:opacity-100 transition-all duration-300">→</span>
                         <span>Anamaya</span>
                       </a>
