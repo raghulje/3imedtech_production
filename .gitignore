@@ -9,6 +9,9 @@ package-lock.json
 .env.development
 .env.test
 
+# Production configuration files (server-specific, should not be tracked)
+server/config/config.json
+
 # Build outputs
 client/out/
 client/dist/

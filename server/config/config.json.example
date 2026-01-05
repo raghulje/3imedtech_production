@@ -1,8 +1,8 @@
 {
   "development": {
-    "username": "raghul",
-    "password": "RefexAdmin@123",
-    "database": "3imedtech_production",
+    "username": "your_username",
+    "password": "your_password",
+    "database": "your_database_name",
     "host": "localhost",
     "port": 3306,
     "dialect": "mysql",
@@ -21,9 +21,9 @@
     }
   },
   "test": {
-    "username": "raghul",
-    "password": "RefexAdmin@123",
-    "database": "3imedtech_production",
+    "username": "your_username",
+    "password": "your_password",
+    "database": "your_database_name",
     "host": "localhost",
     "port": 3306,
     "dialect": "mysql",
@@ -38,9 +38,9 @@
     }
   },
   "production": {
-    "username": "raghul",
-    "password": "RefexAdmin@123",
-    "database": "3imedtech_production",
+    "username": "your_username",
+    "password": "your_password",
+    "database": "your_database_name",
     "host": "localhost",
     "port": 3306,
     "dialect": "mysql",

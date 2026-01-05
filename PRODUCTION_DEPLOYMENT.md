@@ -2,32 +2,28 @@
 
 ## Quick Deploy Commands
 
-### Step 1: Backup Your Configuration Files
-
-```bash
-# Backup your production configuration files
-cp server/config/config.json server/config/config.json.backup
-cp docker-compose.yml docker-compose.yml.backup 2>/dev/null || true
-cp server/.env server/.env.backup 2>/dev/null || true
-cp client/.env.production client/.env.production.backup 2>/dev/null || true
-```
-
-### Step 2: Pull Latest Changes
+### Step 1: Pull Latest Changes
 
 ```bash
 # Pull the latest changes from GitHub
+# Note: config.json, docker-compose.yml, and .env files are now in .gitignore
+# They will NOT be overwritten by git pull
 git pull origin master
 ```
 
-### Step 3: Restore Your Configuration Files
+### Step 2: Create config.json (First Time Only)
+
+If this is your first deployment and `config.json` doesn't exist:
 
 ```bash
-# Restore your production configuration (if they were overwritten)
-cp server/config/config.json.backup server/config/config.json
-cp docker-compose.yml.backup docker-compose.yml 2>/dev/null || true
-cp server/.env.backup server/.env 2>/dev/null || true
-cp client/.env.production.backup client/.env.production 2>/dev/null || true
+# Copy from example template
+cp server/config/config.json.example server/config/config.json
+
+# Then edit with your production database credentials
+nano server/config/config.json  # or use your preferred editor
 ```
+
+**Important**: `config.json` is now in `.gitignore` and will **never** be overwritten by `git pull`. Your production configuration is safe!
 
 ### Step 4: Build Frontend
 
